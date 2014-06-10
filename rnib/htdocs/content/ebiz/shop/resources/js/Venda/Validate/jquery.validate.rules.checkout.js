@@ -180,13 +180,10 @@ jQuery(function() {
             },
             zipc    : {
                 required: true,
-                populatedaddress: function(ele){
-                    /* if LOOKUP button displayed validate zipc fields */
-                    return jQuery('#js-lookupBtn').is(':visible');
-                }
+                findaddress: true
             },
             zcdropdown : {
-                required: function(ele){ return jQuery(ele).is(':visible'); }
+                required: true
             },
             phone   : {
                 required: true,
@@ -238,7 +235,7 @@ jQuery(function() {
             },
             zipc    : {
                     required: Venda.Validate.msg.postcode,
-                    populatedaddress: Venda.Validate.msg.postcode_populate
+                    findaddress: Venda.Validate.msg.postcode_populate
             },
             zcdropdown    : {
                     required: Venda.Validate.msg.postcode_dropdown

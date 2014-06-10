@@ -122,15 +122,16 @@ jQuery.validator.addMethod("cardexpiry", function(value, element) {
     }
 });
 
-jQuery.validator.addMethod("populatedaddress", function(value, element) {
-
-    if(jQuery('select[name=zcdropdown]').is(':visible')) {
-        return true;
-    } else {
+/**
+ * A method that matches findaddress rules
+ * If using UK postcode lookup
+ */
+jQuery.validator.addMethod('findaddress', function () {
+    if (jQuery('select[name=zcdropdown]').length === 0 && jQuery('#js-lookup-submit-btn').is(':visible')) {
         return false;
     }
-
-}, "Populate the address");
+    return true; //validation rule is ok (passed) - true
+});
 
 jQuery.validator.addMethod("customAlert", function(value, element) {
 
