@@ -1,0 +1,19 @@
+==============================================================================<cr>
+<venda_text id=site.email.refered_details.title><cr>
+==============================================================================<cr><cr>
+
+<venda_text id=site.email.dear> <venda_name><cr>
+<venda_fromname> <venda_text id=site.email.refered_details.msg1><cr>
+
+<venda_text id=site.email.refered_details.msg2><cr>
+
+<venda_text id=site.email.refered_details.to> <venda_name><cr>
+<venda_text id=site.email.refered_details.from> <venda_fromname><cr>
+
+<venda_text id=site.email.refered_details.amount> <venda_coamt> GBP<cr>
+<venda_text id=site.email.refered_details.claim_code> <venda_copromo><cr>
+<venda_text id=site.email.refered_details.expiry_date> <venda_codurexp><cr><cr>
+
+<venda_inctemplate name=textEmailTandC,type=emailIncludes>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

@@ -1,0 +1,257 @@
+<br>
+<table class="emails-table-header" border="0" cellspacing="0"  cellpadding="5" style="font-family:Arial; font-size:16px;text-align:left;color:#000;background-color: #c2e3e6;margin: 0 auto !important" width="92%">
+<!-- start contact/billing details -->
+<tr>
+	<th class="th-header" colspan="2" style="background-color:#008194; color: #fff;text-align:left; line-height: 142%; padding:20px;"><venda_text id=desktop.heading.billing_details></th>
+</tr>
+</table>
+<table class="emails-table-body" border="0" cellpadding="0" cellspacing="0" bgcolor="white" style="background:white;width: 92%;padding: 10px;text-align: left; margin: 0 auto;">
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left; padding:10px;font-weight: bold;"><venda_text id=desktop.info.cardholder>:</td>
+	<td width="70%" ><span class="addrName"><venda_ohtitle> <venda_ohfname> <venda_block label=76,ohmname=notnull><venda_ohmname> </venda_block label=76><venda_ohlname></span></td>
+</tr>
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left; padding:10px;font-weight: bold;"><venda_text id=desktop.info.billing_address></td>
+	<td width="70%" >
+	<venda_block label=73,ohcompany=notnull><venda_ohcompany><br></venda_block label=73>
+	<venda_ohnum> <venda_ohaddr1><br>
+	<venda_block label=74,ohaddr2=notnull><venda_ohaddr2><br></venda_block label=74>
+
+	<!-- if country is US or US entities display this formatting -->
+	<venda_block label=999,mode=value,<venda_ohcntry>=United States,<venda_ohcntry>=United States Non-48,<venda_ohcntry>=United States Armed Forces,operator=or>
+	<venda_ohcity>, <venda_block label=75,ohstate=notnull><venda_ohstate></venda_block label=75> <venda_ohzipc><br>
+	</venda_block label=999>
+	<!-- if country is NOT US or US entities display this formatting -->
+	<venda_block label=9991,mode=value,<venda_ohcntry>!=United States,<venda_ohcntry>!=United States Non-48,<venda_ohcntry>!=United States Armed Forces,operator=and>
+	<venda_ohcity><br>
+	<venda_block label=751,ohstate=notnull><venda_ohstate></venda_block label=751> <venda_ohzipc><venda_block label=1234,ohstate=notnull,ohzipc=notnull,operator=or><br></venda_block label=1234>
+	</venda_block label=9991>
+	<venda_ohcntry>
+	</td>
+</tr>
+<tr>
+	<td class ="table-titles" width="30%" style="text-align:left;padding:10px;font-weight: bold;"><venda_text id=desktop.info.phone_number>:</td>
+	<td width="70%" ><span class="addrPhone"><venda_oharea> <venda_ohphone></span></td>
+</tr>
+<venda_block label=155,ohfax=notnull>
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left; padding:10px;font-weight: bold;"><venda_text id=desktop.info.fax_number>:</td>
+	<td width="70%" ><span class="addrFax"><venda_ohfarea> <venda_ohfax></span></td>
+</tr>
+</venda_block label=155>
+<!-- end contact/billing details -->
+</table>
+<!-- Loop through items and their details starts -->
+<venda_detblock2>
+<tr class="odc-splits-rows">
+	<venda_block label=20,invtatt1=notnull>
+		<venda_tpcomment><!--product has attributes--></venda_tpcomment>
+		<venda_block label=21,med-setxsmall=notnull>
+			<venda_block label=22,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=setxsmall,img=no,medatr=yes>=notnull>
+				<venda_tpcomment><!-- if 'set' prefix with att association value--></venda_tpcomment>
+				<td class="image" style="text-align:left; color: #000;padding: 10px"><a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_ebizurl><venda_media rec=invt,type=movie-swf-pict,key=setxsmall,img=no,jump=no,medatr=yes>" alt="<venda_oiivname>"></a></td>
+				<td class="image-item-desc" style="color: #000;padding: 10px"><b><venda_oiivname></b><br/><b><venda_text id=desktop.info.price_each></b><br/><venda_ohcursym><venda_oisub><br/> <b><venda_text id=desktop.info.qty></b><br><venda_oiqty></td>
+			</venda_block label=22>
+			<venda_block label=23,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=setxsmall,img=no,medatr=yes>=null>
+				<venda_tpcomment><!--if 'set' prefix without att association value--></venda_tpcomment>
+				<venda_block label=231,med-xsmall=notnull>
+					<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+					<td class="image" style="text-align:left; color: #000;padding: 10px"><a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_ebizurl><venda_media rec=invt,type=movie-swf-pict,key=xsmall,img=no,jump=no>" alt="<venda_oiivname>"></a></td>
+					<td class="image-item-desc" style="color: #000;padding: 10px"><b><venda_oiivname></b><br/><b><venda_text id=desktop.info.price_each></b><br/><venda_ohcursym><venda_oisub><br/> <b><venda_text id=desktop.info.qty></b><br><venda_oiqty></td>
+				</venda_block label=231>
+				<venda_block label=232,med-xsmall=null>
+					<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+					<td class="noimage" style="text-align:left; color: #000;padding: 10px"><a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/no_image_xsmall.gif" alt="<venda_text id=desktop.info.no_product_image>"></a></td>
+					<td class="image-item-desc" style="color: #000;;padding: 10px"><b><venda_text id=desktop.info.price_each></b><br/><venda_ohcursym><venda_oisub><br/> <b><venda_text id=desktop.info.qty></b><br><venda_oiqty></td>
+				</venda_block label=232>
+			</venda_block label=23>
+		</venda_block label=21>
+		<venda_block label=24,med-setxsmall=null>
+			<venda_tpcomment><!--if not 'set' prefix - no alt. images functionality--></venda_tpcomment>
+			<venda_block label=25,med-xsmall=notnull>
+				<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+				<td class="image" style="text-align:left; color: #000;padding: 10px"><a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_ebizurl><venda_media rec=invt,type=movie-swf-pict,key=xsmall,img=no,jump=no>" alt="<venda_oiivname>"></a></td>
+				<td class="image-item-desc" style="color: #000;padding: 10px"><b><venda_oiivname></b><br/><venda_text id=desktop.info.price_each></b><br/><venda_ohcursym><venda_oisub><br/> <b><venda_text id=desktop.info.qty></b><br><venda_oiqty></td>
+			</venda_block label=25>
+			<venda_block label=26,med-xsmall=null>
+				<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+				<td class="noimage" style="text-align:left; color: #000;padding: 10px"><a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/no_image_xsmall.gif" alt="<venda_text id=desktop.info.no_product_image>"></a></td>
+				<td class="image-item-desc" style="color: #000;padding: 10px"><b><venda_text id=desktop.info.price_each></b><br/><venda_ohcursym><venda_oisub><br/> <b><venda_text id=desktop.info.qty></b><br><venda_oiqty></td>
+			</venda_block label=26>
+		</venda_block label=24>
+	</venda_block label=20>
+	<venda_block label=30,invtatt1=null>
+		<venda_tpcomment><!--product doesnt has attributes--></venda_tpcomment>
+		<venda_block label=31,med-xsmall=notnull>
+			<venda_tpcomment><!--if not 'set' prefix - no alt. images functionality --></venda_tpcomment>
+			<td class="image" style="text-align:left; color: #000;padding: 10px"><a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_ebizurl><venda_media rec=invt,type=movie-swf-pict,key=xsmall,img=no,jump=no>" alt="<venda_oiivname>"></a></td>
+			<td class="image-item-desc" style="color: #000;padding: 10px"><b><venda_oiivname></b><br/><b><venda_text id=desktop.info.price_each></b><br/><venda_ohcursym><venda_oisub><br/> <b><venda_text id=desktop.info.qty></b><br><venda_oiqty></td>
+		</venda_block label=31>
+		<venda_block label=32,med-xsmall=null>
+			<venda_tpcomment><!--without key=xsmall--></venda_tpcomment>
+			<td class="noimage" style="text-align:left; color: #000;padding: 10px"><a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_ebizurl>/content/ebiz/<venda_bsref>/resources/images/no_image_xsmall.gif" alt="<venda_text id=desktop.info.no_product_image>"></a></td>
+			<td class="image-item-desc" style="color: #000;padding: 10px"><b><venda_text id=desktop.info.price_each></b><br/><venda_ohcursym><venda_oisub><br/> <b><venda_text id=desktop.info.qty></b><br><venda_oiqty></td>
+		</venda_block label=32>
+	</venda_block label=30>
+	<td style="text-align:left;padding: 10px"><venda_ohcursym><venda_oiextsub>
+    </td>
+	<td style="text-align:left; color: #000;padding: 10px">
+	<venda_block label=10,oistatus=2><venda_text id=desktop.info.order_status_in_progress></venda_block label=10>
+	<venda_block label=11,oistatus=3><venda_text id=desktop.info.order_status_released_for_delivery></venda_block label=11>
+	<venda_block label=12,oistatus=4><venda_text id=desktop.info.order_status_backordered></venda_block label=12>
+	<venda_block label=13,oistatus=5><venda_block label=114,num=notnull><venda_text id=desktop.info.tracking_num>: <venda_num> <venda_oicarrier> </venda_block label=114><venda_text id=desktop.info.order_status_despatched> <venda_stmp></venda_block label=13>
+	<venda_block label=14,oistatus=6><venda_text id=desktop.info.order_status_returned> <venda_stmp></venda_block label=14>
+	<venda_block label=15,oistatus=7><venda_text id=desktop.info.order_status_cancelled></venda_block label=15>
+	<venda_block label=16,oistatus=8><venda_text id=desktop.info.rma_num>: <venda_num> <venda_text id=desktop.info.order_status_delivered> <venda_stmp></venda_block label=16>
+	</td>
+</tr>
+<venda_block label=45,oiitype=3>
+<tr>
+	<td colspan="6" style="text-align:left; color: #000">
+	<venda_text id=desktop.info.giftcert_sent_to><br>
+	<venda_block label=880,gcexpires=notnull><venda_text id=desktop.info.giftcert_expiry_date> <venda_gcexpires><br></venda_block label=880>
+	<venda_text id=desktop.info.message>: <venda_oicmt>
+	</td>
+</tr>
+</venda_block label=45>
+</venda_detblock2>
+<!-- Loop through items and their details ends -->
+<!-- start delivery/items loop -->
+<venda_detblock1>
+<venda_block label=40,pkshipreq=1>
+	<!-- start delivery details -->
+	<br>
+<table class="emails-table-header" border="0" cellspacing="0" cellpadding="5" bgcolor:"white" summary="Details for your <venda_ebizname> order" style="font-family:Arial, Helvetica, sans-serif; font-size:16px;text-align:left;color:#000;background-color: white;margin: 0 auto !important;" width="92%" >
+	<tr>
+		<th class="th-header" colspan="2" style="text-align:left;background:#008194; color: #fff; padding: 20px;"><venda_text id=desktop.heading.delivery_details></th>
+	</tr>
+</table>
+<table class="emails-table-body" border="0" cellpadding="0" cellspacing="0" bgcolor="white" style="background:white;width: 92%;padding: 10px;text-align: left;margin: 0 auto;">
+	<tr>
+		<td width="30%" style="text-align:left;color: #000; padding: 10px"><b><venda_text id=desktop.info.recipient>:</b></td>
+		<td width="70%" style="color: #000"><span class="addrName"><venda_pktitle> <venda_pkfname> <venda_block label=75,pkmname=notnull><venda_pkmname> </venda_block label=75><venda_pklname></span></td>
+	</tr>
+	<tr>
+		<td width="30%" style="text-align:left;color:#000; padding: 10px"><b><venda_text id=desktop.info.delivery_address>:</b></td>
+		<td width="70%" style="color:#000">
+		<venda_block label=77,pkcompany=notnull><venda_pkcompany><br></venda_block label=77>
+		<venda_pknum> <venda_pkaddr1><br>
+		<venda_block label=72,pkaddr2=notnull><venda_pkaddr2><br></venda_block label=72>
+
+		<!-- if country is US or US entities display this formatting -->
+		<venda_block label=999,mode=value,<venda_pkcntry>=United States,<venda_pkcntry>=United States Non-48,<venda_pkcntry>=United States Armed Forces,operator=or>
+		<venda_block label=184,pkcity=notnull><venda_pkcity>, </venda_block label=184>
+		<venda_block label=185,pkstate=notnull><venda_pkstate> </venda_block label=185><venda_pkzipc><br>
+		</venda_block label=999>
+		<!-- if country is NOT US or US entities display this formatting -->
+		<venda_block label=9991,mode=value,<venda_pkcntry>!=United States,<venda_pkcntry>!=United States Non-48,<venda_pkcntry>!=United States Armed Forces,operator=and>
+		<venda_block label=184,pkcity=notnull><venda_pkcity><br></venda_block label=184>
+		<venda_block label=185,pkstate=notnull><venda_pkstate> </venda_block label=185><venda_pkzipc><venda_block label=1234,pkstate=notnull,pkzipc=notnull,operator=or><br></venda_block label=1234>
+		</venda_block label=9991>
+		<venda_pkcntry>
+		<venda_block label=76,pkarea=notnull><br><span class="addrPhone"><venda_pkarea> <venda_pkphone></span></venda_block label=76>
+		</td>
+	</tr>
+	<venda_block label=41,pkshipmthd=notnull>
+	<tr>
+		<td width="30%" style="text-align:left; color:#000; padding: 10px"><b><venda_text id=desktop.info.delivery_method></b></td>
+		<td width="70%"  ><venda_pkshipmthd></td>
+	</tr>
+	</venda_block label=41>
+	<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=htmlEmailOrxfieldsDisplay,type=emailIncludes,group=1,displayonly=1>
+	<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=htmlEmailOrxfieldsDisplay,type=emailIncludes,group=2,displayonly=1>
+	<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=htmlEmailOrxfieldsDisplay,type=emailIncludes,group=3,displayonly=1>
+	<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=htmlEmailOrxfieldsDisplay,type=emailIncludes,group=4,displayonly=1>
+	<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=htmlEmailOrxfieldsDisplay,type=emailIncludes,group=5,displayonly=1>
+	<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=htmlEmailOrxfieldsDisplay,type=emailIncludes,group=6,displayonly=1>
+	<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=htmlEmailOrxfieldsDisplay,type=emailIncludes,group=7,displayonly=1>
+	<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=htmlEmailOrxfieldsDisplay,type=emailIncludes,group=8,displayonly=1>
+	<!-- end delivery details -->
+</table>
+</venda_block label=40>
+<br>
+<table class="odc-splits" border="0" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; font-size:16px;text-align:left;color:#000;background-color: white; margin: 0 auto !important" width="92%">
+<!-- start items loop -->
+<thead>
+<tr>
+	<th scope="col" colspan="2" style="background-color:#008194;text-align:left; color: #fff;padding: 20px">Item</th>
+	<th scope="col" style="background-color:#008194;text-align:left; color: #fff;padding: 10px;padding: 20px"><venda_text id=desktop.info.total_price></th>
+	<th scope="col" style="background-color:#008194;text-align:left; color: #fff;padding: 20px"><venda_text id=desktop.info.status></th>
+</tr>
+</thead>
+<tbody>
+<venda_detail2>
+</tbody>
+<!-- end items loop -->
+</table>
+</venda_detblock1>
+<venda_detail1>
+<!-- end delivery/items loop -->
+<br>
+<table class="emails-table-header" border="0" cellspacing="0" cellpadding="5" style="font-family:Arial; font-size:16px;text-align:left;color:#000;background-color: white;margin: 0 auto !important" width="92%">
+<tr>
+	<th class="th-header" colspan="2" style="background-color:#008194;color: #fff; text-align:left; line-height: 142%; padding:20px"><venda_text id=desktop.heading.order_totals></th>
+</tr>
+</table>
+<table class="emails-table-body" border="0" cellpadding="0" cellspacing="0" bgcolor="white" style="background:white;width: 92%;padding: 10px;text-align: left;margin: 0 auto;">
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left; padding:10px;font-weight: bold;"><venda_text id=desktop.info.subtotal>:</td>
+	<td width="70%" ><venda_ohcursym><venda_ohsub></td>
+</tr>
+<venda_block label=64,ohdisc!=0.00,ohdisc=notnull>
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left;padding:10px;font-weight: bold;"><venda_text id=desktop.info.discount>:</td>
+	<td width="70%" >-<venda_ohcursym><venda_ohdisc></td>
+</tr>
+</venda_block label=64>
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left;padding:10px;font-weight: bold;"><venda_text id=desktop.info.delivery_cost>:</td>
+	<td width="70%" ><venda_ohcursym><venda_ohship></td>
+</tr>
+<venda_block label=91,ohtax!=0.00,ohtax=notnull>
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left;padding:10px;font-weight: bold;"><venda_text id=desktop.info.estimated_tax>:</td>
+	<td width="70%" ><venda_ohcursym><venda_ohtax></td>
+</tr>
+</venda_block label=91>
+<venda_block label=670,ohgwtot&gt;0>
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left;padding:10px;font-weight: bold;"><venda_text id=desktop.info.giftwrapping>:</td>
+	<td width="70%" ><venda_ohcursym><venda_ohgwtot></td>
+</tr>
+</venda_block label=670>
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left;padding:10px;font-weight: bold;"><venda_text id=desktop.info.order_total>:</td>
+	<td width="70%" ><venda_ohcursym><venda_ohtot></td>
+</tr>
+<venda_block label=92,ohtaxinc!=0.00,ohtaxinc=notnull>
+<tr>
+	<td colspan="2" ><venda_text id=desktop.info.including_vat></td>
+</tr>
+</venda_block label=92>
+<venda_block label=70,storecreditused&gt;0.00,storecreditused=notnull,creditaccount=notnull>
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left;padding:10px;font-weight: bold;"><venda_text id=desktop.info.store_credit_used><venda_block label=65,storecredit&gt;0.00,storecredit=notnull> (<venda_text id=desktop.info.store_credit_remaining><venda_ohcursym><venda_storecredit>)</venda_block label=65>:</td>
+	<td  width="70%" ><venda_ohcursym><venda_creditaccount></td>
+</tr>
+<venda_block label=181,balance=notnull,balance&gt;0.00>
+<tr style="background-color:#008194;">
+	<td class="table-titles" width="30%" style="text-align:left;padding:10px;font-weight: bold; color: #fff"><venda_text id=desktop.info.store_credit_balance_paid>:</td>
+	<td  width="70%" style="color: #fff"><venda_ohcursym><venda_balance></td>
+</tr>
+</venda_block label=181>
+</venda_block label=70>
+<!-- end totals -->
+<venda_block label=62,totaldisc&gt;0.00>
+<tr>
+	<td class="table-titles" width="30%" style="text-align:left;padding:10px;font-weight: bold;"><venda_text id=desktop.info.promotions_applied></td>
+	<td width="70%" style="text-align:left; color: #000">
+		<venda_detblock3>
+			<venda_ckname> (-<venda_ohcursym><venda_cktotal>)
+		</venda_detblock3>
+		<venda_detail3>
+    </td>
+</tr>
+
+</venda_block label=62>
+</table>

@@ -1,0 +1,81 @@
+<div id="multipledeliveryaddresses">
+<div id="<venda_curstep>" class="<venda_workflow> <venda_curstep>">
+<div class="main-header marg-bottom">
+	<h1 class="nomarg"><venda_text id=desktop.heading.multiple_delivery_addresses></h1>
+</div>
+<div>
+
+<venda_block label=1,errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=1>
+
+<form method="post" name="<venda_curstep>form" action="<venda_codehttps>" id="multipledeliveryaddressesform" class="js-custom">
+	<venda_tpcomment><!-- Core parameters --></venda_tpcomment>
+	<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+	<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+	<input type="hidden" name="curstep" value="<venda_curstep>" />
+	<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+	<input type="hidden" name="mode" value="process" />
+	<input type="hidden" name="step" value="ordersummary" />
+	<input type="hidden" name="param2" value="" />
+
+	<venda_tpcomment><!-- Start: Multiple Delivery Address Table --></venda_tpcomment>
+	<venda_detblock>
+	<tr class="prod">
+		<input type="hidden" name="oirfnbr" value="<venda_oirfnbr>" />
+		<td class="small-12 large-10 prod-name text-left">
+			<div class="large-24">
+				<p><strong><venda_oiivname>
+				<venda_block label=1,oiatt1=notnull>(<venda_oiatt1><venda_block label=2,oiatt2=notnull>,&nbsp;<venda_oiatt2></venda_block label=2><venda_block label=3,oiatt3=notnull>,&nbsp;<venda_oiatt3></venda_block label=3><venda_block label=4,oiatt4=notnull>,&nbsp;<venda_oiatt4></venda_block label=4>)</venda_block label=1></strong></p>
+			</div>
+
+            <div class="small-9 large-4 left">
+                <label for="formoiqty-<venda_oirfnbr>" class="inline"><venda_text id=desktop.form.qty></label>
+            </div>
+            <div class="left">
+            	<input type="text" class="js-qty" name="oiqty-<venda_oirfnbr>" id="formoiqty-<venda_oirfnbr>" size="3" maxlength="3" value="<venda_oiqty>" />
+            </div>
+		</td>
+		<td>
+			<div class="row">
+				<div class="large-20 columns">
+					<label for="formoiabsel-<venda_oirfnbr>" class="hidescreenreadersafe"><venda_text id=desktop.form.address_for_item></label>
+					<select name="oiabsel-<venda_oirfnbr>" id="formoiabsel-<venda_oirfnbr>"><venda_address template=address,selectaddr=<venda_oiabnbr>></select>
+				</div>
+			</div>
+		</td>
+	</tr>
+	</venda_detblock>
+
+	<div class="row">
+		<div class="large-24 columns">
+		<table summary="<venda_text id=desktop.info.multiple_delivery_summary>" title="<venda_text id=desktop.info.multiple_delivery_title>" class="large-24">
+			<thead>
+				<tr>
+				<th scope="col"><venda_text id=desktop.info.description></th>
+				<!--th scope="col"><venda_text id=desktop.info.qty></th-->
+				<th scope="col"><venda_text id=desktop.info.address_for_item></th>
+				</tr>
+			</thead>
+			<tbody>
+				<venda_detail>
+			</tbody>
+		</table>
+		</div>
+	</div>
+	<venda_tpcomment><!-- End: Multiple Delivery Address Table --></venda_tpcomment>
+
+	<div>
+	    <a class="button marg-bottom" href="<venda_wizurl step=addressbookadd,param1=delivery,param2=add>"><venda_text id=desktop.button.add_new_address></a>
+	    <input type="submit" id="updatequantities" value="<venda_text id=desktop.button.update_quantities>" class="button marg-bottom" />
+	    <input type="submit" value="<venda_text id=desktop.button.done>" class="button marg-bottom right" />
+	</div>
+
+</form>
+</div></div>
+
+<venda_tpcomment><!-- Used for checkout step indicators --></venda_tpcomment>
+<venda_tpxt mode=set,name=curstep,value=step3>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.multiple_delivery_addresses>>
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+</div>
+

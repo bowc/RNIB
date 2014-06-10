@@ -1,0 +1,47 @@
+<venda_block label=34,ustype=R>
+<div id="orderhistory" class="box basketAlt">
+
+    <h1 class="header"><venda_text id=desktop.heading.order_history></h1>
+    <venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+    <p><venda_text id=desktop.info.order_history_1></p>
+    <p><venda_text id=desktop.info.order_history_2> <a href="mailto:showcase@venda.com">showcase@venda.com</a>&nbsp;</p>
+    <h2 class="balance"><venda_text id=desktop.info.order_history_store_credit></h2>
+
+    <venda_tpcomment><!-- Start: Recent Orders --></venda_tpcomment>
+    <venda_detblock4>
+    <venda_order ref=<venda_ohrfnbr>,shopcart=0,template=orderOverview>
+    </venda_detblock4>
+
+    <div class="box basketAlt ordersListBox">
+        <h2 class="header">Your Recent Orders</h2>
+
+        <venda_block label=20,ohorders!=0>
+        <ul id="orders_list" data-role="listview" data-inset="true"><venda_detail4></ul>
+        </venda_block label=20>
+        <venda_tpcomment><!-- End: Recent Orders --></venda_tpcomment>
+
+        <venda_tpcomment><!-- Start: No Orders --></venda_tpcomment>
+        <venda_block label=21,ohorders=0>
+        <p><venda_text id=desktop.info.no_orders_placed></p>
+        </venda_block label=21>
+        <venda_tpcomment><!-- End: No Orders --></venda_tpcomment>
+
+        <div id="buttons" class="bottomButtons">
+            <a href="<venda_dispview page=myaccount>" class="button buttonAlt2"><venda_text id=desktop.button.my_account></a>
+        </div>
+    </div>
+
+</div>
+</venda_block label=34>
+
+<venda_block label=33,ustype!=R>
+<div><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>">Please login to view your order history</a></div>
+</venda_block label=33>
+
+<!-- 
+template: templates/workflow/<venda_workflow>/orderlist/orderlist.html
+-->
+<venda_tpxt mode=set,name=trackingstep,value=orderlist>
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.order_history>>

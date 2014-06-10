@@ -1,0 +1,13 @@
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email.account_locked><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader2,type=emailIncludes>
+
+<venda_text id=desktop.info.account_locked_message_1> <venda_ebizname> <venda_text id=desktop.info.account_locked_message_2><cr>
+<venda_text id=desktop.info.email_address> <venda_block label=1,usemail=notnull><venda_usemail></venda_block label=1><venda_block label=2,usemail=null,uslogin=notnull><venda_uslogin></venda_block label=2><cr>
+
+<venda_text id=desktop.info.account_locked_message_3> <venda_text id=desktop.info.password_reminder> (<venda_serveradd>/bin/venda?ex=co_wizr-register&bsref=<venda_ebizref>&step=passwordreminder). <venda_text id=desktop.info.account_locked_message_4><cr>
+<venda_text id=desktop.info.account_locked_message_5><cr>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

@@ -1,0 +1,15 @@
+==============================================================================<cr>
+<venda_block label=832,ohusgrrf!=ebayguest><venda_ebizname> <venda_text id=desktop.heading.email.refund_receipt> - <venda_ohordnum><cr></venda_block label=832>
+<venda_block label=833,ohusgrrf=ebayguest><venda_text id=desktop.heading.email.refund_receipt_ebay> - <venda_ohordnum></venda_block label=833>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader,type=emailIncludes>
+
+<venda_block label=834,ohusgrrf!=ebayguest><venda_text id=desktop.info.refund_receipt_message> <venda_ebizname>.</venda_block label=834>
+<venda_block label=835,ohusgrrf=ebayguest><venda_text id=desktop.info.refund_receipt_message_ebay> <venda_ohordnum>.</venda_block label=835><cr>
+<venda_text id=desktop.info.refund_of> <venda_refamt> <venda_ohcur> <venda_text id=desktop.info.refund_receipt.message_2><cr>
+<venda_block label=836,ohusgrrf!=ebayguest>
+<venda_text id=desktop.info.refund_receipt.message_3><cr>
+</venda_block label=836>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

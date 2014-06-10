@@ -1,0 +1,41 @@
+<div class="headerTop">
+	<div class="headerTopLogo">
+		<venda_block label=111,pageref!=homemobile>
+			<span class="headertop-back"><a href="#" data-role="button" data-inline="true" data-mini="true" data-icon="backblue" data-rel="back"><venda_text id=mobile.button.back></a></span>
+		</venda_block label=111>
+		<venda_block label=111,pageref!=homemobile><a href="<venda_dispview page=home>"></venda_block label=111><img class="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/mobile/mobile_logo.png" alt="<venda_setting type=ebiz,name=name>" /><venda_block label=112,pageref!=homemobile></a></venda_block label=112>
+	</div>
+	<div class="headerTopLink">
+		<div class="headerTopLogin">
+			<!--login-->
+		  	<venda_block label=21,ustype!=R><a href="<venda_codehttps>?ex=co_wizr-registermobile&bsref=<venda_bsref>"><span><venda_text id=mobile.header.login_link></span></a></venda_block label=21>
+		  	<!--logout -->
+			<venda_block label=20,ustype=R><a href="<venda_dispview page=home>&log=4"><span><venda_text id=mobile.header.logout_link></span></a></venda_block label=20>
+		</div>
+		<div class="headerTopCart"><venda_minicart template=cartMobile></div>
+	</div>
+</div><!-- /headertop -->
+
+<div class="ui-grid-a keywordsearch">
+	<form id="formsolrsearch" name="formsolrsearch" action="/search" data-ajax="false">
+	<div class="ui-block-a">
+		<label for="q" class="ui-hidden-accessible"><venda_text id=mobile.button.search>:</label>
+		<input type="search" name="q" data-icon="search" id="q" placeholder="<venda_text id=mobile.button.search>"/>
+	</div>
+	<div class="ui-block-b submit"><input type="submit" value="<venda_text id=mobile.button.go>" id="searchsubmit"></div>
+	</form>
+</div><!-- /keyword -->
+
+<div class="ui-grid-b headerBottom">
+	<div class="ui-block-a regionLangLink">
+		<a href="#" id="regionLangSwitch" class="regionLangSwitch" data-ajax="false">
+			<span class="selectedlocn <venda_sessionlocation>"><venda_currsym></span><span class="selectedlang <venda_sessionlanguage>"></span>
+		</a>
+	</div>
+	<div class="ui-block-b homeLink">
+		<a href="<venda_dispview page=home>"><venda_text id=mobile.button.home></a>
+	</div>
+	<div class="ui-block-c storelocatorLink">
+		<a href="<venda_dispview page=storelocatorselect>"><venda_text id=mobile.button.store_locator></a>
+	</div>
+</div><!-- /headerBottom -->

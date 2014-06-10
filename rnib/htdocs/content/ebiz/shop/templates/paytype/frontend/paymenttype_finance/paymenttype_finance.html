@@ -1,0 +1,21 @@
+<venda_block label=62,paymentavailable=notnull>
+<fieldset class="f-finance thickmarg-topbottom">
+    <legend><venda_text id=desktop.info.finance></legend>
+    <div class="finance row">
+        <div class="large-24 columns">
+            <div class="small-24 large-24 left">
+                <input type="radio" name="ohpaytype" value="15" id="finance" <venda_block label=65,paymentused=notnull>checked</venda_block label=65>><label for="finance"><span class="thinpad-side"><venda_text id=desktop.form.finance></span></label>
+                <br>
+                <p class="nomarg"><venda_text id=desktop.info.placeorder_text></p>
+                <select name="pmfinance" id="methodtype"><venda_paymentselectmethod></select>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<hr>
+<venda_block label=67,checkfullamount=notnull>
+<script type="text/javascript">
+    document.wizform.sendpaypaid.readOnly=true;
+</script>
+</venda_block label=67>
+</venda_block label=62>

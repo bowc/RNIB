@@ -1,0 +1,43 @@
+<venda_detblock>
+<li>
+	<a href="<venda_dispview icat=<venda_icatref1>>"><venda_block label=10,med-catimage1=notnull> <img border="0" alt="" name="catimage" src="<venda_media rec=icat1,type=movie-swf-pict,key=catimage,border=0,img=no>"></venda_block label=10>
+	<div><venda_icatname1></div></a>
+</li>
+</venda_detblock>
+
+<div class="main-header thinmarg-bottom">
+    <h1 class="cat-header"><venda_icatname></h1>
+	<venda_block label=desc,med-catbanner=notnull,icatsdesc=notnull,operator=or>
+	<div class="cat-sdesc hide-for-small">
+		<venda_block label=441,med-catbanner=notnull>
+			<div class="row nomarg"><div class="large-24 columns nopad"><p><venda_icatsdesc></p></div>
+			<div class="large-24 columns nopad"><img src="<venda_media rec=icat,type=movie-swf-pict,key=catbanner,img=no>" class="fullwidth"></div></div>
+		</venda_block label=441>
+		<venda_block label=442,med-catbanner=null><p><venda_icatsdesc></p></venda_block label=442>
+	</div>
+	</venda_block label=desc>	
+</div>
+
+<venda_page page=<venda_icxtcategorypage>>
+
+
+<!--<div class="row">
+    <div class="large-12 columns">
+        <p class="panel text-center">Promotion Panel</p>
+    </div>
+    <div class="large-12 columns">
+        <p class="panel text-center">Promotion Panel</p>
+    </div>
+</div>-->
+
+<ul id="categorylist" class="categorylist large-block-grid-4 small-block-grid-2 text-center">
+<venda_detail>
+</ul>
+
+<venda_inctemplate name=catfeatslider,type=widgets>
+
+<venda_block errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block>
+
+<venda_tpxt mode=set,name=track,value=categorylist>
+<!-- tpxt used for showing the bestseller products based on current category -->
+<venda_tpxt mode=set,name=categorySearch,value=<venda_icatref>>

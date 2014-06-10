@@ -1,0 +1,13 @@
+<p><venda_text id=sso.logged_in_as><venda_usemail></p>
+<p><venda_text id=sso.update_details></p>
+<p><venda_errors></p>
+<form action="/sso/verify" method="post" id="addressform">
+<input type="hidden" name="update" value="1" />
+<venda_inctemplate type=includes/admn/tl_user-myform/edit_user_details,name=edit_contact_details>
+<div>
+    <input type="submit" value="<venda_text id=site.fbconnect.completeregistration>" class="button" />
+</div>
+</form>
+<!-- template: templates/sso/user_verify/user_verify.html -->
+<venda_tpxt mode=set,name=trackingstep,value=facebook-create>
+<venda_inctemplate name=workflowSteps,type=tracking/shared>

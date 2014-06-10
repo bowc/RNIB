@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title><venda_ebizname> <venda_text id=desktop.heading.email_tell_a_friend></title>
+    <venda_inctemplate name=htmlEmailCss,type=emailIncludes>
+</head>
+<body style ="background: #c2e3e6 !important; font-family:Arial, Helvetica, sans-serif !important; padding-top: 20px;">
+	<div class="body-container" style="color: #000000 !important; padding-bottom: 20px;">
+		<table class="emails-table-header" border="0" cellpadding="0" cellspacing="0" style="background:#008194; width: 92%; padding: 10px; margin: 0 auto !important;">
+			<tr>
+				<td class="nor-col" style="font-family:Arial, Helvetica, sans-serif; text-align: left !important;padding-left:10px !important;"><venda_inctemplate name=htmlEmailLogo,type=emailIncludes></td>
+				<td class="force-col" valign="bottom" style="font-family:Arial, Helvetica, sans-serif !important; text-align: right; vertical-align: bottom; color: #ffffff; position:relative !important; bottom: -15px !important;">
+					<h1 style="font-size:16px; font-weight: bold;color: #fff"><venda_text id=desktop.heading.email_tell_a_friend></h1>
+			    </td>
+			</tr>
+		</table>
+		<table class="emails-table-body" border="0" cellpadding="0" cellspacing="0" bgcolor="white" style="background:white;width: 92%;padding: 10px;text-align: left; margin: 0 auto;">
+			<tr>
+				<td valign="middle" style="font-family:Arial, Helvetica, sans-serif !important; font-size: 16px !important;padding: 10px;">
+					<p style="font-size: 16px !important;"><venda_text id=desktop.info.dear> <strong><venda_name></strong></p>
+					<venda_block label=1,message=notnull><p><venda_message></p></venda_block label=1>
+					<venda_block label=2,message=null><p><venda_text id=desktop.info.refer_product_1> <a href="<venda_serveradd>"><venda_ebizname></a>.</p></venda_block label=2>
+					<p style="font-size: 16px !important;"><a href="<venda_dispview invt=<venda_invtref>>">
+					<strong><venda_invtname></strong></a><br>
+					<venda_block label=20,invtsell&gt;0><venda_text id=desktop.info.costing> <venda_currsym><venda_invtsell> <venda_text id=desktop.info.each><br></venda_block label=20>
+					<venda_block label=21,invtsell=0.00,invtatrminsubsell&gt;0,operator=or><venda_text id=desktop.info.from> <venda_currsym><venda_invtatrminsubsell><br></venda_block label=21>
+					<venda_text id=desktop.info.sku> <venda_invtref><br>
+					<venda_block label=1,invtdesc1=notnull><venda_invtdesc1></venda_block label=1></p>
+					<p style="font-size: 16px !important;"><venda_text id=desktop.info.from></p>
+					<venda_block label=44,fname=Empty><venda_text id=desktop.info.a_friend></venda_block label=44>
+					<venda_block label=45,fname!=Empty><venda_fname> <venda_lname></venda_block label=45>
+				</td>
+			</tr>
+		</table>
+    </div>
+</body>
+</html>

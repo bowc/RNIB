@@ -1,0 +1,74 @@
+<div class="box regionlang-switch regionlang-flag">
+
+<venda_block label=showcaseeu,mode=value,<venda_sessionlocation>!=us,<venda_sessionlocation>!=ca>
+<div class="box-body"><a href="#" id="flag" class="flag"><i class="regionlang-icon <venda_sessionlanguage>"></i> <span class="show-for-desktop-up"><venda_currsym> <venda_currencycode></span>
+<span class="show-for-large-up">(
+    <venda_block label=013,mode=value,<venda_sessionlocation>=fr><venda_text id=desktop.info.region_fr></venda_block label=013>
+    <venda_block label=014,mode=value,<venda_sessionlocation>=de><venda_text id=desktop.info.region_de></venda_block label=014>
+    <venda_block label=015,mode=value,<venda_sessionlocation>=uk><venda_text id=desktop.info.region_uk></venda_block label=015>
+    <venda_block label=016,mode=value,<venda_sessionlocation>=es><venda_text id=desktop.info.region_es></venda_block label=016>
+	<venda_block label=017,mode=value,<venda_sessionlocation>=it><venda_text id=desktop.info.region_it></venda_block label=017>
+)</span>
+ <i class="icon-caret-down icon-large"></i></a></div>
+
+<div id="regionLangContent" class="flag-content" style="display:none">
+    <div class="region">
+    <p><venda_text id=desktop.info.change_region>:</p><ul class="region-list">
+    <li><a href="#" class="secondary button" data-region="fr"><venda_text id=desktop.info.region_fr> - &euro; EUR</a></li>
+    <li><a href="#" class="secondary button" data-region="de"><venda_text id=desktop.info.region_de> - &euro; EUR</a></li>
+    <li><a href="#" class="secondary button" data-region="uk"><venda_text id=desktop.info.region_uk> - &pound; GBP</a></li>
+    <li><a href="#" class="secondary button" data-region="es"><venda_text id=desktop.info.region_es> - &euro; EUR</a></li>
+	<li><a href="#" class="secondary button" data-region="it"><venda_text id=desktop.info.region_it> - &euro; EUR</a></li></ul>
+    </div>
+    <div class="separator"></div>
+
+    <div class="lang">
+    <p><venda_text id=desktop.info.change_language>:</p><ul class="lang-list">
+    <li><a href="#" class="secondary button" data-lang="fr"><i class="regionlang-icon fr"></i>Fran&ccedil;ais</a></li>
+    <li><a href="#" class="secondary button" data-lang="de"><i class="regionlang-icon de"></i>Deutsch</a></li>
+    <li><a href="#" class="secondary button" data-lang="en"><i class="regionlang-icon en"></i>English</a></li>
+    <li><a href="#" class="secondary button" data-lang="es"><i class="regionlang-icon es"></i>Espa&ntilde;ol</a></li>
+	<li><a href="#" class="secondary button" data-lang="it"><i class="regionlang-icon it"></i>Italiano</a></li></ul>
+    </div>
+    <div class="separator"></div>
+
+    <div class="lang">
+        <a href="<venda_dispview page=landingswitcher>" class="secondary button showall js-dialog js-doDialog" rel="500,450" data-track="open-languageswitcher"><i class="regionlang-icon all"></i><venda_text id=desktop.button.show_all></a>
+    </div>
+
+</div>
+<!--a href="/page/landingswitcher" class="change-region" data-trackEvent="Change Lang/Region"><venda_text id=desktop.regionlanguage.switch.header></a-->
+</div>
+</venda_block label=showcaseeu>
+
+<venda_block label=showcaseus,mode=value,<venda_sessionlocation>=us,<venda_sessionlocation>=ca,operator=or>
+<div class="box-body"><a href="#" id="flag" class="flag"><i class="regionlang-icon <venda_sessionlanguage>"></i> <span class="show-for-desktop-up"><venda_currsym> <venda_currencycode></span>
+<span class="show-for-large-up">(
+    <venda_block label=013,mode=value,<venda_sessionlocation>=us>United States</venda_block label=013>
+    <venda_block label=014,mode=value,<venda_sessionlocation>=ca>Canada</venda_block label=014>
+)</span>
+ <i class="icon-caret-down icon-large"></i></a></div>
+
+<div id="regionLangContent" class="flag-content" style="display:none">
+    <div class="region">
+    <p><venda_text id=desktop.info.change_region>:</p><ul class="region-list">
+    <li><a href="#" class="secondary button" data-region="us"><venda_text id=desktop.info.region_us> - $ USD</a></li>
+    <li><a href="#" class="secondary button" data-region="ca">Canada - C&dollar; CAD</a></li>
+    </div>
+    <div class="separator"></div>
+
+    <div class="lang">
+    <p><venda_text id=desktop.info.change_language>:</p><ul class="lang-list">
+    <li><a href="#" class="secondary button" data-lang="ae"><i class="regionlang-icon ae"></i>American English</a></li>
+    <li><a href="#" class="secondary button" data-lang="fr"><i class="regionlang-icon fr"></i>fran&ccedil;ais</a></li>
+    </div>
+    <div class="separator"></div>
+
+    <div class="lang">
+        <a href="<venda_dispview page=landingswitcher>" class="secondary button showall js-dialog js-doDialog" rel="500,450" data-track="open-languageswitcher"><i class="regionlang-icon all"></i><venda_text id=desktop.button.show_all></a>
+    </div>
+
+</div>
+<!--a href="/page/landingswitcher" class="change-region" data-trackEvent="Change Lang/Region"><venda_text id=desktop.regionlanguage.switch.header></a-->
+</div>
+</venda_block label=showcaseus>

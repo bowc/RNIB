@@ -1,0 +1,22 @@
+<venda_detblock1>
+<venda_text id=desktop.info.emailinstock_message_3> <venda_invtname> <venda_text id=desktop.info.emailinstock_message_4><cr>
+<venda_dispview invt=<venda_invtref>><cr><cr>
+</venda_detblock1>
+
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email.emailinstock><cr>
+==============================================================================<cr><cr>
+
+<venda_text id=desktop.info.dear_customer><cr><cr>
+
+<venda_text id=desktop.info.emailinstock_message_1><cr><cr>
+<venda_detail1><cr>
+<venda_text id=desktop.info.emailinstock_message_2><cr><cr>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>
+
+
+
+
+
+

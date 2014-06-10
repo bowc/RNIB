@@ -1,0 +1,158 @@
+<div id="myaccount">
+  <venda_block label=33,ustype!=R>
+      <script language="javascript" type="text/javascript">  <venda_tpcomment>/* forward to log in page*/</venda_tpcomment>  window.location.replace="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>";  </script>
+          <div class="main-header"><h1><venda_text id=desktop.heading.myaccount></h1></div>
+
+            <p><venda_text id=desktop.info.myaccount_login_message> <a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>"><venda_text id=desktop.button.log_in></a></p>
+
+  </venda_block label=33>
+  <venda_block label=31,ustype=R>
+
+	<div class="main-header"><h1><venda_text id=desktop.heading.myaccount></h1></div>
+
+	<venda_userinfo><p class="pad-bottom"><venda_text id=desktop.info.myaccount_welcome></p></venda_userinfo>
+
+	<div class="box js-recentorders pad-bottom">
+		<h2 class="marg-top marg-bottom"><venda_text id=desktop.heading.recent_orders></h2>
+		<venda_cartlist carttype=order,template=myaccountRecentOrders,type=order,limit=1>
+
+		<a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>&log=22&step=orderhistory" class="button radius"><venda_text id=desktop.button.view_order_history></a>
+	</div>
+
+	<div class="box js-billingdetails pad-bottom">
+		<h2><venda_text id=desktop.heading.billing_details></h2>
+		<div class="panel">
+		<venda_userinfo>
+		<p class="vcard">
+		<span class="fn"><strong><venda_sestitle> <venda_sesfname> <venda_seslname></strong></span><br>
+		<venda_block label=1001,sescompany=notnull><span class="org"><venda_sescompany></span><br></venda_block label=1001>
+		<span class="adr">
+		<span class="street-address"><venda_sesnum> <venda_sesaddr1><br>
+		<venda_block sesaddr2=notnull><venda_sesaddr2><br></venda_block></span>
+
+		<venda_tpcomment><!-- if country is US or US entities display this formatting --></venda_tpcomment>
+		<venda_block label=999,mode=value,<venda_sescntry>=United States,<venda_sescntry>=United States Non-48,<venda_sescntry>=United States Armed Forces,operator=or>
+		<span class="locality"><venda_sescity></span>, <span class="region"><venda_sesstate></span> <span class="postal-code"><venda_seszipc></span><br>
+		</venda_block label=999>
+
+		<!-- if country is NOT US or US entities display this formatting --></venda_tpcomment>
+		<venda_block label=9991,mode=value,<venda_sescntry>!=United States,<venda_sescntry>!=United States Non-48,<venda_sescntry>!=United States Armed Forces,operator=and>
+		<span class="locality"><venda_sescity></span><br>
+		<venda_block label=751,sesstate=notnull,seszipc=notnull,operator=or><span class="region"><venda_sesstate></span> <span class="postal-code"><venda_seszipc></span><br></venda_block label=751>
+		</venda_block label=9991>
+
+		<span class="country-name"><venda_sescntry></span>
+		</span>
+		<br>
+		<venda_block label=12,sesphone=notnull><span class="tel"><venda_sesarea><venda_sesphone></span></venda_block label=12>
+		</p>
+		</venda_userinfo>
+		</div>
+		<a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,addr=change>" class="button js-billingadd radius"><venda_text id=desktop.button.edit_billing_details></a>
+	</div>
+
+	<div class="box js-accountdetails pad-bottom">
+		<h2><venda_text id=desktop.heading.account_details></h2>
+		<a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,pass=change>" class="button js-emailpwd radius marg-bottom"><venda_text id=desktop.button.edit_email_password></a>
+		<!--<a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&param1=profile" class="button radius js-profile marg-bottom"><venda_text id=desktop.button.edit_profile></a>-->
+		<a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&param1=storecredit" class="button radius js-storecredit marg-bottom"><venda_text id=desktop.button.view_remaining_store_credit></a>
+	</div>
+
+	<div class="box js-commopts pad-bottom">
+		<h2><venda_text id=desktop.heading.communication_options></h2>
+
+		<venda_userinfo>
+			  <venda_block label=1,sesblkpost=1,sesblkemail=1,sesblksms=1,sesblktrdcomm=1,operator=or>
+			  <table class="fullwidth">
+					<thead>
+					  <tr>
+						  <th></th>
+						  <th scope="col" class="text-center"><venda_text id=desktop.form.communication_email></th>
+						  <th scope="col" class="text-center"><venda_text id=desktop.form.communication_post></th>
+						  <venda_tpcomment><!-- <th scope="col"><venda_text id=desktop.form.communication_sms></th> --></venda_tpcomment>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						 <th scope="row" class="text-left"><venda_text id=desktop.form.company_communication_options></th>
+						 <td class="text-center"><venda_block label=11,sesblkemail=1><i class="icon-ok"><span class="hidescreenreadersafe">Selected</span></i></venda_block label=11></td>
+						 <td class="text-center"><venda_block label=12,sesblkpost=1><i class="icon-ok"><span class="hidescreenreadersafe">Selected</span></i></venda_block label=12></td>
+						 <venda_tpcomment><!-- <th><venda_block label=13,sesblksms=1><i class="icon-ok"></i></venda_block label=13></th> --></venda_tpcomment>
+					  </tr>
+					  <tr>
+						 <th scope="row" class="text-left"><venda_text id=desktop.form.3rdparty_communication_options></th>
+						 <td class="text-center"><venda_block label=14,sesblktrdcomm=1><i class="icon-ok"><span class="hidescreenreadersafe">Selected</span></i></venda_block label=14></td>
+						 <td></td>
+						 <venda_tpcomment><!-- <th></th> --></venda_tpcomment>
+					  </tr>
+					</tbody>
+			  </table>
+			  </venda_block label=1>
+
+			  <venda_block label=2,sesblkemail!=1,sesblkpost!=1,sesblksms!=1>
+				  <p><venda_text id=desktop.info.communication_options_unsubscribed></p>
+			  </venda_block label=2>
+
+		</venda_userinfo>
+
+		<a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,comm=change>" class="button radius js-comms"><venda_text id=desktop.button.edit_communication_options></a>
+	
+	</div>
+
+	<div class="box js-addressbook">
+	  <h2><venda_text id=desktop.heading.address_book></h2>
+		  <div class="panel">
+			  <venda_detblock>
+			  <venda_block label=defaultdelivery,default1=1>
+				<venda_block label=10,abrfnbr1&gt;0>
+
+				  <h3><venda_text id=desktop.info.default_delivery_address>
+					<venda_block label=101,adtype1=1> - <venda_text id=desktop.heading.billing_address></venda_block label=101>
+
+					<venda_block label=102,adtype1=0>
+
+					  <venda_block label=11,mode=value,<venda_company1>=c/o <venda_setting type=ebiz,name=name>>- <venda_text id=desktop.heading.deliver_to_store></venda_block label=11>
+
+					  <venda_block label=13,addrname1=notnull> - <venda_addrname1></venda_block label=13>
+
+					</venda_block label=102>
+				  </h3>
+
+				  <p class="vcard">
+					<span class="fn"><strong><venda_title1> <venda_fname1><venda_block label=77,mname1=notnull> <venda_mname1></venda_block label=77> <venda_lname1></strong></span><br>
+
+					<venda_block label=31,company1=notnull><span class="org"><venda_company1></span><br></venda_block label=31>
+					<span class="adr">
+					  <span class="street-address"><venda_block label=41,num1=notnull><venda_num1> </venda_block label=41><venda_addr11><venda_block label=3,addr21=notnull><br><venda_addr21></venda_block label=3></span><br>
+
+					  <venda_tpcomment><!-- if country is US or US Non-48 display this formatting --></venda_tpcomment>
+					  <venda_block label=999,mode=value,<venda_cntry1>=United States,<venda_cntry1>=United States Non-48,<venda_cntry1>=United States Armed Forces,operator=or>
+					  <span class="locality"><venda_city1></span>, <venda_block label=42,state1=notnull><span class="region"><venda_state1></span><br> </venda_block label=42><span class="postal-code"><venda_zipc1></span><br>
+					  </venda_block label=999>
+
+					  <venda_tpcomment><!-- if country is NOT US or US entities display this formatting --></venda_tpcomment>
+					  <venda_block label=9991,mode=value,<venda_cntry1>!=United States,<venda_cntry1>!=United States Non-48,<venda_cntry1>!=United States Armed Forces,operator=and>
+					  <span class="locality"><venda_city1></span><br>
+					  <venda_block label=42,state1=notnull><span class="region"><venda_state1></span><br> </venda_block label=42><span class="postal-code"><venda_zipc1></span><venda_block label=1234,state1=notnull,zipc1=notnull,operator=or><br></venda_block label=1234>
+					  </venda_block label=9991>
+
+					  <span class="country-name"><venda_cntry1></span><br>
+					</span>
+					<venda_block label=12,phone1=notnull><span class="tel"><venda_area1><venda_phone1></span></venda_block label=12>
+				  </p>
+
+				</venda_block label=10>
+			  </venda_block label=defaultdelivery>
+			  </venda_detblock>
+			  <venda_detail>
+		  </div>
+		  <a href="<venda_codehttps>?ex=co_wizr-myaccount&log=22&step=addressbook&bsref=<venda_bsref>" class="button radius js-addbook"><venda_text id=desktop.button.view_address_book></a>
+	</div>
+  </venda_block label=31>
+
+
+<venda_tpxt mode=set,name=trackingstep,value=myaccount>
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.myaccount>>
+</div>

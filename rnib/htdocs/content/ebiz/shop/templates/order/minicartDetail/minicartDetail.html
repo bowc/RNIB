@@ -1,0 +1,175 @@
+<venda_detblock_item>
+<li class="minicart-<venda_invtref>" id="li_<venda_invtref>">
+<div id="minicartDetailHighlight_<venda_invtref>"></div>
+
+<div class="row">
+<venda_block label=45,invtpublish=1>
+<venda_block label=119,invtref!=giftcert>
+<venda_tpcomment><!-- product --></venda_tpcomment>
+	<div class="prod-image small-7 columns">
+	<venda_block label=20,invtatt1=notnull>
+		<venda_tpcomment><!--product has attributes--></venda_tpcomment>
+		<venda_block label=21,med-set<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+			<venda_block label=22,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setminicartpopupimagekey>,img=no,medatr=yes>=notnull>
+				<venda_tpcomment><!-- if 'set' prefix with att association value--></venda_tpcomment>
+				<a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setminicartpopupimagekey>,medatr=yes></a>
+			</venda_block label=22>
+			<venda_block label=23,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=set<venda_setting type=ebiz,name=setminicartpopupimagekey>,img=no,medatr=yes>=null>
+				<venda_tpcomment><!--if 'set' prefix without att association value--></venda_tpcomment>
+				<venda_block label=231,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+					<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+					<a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>></a>
+				</venda_block label=231>
+				<venda_block label=232,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+					<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+					<a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>"></a>
+				</venda_block label=232>
+			</venda_block label=23>
+		</venda_block label=21>
+		<venda_block label=24,med-set<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+			<venda_tpcomment><!--if not 'set' prefix - no alt. images functionality--></venda_tpcomment>
+			<venda_block label=25,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+				<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+				<a href="<venda_dispview invt=<venda_invtparef>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>></a>
+			</venda_block label=25>
+			<venda_block label=26,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+				<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+				<a href="<venda_dispview invt=<venda_invtparef>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>"></a>
+			</venda_block label=26>
+		</venda_block label=24>
+	</venda_block label=20>
+	<venda_block label=30,invtatt1=null>
+		<venda_tpcomment><!--product doesn't has attributes--></venda_tpcomment>
+		<venda_block label=31,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+		<venda_tpcomment><!--if not 'set' prefix - no alt. images functionality --></venda_tpcomment>
+		<a href="<venda_dispview invt=<venda_invtref>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>></a>
+		</venda_block label=31>
+		<venda_block label=32,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+		<venda_tpcomment><!--without key=xsmall--></venda_tpcomment>
+		<a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>"></a>
+		</venda_block label=32>
+	</venda_block label=30>
+	</div>
+	<div class="prod-details small-16 columns">
+		<venda_block label=80,invtatrtot&lt;1><span class="prod-name"><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></span></venda_block label=80>
+		<venda_block label=81,invtatrtot&gt;0><span class="prod-name"><a href="<venda_dispview invt=<venda_invtparef>>"><venda_invtname></a></span> <span class="prod-invtatt">(<venda_invtatt1><venda_block label=7,invtatt2=notnull>, <venda_invtatt2></venda_block label=7><venda_block label=8,invtatt3=notnull>, <venda_invtatt3></venda_block label=8><venda_block label=9,invtatt4=notnull>, <venda_invtatt4></venda_block label=9>)</span></venda_block label=81>
+		<span class="prod-quantity"><br><venda_text id=desktop.info.qty>:&nbsp;<venda_oiqty></span>
+		<p class="prod-remove left">
+			<div class="hiddenfields">
+				<input type="hidden" class="normal" value="<venda_bsref>" name="bsref" />
+				<input type="hidden" class="normal" value="<venda_invtref>" name="hash" />
+				<input type="hidden" class="normal" value="shopcart" name="curstep"/>
+				<input type="hidden" class="normal" value="1" name="<venda_cartfield name=deleteline>"/>
+				<input type="hidden" class="normal" value="<venda_lineid>" name="line-id"/>
+				<input type="hidden" class="normal" value="<venda_lineid>" name="line-id-"/>
+				<input type="hidden" class="normal" value="co_wizr-shopcart" name="ex"/>
+				<input type="hidden" class="dataline" value="<venda_oibun>" name="isbun-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_invtref>" name="ivref-id-*"/>
+				<input type="hidden" class="normal" value="process" name="mode"/>
+				<input type="hidden" class="normal" value="<venda_oiohnbr>" name="ohrfnbr"/>
+				<input type="hidden" class="dataline" value="<venda_oiabnbr>" name="oiabnbr-id-*"/>
+				<input type="hidden" class="normal" value="<venda_oibun>" name="oibun"/>
+				<input type="hidden" class="normal" value="<venda_oiclnbr>" name="oiclnbr"/>
+				<input type="hidden" class="dataline" value="<venda_oiclnbr>" name="oiclnbr-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_oiitype>" name="oiitype-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_invtname>" name="oiivname-id-*"/>
+				<input type="hidden" class="normal" value="<venda_invtref>-<venda_invtatrsell>" name="oilist"/>
+				<input type="hidden" class="normal" value="<venda_oiqty>" name="oioqty"/>
+				<input type="hidden" class="normal" value="<venda_invtref>" name="oiord"/>
+				<input type="hidden" class="normal" value="<venda_oirfnbr>" name="numberstart"/>
+				<input type="hidden" class="normal" value="<venda_oiqty>" name="quantity"/>
+				<input type="hidden" class="dataline" value="<venda_invtatrsell>" name="oisymsell-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_oiqty>" name="qty-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_oiqty>" name="setqty-id-*"/>
+				<input type="hidden" class="normal" value="login" name="step"/>
+				<input type="hidden" class="normal" value="1" name="trrfext"/>
+				<input type="hidden" class="normal" value="<venda_oiusnbr>" name="trrfnbr"/>
+			</div>
+		</p>
+		<div class="small-24 columns nopad">
+			<span class="prod-price"><venda_currsym><venda_invtsell><venda_block label=10,oiqty&gt;1>&nbsp;<venda_text id=desktop.info.each></venda_block label=10></span>
+		</div>
+		<div class="small-16 columns remove">
+			<a href="#" class="js-removeItem small radius button secondary right" data-trrfnbr="<venda_oiusnbr>" data-oiord="<venda_ref>" data-ohrfnbr="<venda_oiohnbr>" data-trackEvent="Shopping" data-role="button" data-line="<venda_lineid>" data-wizard="shopcart"><venda_text id=desktop.button.remove></a>
+		</div>
+	</div>
+</venda_block label=119>
+
+<venda_block label=229,invtref=giftcert>
+	<venda_tpcomment><!-- giftcert --></venda_tpcomment>
+	<div class="prod-image small-7 columns">
+		<venda_block label=412,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+		<a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>></a>
+		</venda_block label=412>
+		<venda_block label=422,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+		<a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>"></a>
+		</venda_block label=422>
+	</div>
+	<div class="prod-details small-16 columns">
+		<span class="prod-name"><a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><venda_invtname></a></span>
+		<span class="prod-quantity"><br><venda_text id=desktop.info.qty>:&nbsp;<venda_oiqty></span>
+		<span class="prod-price"><br><venda_currsym><venda_oiextprice></span>
+
+		<p class="prod-remove left">
+			<div class="hiddenfields">
+				<input type="hidden" class="normal" value="<venda_bsref>" name="bsref" />
+				<input type="hidden" class="normal" value="<venda_invtref>" name="hash" />
+				<input type="hidden" class="normal" value="shopcart" name="curstep"/>
+				<input type="hidden" class="normal" value="1" name="<venda_cartfield name=deleteline>"/>
+				<input type="hidden" class="normal" value="<venda_lineid>" name="line-id"/>
+				<input type="hidden" class="normal" value="<venda_lineid>" name="line-id-"/>
+				<input type="hidden" class="normal" value="co_wizr-shopcart" name="ex"/>
+				<input type="hidden" class="dataline" value="<venda_oibun>" name="isbun-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_invtref>" name="ivref-id-*"/>
+				<input type="hidden" class="normal" value="process" name="mode"/>
+				<input type="hidden" class="normal" value="<venda_oiohnbr>" name="ohrfnbr"/>
+				<input type="hidden" class="dataline" value="<venda_oiabnbr>" name="oiabnbr-id-*"/>
+				<input type="hidden" class="normal" value="<venda_oibun>" name="oibun"/>
+				<input type="hidden" class="normal" value="<venda_oiclnbr>" name="oiclnbr"/>
+				<input type="hidden" class="dataline" value="<venda_oiclnbr>" name="oiclnbr-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_oiitype>" name="oiitype-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_invtname>" name="oiivname-id-*"/>
+				<input type="hidden" class="normal" value="<venda_invtref>-<venda_invtatrsell>" name="oilist"/>
+				<input type="hidden" class="normal" value="<venda_oiqty>" name="oioqty"/>
+				<input type="hidden" class="normal" value="<venda_invtref>" name="oiord"/>
+				<input type="hidden" class="normal" value="<venda_oirfnbr>" name="numberstart"/>
+				<input type="hidden" class="normal" value="<venda_oiqty>" name="quantity"/>
+				<input type="hidden" class="dataline" value="<venda_invtatrsell>" name="oisymsell-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_oiqty>" name="qty-id-*"/>
+				<input type="hidden" class="dataline" value="<venda_oiqty>" name="setqty-id-*"/>
+				<input type="hidden" class="normal" value="login" name="step"/>
+				<input type="hidden" class="normal" value="1" name="trrfext"/>
+				<input type="hidden" class="normal" value="<venda_oiusnbr>" name="trrfnbr"/>
+			</div>
+		</p>
+		<div class="small-24 columns nopad">
+			<span class="prod-price"><venda_currsym><venda_oiextprice><venda_block label=10,oiqty&gt;1>&nbsp;<venda_text id=desktop.info.each></venda_block label=10></span>
+		</div>
+		<div class="small-16 columns remove">
+			<a href="#" class="js-removeItem small radius button secondary right" data-trrfnbr="<venda_oiusnbr>" data-oiord="<venda_ref>" data-ohrfnbr="<venda_oiohnbr>" data-trackEvent="Shopping" data-role="button" data-line="<venda_lineid>" data-wizard="shopcart"><venda_text id=desktop.button.remove></a>
+		</div>
+	</div>
+</venda_block label=229>
+</venda_block label=45>
+<venda_block label=46,invtpublish!=1>
+<venda_tpcomment><!-- unpublished --></venda_tpcomment>
+
+	<venda_block label=43,invtref!=giftcert>
+	<div class="prod-image small-7 columns">
+		<venda_block label=41,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=notnull>
+		<venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setminicartpopupimagekey>>
+		</venda_block label=41>
+		<venda_block label=42,med-<venda_setting type=ebiz,name=setminicartpopupimagekey>=null>
+		<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setminicartpopupimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>">
+		</venda_block label=42>
+	</div>
+	</venda_block label=43>
+	<div class="prod-details small-17 columns">
+		<span class="prod-name"><venda_invtname></span>
+		<p class="prod-unpublished"><venda_text id=desktop.info.not_available></p>
+	</div>
+</venda_block label=46>
+</li>
+</venda_detblock_item>
+
+<ul id="minicart_products" class="minicart_products"><venda_detail_item></ul>

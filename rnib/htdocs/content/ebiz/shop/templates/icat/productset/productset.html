@@ -1,0 +1,119 @@
+<venda_tpcomment><!-- only need to call cloudzoom here, not sitewide --></venda_tpcomment>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/cloudzoom.js"></script>
+<script>
+    CloudZoom.quickStart();
+</script>
+
+<venda_tpcomment><!-- tag values used for tell a friend, emwbis, write and read a review popups --></venda_tpcomment>
+<div id="tag-qtymsg" style="display:none;"><venda_text id=desktop.validation.please_enter_quantity></div>
+<div id="tag-ebizref" style="display:none;"><venda_setting type=ebiz,name=ref></div>
+<div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
+<div id="tag-invtref" style="display:none;"><venda_invtref></div>
+<div id="tag-invtname" style="display:none;"><venda_invtname></div>
+<div id="tag-currsym" style="display:none;"><venda_currsym></div>
+
+<venda_tpcomment><!-- Dictionary translations required for attributes JS --></venda_tpcomment>
+<div id="attributes-stockNA" style="display:none;"><venda_text id=desktop.validation.selection_not_available></div>
+<div id="attributes-stockOut" style="display:none;"><venda_text id=desktop.validation.selection_out_of_stock></div>
+<div id="attributes-productselected" style="display:none;"><venda_text id=desktop.validation.you_have_selected></div>
+<div id="attributes-productstatus" style="display:none;"><venda_text id=desktop.validation.please_select_colon></div>
+<div id="attributes-only" style="display:none;"><venda_text id=desktop.validation.only></div>
+<div id="attributes-left" style="display:none;"><venda_text id=desktop.validation.left></div>
+<div id="attributes-optionDefault" style="display:none;"><venda_text id=desktop.validation.please_select_multi_dot></div>
+<div id="attributes-tooltip" style="display:none;"><venda_text id=desktop.validation.is_out_of_stock></div>
+<div id="attributes-backorder" style="display:none;"><venda_text id=desktop.validation.backorder_text></div>
+<div id="attributes-preorder" style="display:none;"><venda_text id=desktop.validation.preorder_text></div>
+<div id="attributes-quantity" style="display:none;"><venda_text id=desktop.validation.enter_quantity></div>
+<div id="attributes-chooseVariant" style="display:none;"><venda_text id=desktop.validation.choose_variant></div>
+<div id="attributes-addThisProduct" style="display:none;"><venda_text id=desktop.validation.add_this_product></div>
+<div id="attributes-addAllProduct" style="display:none;"><venda_text id=desktop.validation.add_all_product></div>
+<div id="attributes-noneChecked" style="display:none;"><venda_text id=desktop.validation.none_checked></div>
+
+<venda_tpcomment><!-- VCP switch settings required for attributes JS --></venda_tpcomment>
+<div id="OutOfStockThreshold" style="display: none;"><venda_setting type=ebiz,name=emailmebackthreshold></div><venda_tpcomment><!-- Out of Stock Threshold --></venda_tpcomment>
+<div id="DoNotBackorder" style="display: none;"><venda_setting type=ebiz,name=nobackorderedinclude></div><venda_tpcomment><!-- Do not dispatch backordered items (checked == no backorder)--></venda_tpcomment>
+<div id="emwbisType" style="display: none;"><venda_setting type=ebiz,name=emailmebackcriteria></div><venda_tpcomment><!-- Email me when back in stock criteria (ETA / Release Dates): 4 options: none, eta, release, eta and etarelease --></venda_tpcomment>
+<div id="stockchecking_basket" style="display: none;"><venda_setting type=ebiz,name=stockchecking_basket></div><venda_tpcomment><!-- Confirm Stock Availability at basket --></venda_tpcomment>
+<div id="stockchecking_orderconfirm" style="display: none;"><venda_setting type=ebiz,name=stockchecking_orderconfirm></div><venda_tpcomment><!-- Confirm Stock Availability at Confirm screen --></venda_tpcomment>
+
+<venda_detblock>
+<venda_inventory ref=<venda_invtref1>,temp=productsetInvt>
+</venda_detblock>
+
+<div id="productListMulti" class="row">
+    <venda_tpcomment><!-- start: left hand side (picture) --></venda_tpcomment>
+    <div class="large-11 columns">
+        <venda_block label=5,med-catbanner=notnull><div class="prod-detail-image"><venda_media rec=icat,type=movie-swf-pict,key=catbanner></div></venda_block label=5>
+        <venda_tpcomment><!-- start: product detail tabs --></venda_tpcomment>
+        <div id="infotab" class="tabs thickmarg-top">
+            <div class="tab-header js-tab-header">
+                <ul class="tab-nav js-tab-nav">
+                <li><a href="#contentTab1" title="<venda_text id=desktop.info.description>"><span class="hide-for-desktop-up"><venda_text id=desktop.info.small.description></span><span class="show-for-desktop-up"><venda_text id=desktop.info.description></span></a></li>
+                <li><a href="#contentTab2" title="<venda_text id=desktop.info.specification>"><span class="hide-for-desktop-up"><venda_text id=desktop.info.small.specification></span><span class="show-for-desktop-up"><venda_text id=desktop.info.specification></span></a></li>
+                <li><a href="#contentTab3" title="<venda_text id=desktop.info.delivery>"><span class="hide-for-small"><venda_text id=desktop.info.delivery></span><span class="show-for-small"><venda_text id=desktop.info.small.delivery></span></a></li>
+                <li class="tab-last"><a href="#contentTab4" title="<venda_text id=desktop.info.returns>"><venda_text id=desktop.info.returns></a></li>
+                </ul>
+            </div>
+            <div class="tab-content js-tab-content">
+                <!-- description -->
+                <div class="tab js-tab">
+                    <venda_block label=12,icatldesc=notnull><p class="tab-icatldesc" itemprop="description"><venda_icatldesc></p></venda_block label=12>
+                </div>
+                <div class="tab js-tab">
+                    <venda_block label=22,invtsdesc=notnull><p class="tab-invtsdesc" itemprop="summary"><venda_invtsdesc></p></venda_block label=22>
+                </div>
+                <div class="tab js-tab"><venda_page page=deliveryproduct></div>
+                <div class="tab js-tab"><venda_page page=returnsproduct></div>
+            </div>
+        </div>
+        <venda_tpcomment><!-- end: product details tab --></venda_tpcomment>
+    </div>
+    <venda_tpcomment><!-- end: left hand side (picture) --></venda_tpcomment>
+
+    <div class="large-12 pull-1 columns">
+        <h1 itemprop="name"><venda_icatname></h1>
+        <venda_block errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block>
+        <venda_block label=52,rectot=><p><venda_text id=desktop.info.category_no_products></p></venda_block label=52>
+
+        <venda_block label=53,rectot!=>
+        <form name="form" action="<venda_codehttp>" method="post" name="addproductform" id="addproductform">
+            <input type="hidden" name="bsref" value="<venda_bsref>">
+            <input type="hidden" name="mode" value="addmul">
+            <input type="hidden" name="log" value="22">
+            <input type="hidden" name="layout" value="">
+            <input type="hidden" name="curpage" value="">
+            <input type="hidden" name="next" value="">
+            <input type="hidden" name="param1" value="bulk">
+            <input type="hidden" name="param2" value="">
+            <input type="hidden" name="ex" value="co_wizr-shopcart">
+            <!-- "invt" defines next step if "ex" is "co_disp-shopc" (sends to home page without this field) - could be set to send to any icat or page instead -->
+            <input type="hidden" name="icat" value="<venda_icatref>">
+
+            <venda_tpcomment><!-- start: declare variable for imageSwapping --></venda_tpcomment>
+            <script type="text/javascript">var imageSwapping = new Array();</script>
+            <venda_tpcomment><!-- end: declare variable for imageSwapping --></venda_tpcomment>
+            <venda_detail>
+
+            <div class="js-attributesForm" id="productset" style="display: none;"><venda_pdxtatrtype></div> <!-- dropdown, halfswatch, swatch, grid, multiAdd1? -->
+
+            <div class="js-buyControlsMulti"></div> <!-- adds an 'Add all products' checkbox -->
+            <div class="row">
+                <div class="small-12 columns"><input type="submit" class="success radius expand button js-addproduct" value="<venda_text id=desktop.button.addtobasket>" onclick="document.form.ex.value='co_disp-shopc';"></div>
+                <div class="small-12 columns"><input type="submit" class="button radius expand js-buynow" value="<venda_text id=desktop.button.buy_now>" onclick="document.form.ex.value='co_wizr-shopcart';"></div>
+            </div>
+        </form>
+        </venda_block label=53>
+    </div>
+
+<venda_tpcomment>
+<!-- TPXTs are defined for other function:
+categorySearch - is used for bestsellers/ compare products based on current category.
+comparecatref - is used for compare products.
+-->
+</venda_tpcomment>
+<venda_tpxt mode=set,name=track,value=productlist>
+<venda_tpxt mode=set,name=categorySearch,value=<venda_icatref>>
+<venda_block label=41,mode=value,<venda_setting type=ebiz,name=showcompareproductlist>=1>
+<venda_block label=501,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>!=1><venda_tpxt mode=set,name=comparecatref,value=<venda_icatref>></venda_block label=501>
+<venda_block label=502,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>=1><venda_tpxt mode=set,name=comparecatref,value=allcategory></venda_block label=502>
+</venda_block label=41>

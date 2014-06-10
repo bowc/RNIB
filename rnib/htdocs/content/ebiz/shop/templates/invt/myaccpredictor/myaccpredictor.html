@@ -1,0 +1,39 @@
+<venda_block label=45,invtpublish=1>
+<div class="prod-image">
+	<venda_block label=4,med-<venda_setting type=ebiz,name=setfeaturedproductsimagekey>=notnull>
+	<a href="<venda_dispview invt=<venda_invtref>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setfeaturedproductsimagekey>></a>
+	</venda_block label=4>
+	<venda_block label=5,med-<venda_setting type=ebiz,name=setfeaturedproductsimagekey>=null>
+	<a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setfeaturedproductsimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>"></a>
+	</venda_block label=5>
+</div>
+<div class="prod-details">
+	<h3 class="prod-name"><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></h3>
+	<venda_inctemplate type=includes,name=priceFormat>
+	<venda_block label=445,invtparef=notnull>
+		<p class="prod-moreinfo"><a href="<venda_dispview invt=<venda_invtparef>>" title="<venda_text id=desktop.info.product_moreinfo_title>" class="small success button"><venda_text id=desktop.button.more_info> <i class="icon-double-angle-right"></i></a></p>
+	</venda_block label=445>
+	<venda_block label=446,invtparef=null>
+		<p class="prod-moreinfo"><a class="small success button" href="<venda_dispview invt=<venda_invtref>>" title="<venda_text id=desktop.info.product_moreinfo_title>"><venda_text id=desktop.button.more_info> <i class="icon-double-angle-right"></i></a></p>
+	</venda_block label=446>
+</div>
+
+</venda_block label=45>
+<venda_block label=46,invtpublish!=1>
+<!-- unpublished -->
+<div class="prod-image">
+	<venda_block label=41,med-<venda_setting type=ebiz,name=setfeaturedproductsimagekey>=notnull>
+		<venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setfeaturedproductsimagekey>>
+	</venda_block label=41>
+	<venda_block label=51,med-<venda_setting type=ebiz,name=setfeaturedproductsimagekey>=null>
+		<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setfeaturedproductsimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>">
+	</venda_block label=51>
+</div>
+<div class="prod-details">
+	<h3 class="prod-name"><venda_invtname></h3>
+	<div class="prod-pricedetails">
+	<venda_inctemplate type=includes,name=priceFormat>
+	</div>
+	<p class="prod-unpublished"><venda_text id=desktop.info.not_available></p>
+</div>
+</venda_block label=46>

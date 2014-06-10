@@ -1,0 +1,201 @@
+<div id="shopcart">
+<venda_block label=shopcartempty,mode=value,<venda_emptytemplate>=1>
+	<venda_tpcomment><!-- Shopcart empty --></venda_tpcomment>
+	<div class="row">
+		<div class="large-24 columns">
+			<div class="main-header">
+				<h1 class="cartempty-header nomarg"><venda_text id=desktop.heading.shopping_cart></h1>
+			</div>
+			<venda_block label=1,mode=value,<venda_errors mode=boolean>=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=1>
+
+			<p><venda_text id=desktop.info.shopping_cart_empty></p>
+
+			<div id="buttons" class="large-24 columns">
+				<a href="<venda_dispview page=home>" class="button right thickmarg-bottom radius"><venda_text id=desktop.button.continue_shopping></a>
+			</div>
+		</div>
+	</div>
+    <div id="tag-emptytemplate" style="display:none;">1</div>
+</venda_block label=shopcartempty>
+
+<venda_block label=shopcart,mode=value,<venda_emptytemplate>!=1>
+	<div class="column">
+		<h1 class="shopcart-header"><venda_text id=desktop.heading.shopping_cart> (<venda_oialltotal> <venda_block label=19,oialltotal=1><venda_text id=desktop.info.item></venda_block label=19><venda_block label=20,oialltotal!=1><venda_text id=desktop.info.items></venda_block label=20>)</h1>
+	</div>
+
+	<div class="large-24 columns thickmarg-top">
+		<!--<venda_page page=topbasket>-->
+		<div id="yourbasket" class="js-shopcart">
+
+		<form method="post" name="<venda_curstep>form" action="<venda_codehttp>" id="shopcartform">
+		<input type="hidden" name="ohrfnbr" value="<venda_ohrfnbr>">
+		<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+		<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+		<input type="hidden" name="wizard" id="wizard" value="checkout" /><venda_tpcomment><!-- hardcoded workflow to move the user to the checkout --></venda_tpcomment>
+		<input type="hidden" name="param1" id="param1" value="" />
+		<input type="hidden" name="param2" id="param2" value="" />
+		<input type="hidden" name="param3" id="param3" value="" />
+		<input type="hidden" name="log" id="log" value="" />
+		<input type="hidden" name="mode" id="mode" value="process" />
+		<input type="hidden" name="trrfnbr" id="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+		<input type="hidden" name="trrfext" id="trrfext" value="<venda_block label=15,mode=value,<venda_protocol>=https>1</venda_block label=15>" />
+		<input type="hidden" name="curstep" id="curstep" value="<venda_curstep>" />
+		<input type="hidden" name="curparam1" id="curparam1" value="<venda_curparam1>" />
+		<input type="hidden" name="curparam2" id="curparam2" value="<venda_curparam2>" />
+		<input type="hidden" name="curlayout" id="curlayout" value="<venda_curlayout>" />
+		<input type="hidden" name="bsref" id="bsref" value="<venda_bsref>" />
+		<input type="hidden" name="step" value="<venda_block label=registerednologin,mode=value,<venda_ustype>=R,<venda_setting type=ebiz,name=skipsecondlogin>=1>ordersummary</venda_block label=registerednologin><venda_block label=registeredlogin,mode=value,<venda_ustype>=R,<venda_setting type=ebiz,name=skipsecondlogin>!=1>login</venda_block label=registeredlogin><venda_block label=notregistered,ustype!=R>login</venda_block label=notregistered>" />
+
+			<venda_block label=201,mode=value,<venda_ebxtcurrencyConvert>=1>
+				<venda_tpcomment><!-- Only shows if the currency converter is enabled --></venda_tpcomment>
+				<div>
+					<h2><span></span><venda_text id=desktop.info.currency_converter_info1> <venda_currencycode></h2>
+					<p><venda_text id=desktop.info.currency_converter_info2></p>
+				</div>
+			</venda_block label=201>
+
+			<div class="row">
+				<div class="small-24 columns">
+					<input type="submit" class="button right marg-bottom radius" value="<venda_text id=desktop.button.checkout_securely>">
+				</div>
+			</div>
+
+			<venda_tpcomment><!-- Paypal Express --></venda_tpcomment>
+			<venda_paymenttemplate template=paypal_express,templatetype=paytype/frontend,paymenttype=paypal>
+
+			<venda_block label=1,mode=value,<venda_errors mode=boolean>=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=1>
+
+			<venda_tpcomment><!-- Start: Items Table --></venda_tpcomment>
+
+			<venda_inctemplate type=workflow/shopcart/shopcart,name=standard_items>
+
+			<div>
+				<table summary="<venda_text id=desktop.info.items_table_summary>" title="<venda_text id=desktop.info.items_table_title>" class="large-24 columns">
+					<thead>
+						<tr>
+							<th scope="col"><span><venda_text id=desktop.info.item_description></span></th>
+							<!--th scope="col"></th>
+							<th></th>
+							<th scope="col"><span><venda_text id=desktop.info.your_options></span></th-->
+							<th scope="col" class="text-left"><span><venda_text id=desktop.info.total_price></span></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<venda_detail5><venda_tpcomment><!-- products --></venda_tpcomment>
+						
+						
+
+						<tr>
+							<th scope="row" class="text-left"><div><venda_text id=desktop.info.subtotal>:</div></th>
+							<td colspan="1" class="text-left"><div><venda_currsym><venda_extsub></div></td>
+						</tr>
+						<venda_block label=10,totaldisc&gt;0.00,totaldisc!=null>
+						<tr>
+							<th scope="row" class="text-left"><div><venda_text id=desktop.info.discount>:</div></th>
+							<td colspan="1" class="text-left"><div><venda_currsym><venda_totaldisc></div></td>
+						</tr>
+						</venda_block label=10>
+						<tr class="total">
+							<th scope="row" class="text-left"><span><venda_text id=desktop.info.order_total>:</span></th>
+							<td colspan="1" class="text-left"><span><strong><venda_currsym><venda_esttotal></strong></span></td>
+						</tr>
+
+						
+						
+					</tbody>
+				</table>
+				<div class="row">
+					<div class="large-24 columns">
+						<venda_page page=basketdeliveryinformation>
+					</div>
+
+				</div>
+			</div>
+			<venda_tpcomment><!-- End: Items Table --></venda_tpcomment>
+
+			<venda_tpcomment><!-- Start: JS Buttons --></venda_tpcomment>
+			<div class="row">
+				<div class="small-24 columns">
+					<a href="<venda_dispview page=home>" class="button secondary marg-bottom radius"><venda_text id=desktop.button.continue_shopping></a>
+					<input type="submit" class="button right marg-bottom radius" value="<venda_text id=desktop.button.checkout_securely>">
+				</div>
+			</div>
+			<venda_paymenttemplate template=paypal_express,templatetype=paytype/frontend,paymenttype=paypal>
+			<venda_tpcomment><!-- End: JS Buttons --></venda_tpcomment>
+		</form>
+
+		<venda_tpcomment><!-- Start: Promotions --></venda_tpcomment>
+		<venda_tpcomment><!-- Promotion error display --></venda_tpcomment>
+		<div class="js-loadingimg" style="display:none"><venda_text id=desktop.info.applying_promotion></div>
+		<div id="ajax-error"></div>
+
+		<div id="additionalservices" class="large-24 columns box">
+			<venda_tpcomment><!-- Promotion code input --></venda_tpcomment>
+			<form method="post" name="promotionform" action="<venda_codehttps>" id="promotionform">
+
+				<div class="row thickpad-top">
+					<div class="large-3 columns nopad">
+						<label for="vcode" class="inline"><venda_text id=desktop.form.apply_promo_code></label>
+					</div>
+					<div class="large-8 columns">
+						<input type="text" autocapitalize="off" autocorrect="off" id="vcode" name="vcode" value="" placeholder="<venda_text id=desktop.form.enter_a_promo_code>" data-value="<venda_text id=desktop.form.enter_a_promo_code>"/>
+					</div>
+					<div class="large-5 columns left nopad">
+						<input type="submit" id="vcode_submit_shopcart" value="<venda_text id=desktop.button.apply>" class="button small radius" data-trackEvent="Promotional code">
+					</div>
+				</div>
+			</form>
+			<venda_tpcomment><!-- Promotion code display --></venda_tpcomment>
+
+			<venda_tpcomment><!-- This 'entermediacode' div gets updated by the AJAX, to show the promotion offers in the associated page (except when on shopcart workflow). The page reference matches the promotion code. The build team will not be creating these pages.--></venda_tpcomment>
+
+			<venda_tpcomment><!-- Note: according to the template limitation that we coundn't merge this section with the information in 'detblock9' together. So we comment it out as generally users will be interested in seeing the information about saving money
+			<venda_block label=10,mode=value,<venda_vouchercode_first>=notnull>
+				<div>
+				<span><venda_text id=basket.promocodetext_before> <venda_text id=basket.promocodetext_after></span> <venda_vouchercode template=pending>
+				</div>
+			</venda_block label=10>--></venda_tpcomment>
+
+			<venda_detblock9>
+			  <li><strong><venda_codesc></strong></li>
+			  <venda_tpcomment><!-- Comment out the 'estimated discount' shows to three decimal places but the same promotion shows correctly on order summary to two decimal places.
+			  <venda_text id=basket.estimated_discount--></venda_tpcomment>
+			  <venda_tpcomment><!-- Comment out the ability to remove promotions as per RT#162128:
+			   <a href="?ex=co_wizr-shopcart&curstep=handle_vouchercode&step=handle_vouchercode&mode=process&action=delete"><venda_text id=order_confirmation.promotion_delete></a-->
+			  </venda_tpcomment>
+			</venda_detblock9>
+
+			<venda_block label=43,totaldisc&gt;0.00>
+				<div id="promotions" class="row">
+					<p><venda_text id=desktop.heading.promotions_applied>:</p>
+					<ul><venda_detail9></ul>
+				</div>
+			</venda_block label=43>
+		</div>
+		<venda_tpcomment><!-- End: Promotions --></venda_tpcomment>
+	</div>
+	<div id="bottomtab" class="row tabs">
+		<div class="large-24 columns">
+			<div class="tab-header js-tab-header">
+				<ul class="tab-nav js-tab-nav">
+					<li><a href="#contentTab1" title="<venda_text id=desktop.heading.related_products>"><venda_text id=desktop.heading.related_products></a></li>
+				</ul>
+			</div>
+			<div class="tab-content js-tab-content">
+				<!-- related products -->
+				<div class="tab js-tab"><venda_invtrelated limit=3,threshold=2,template=related></div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div id="js-modal-style" class="reveal-modal medium text-center"><i class="icon-spinner icon-spin icon-2x marg-side"></i><span></span></div>
+<div id="js-promo-waitMsg" style="display:none;"><venda_text id=desktop.info.applying_promotion></div>
+</venda_block label=shopcart>
+
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.shopping_cart>>
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+</div>

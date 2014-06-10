@@ -1,0 +1,61 @@
+<table class="text-left checkout-minicart-totals" summary="<venda_text id=desktop.info.order_totals_summary>" title="<venda_text id=desktop.info.order_totals_title>">
+    <tr>
+        <th scope="row" class="text-left"><venda_text id=desktop.info.subtotal>
+            <venda_tpcomment><!-- conditions below are figuring out if there is only a subtotal to display--></venda_tpcomment>
+            <venda_block label=noship,ohship=0.00,ohship=null,operator=or>
+            <venda_block label=andnotax,ohtax=0.00,ohtax=null,operator=or>
+            <venda_block label=andnowrap,ohgwtot=0.00,ohgwtot=null,operator=or>
+            <venda_block label=ohsub,showdiscount!=1> <venda_text id=desktop.info.excluding_pnp></venda_block label=ohsub>
+            </venda_block label=andnowrap>
+            </venda_block label=andnotax>
+            </venda_block label=noship>
+        </th>
+        <td class="text-right"><venda_ohcursym><venda_ohsub></td>
+    </tr>
+    <venda_block label=90,ohship!=0.00,ohship=notnull>
+    <tr>
+        <th scope="row" class="text-left"><venda_text id=desktop.info.delivery_cost></th>
+        <td class="text-right"><venda_ohcursym><venda_ohship></td>
+    </tr>
+    </venda_block label=90>
+    <venda_block label=64,showdiscount=1>
+    <!-- start discount -->
+    <tr>
+        <th scope="row" class="text-left"><venda_text id=desktop.info.discount></th>
+        <td class="text-right">-<venda_ohcursym><venda_ohdisc></td>
+    </tr>
+    <!-- end discount -->
+    </venda_block label=64>
+    <venda_block label=91,ohtax!=0.00,ohtax=notnull>
+    <tr>
+        <th scope="row" class="text-left"><venda_text id=desktop.info.estimated_tax></th>
+        <td class="text-right"><venda_ohcursym><venda_ohtax></td>
+    </tr>
+    </venda_block label=91>
+    <venda_block label=68,ohgwtot&gt;0>
+    <tr>
+        <th scope="row" class="text-left"><venda_text id=desktop.info.giftwrapping></th>
+        <td class="text-right"><venda_ohcursym><venda_ohgwtot></td>
+    </tr>
+    </venda_block label=68>
+    <venda_taxbreakdown ohrfnbr=<venda_ohrfnbr>,template=shipTaxBreakDown>
+    <venda_block label=66,enablefreeorder=1>
+    <venda_block label=661,ohbal=0.00>
+    <tr>
+        <th scope="row" class="text-left"><venda_text id=desktop.info.free_order></th>
+    </tr>
+    </venda_block label=661>
+    </venda_block label=66>
+    <venda_tpcomment><!-- condition below is figuring out if any other prices are shown, and if not don't bother showing subtotal AND order total because they are the same--></venda_tpcomment>
+    <venda_block label=showtotal,ohship&gt;0,ohtax&gt;0,ohgwtot&gt;0,showdiscount=1,operator=or>
+    <tr>
+        <th scope="row" class="text-left"><venda_text id=desktop.info.order_total>
+            <venda_block label=191,ohtaxinc!=0.00,ohtaxinc=notnull>
+            <venda_block label=80,ohship!=0.00,ohship=notnull> <venda_text id=desktop.info.including_vat></venda_block label=80>
+            <venda_block label=81,ohship=0.00,ohship=null,operator=or> <venda_text id=desktop.info.including_vat_exc_pnp></venda_block label=81>
+            </venda_block label=191>
+        </th>
+        <td class="text-right"><strong><venda_ohcursym><venda_ohtot></strong></td>
+    </tr>
+    </venda_block label=showtotal>
+</table>

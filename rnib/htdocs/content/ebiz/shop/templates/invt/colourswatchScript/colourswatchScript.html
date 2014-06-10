@@ -1,0 +1,27 @@
+<script type="text/javascript">
+<!--
+colourSwatch["<venda_invtuuid>"] = new Venda.Widget.ColourSwatch({
+	configObjArea:{
+		objProductArea: (document.getElementById("comp-image<venda_invtref>")) ? document.getElementById("comp-image<venda_invtref>") : "",
+		objSwatchArea: (document.getElementById("swatch<venda_invtref>")) ? document.getElementById("swatch<venda_invtref>") : ""
+	},
+	configMainImage: {
+		uuid: "<venda_invtuuid>",
+		prodSKU: "<venda_invtref>",
+		prodAlt: "<venda_invtname>",
+		prodLink: "<venda_dispview invt=<venda_invtref>>",
+		displayNotifyMsg: true,
+		notifyText: "<venda_text id=desktop.info.colour_swatch_notify>",
+		fadeOutTime: 3000, // Duration in seconds for fade out message
+		<venda_block label=notsearch,mode=value,<venda_tpxt mode=get,name=activekeyword>=null>
+		<venda_tpcomment>/* The image key for product list template*/</venda_tpcomment>
+		defaultImage: "<venda_block label=511,med-<venda_setting type=ebiz,name=setproductlistimagekey>=notnull><venda_media rec=invt,type=pict,key=<venda_setting type=ebiz,name=setproductlistimagekey>,img=no></venda_block label=511><venda_block label=512,med-<venda_setting type=ebiz,name=setproductlistimagekey>=null><venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setproductlistimagekey>.gif</venda_block label=512>"
+		</venda_block label=notsearch>
+		<venda_block label=search,mode=value,<venda_tpxt mode=get,name=activekeyword>=notnull>
+		<venda_tpcomment>/* The image key for search template*/</venda_tpcomment>
+		defaultImage: "<venda_block label=61,med-<venda_setting type=ebiz,name=setsearchimagekey>=notnull><venda_media rec=invt,type=pict,key=<venda_setting type=ebiz,name=setsearchimagekey>,img=no></venda_block label=61><venda_block label=62,med-<venda_setting type=ebiz,name=setsearchimagekey>=null><venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setsearchimagekey>.gif</venda_block label=62>"
+		</venda_block label=search>
+	}
+});
+// -->
+</script>

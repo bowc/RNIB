@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<venda_detblock1>
+	<p><venda_text id=desktop.info.rma_receipt.message_1> <venda_com>.</p>
+	<p><venda_text id=desktop.info.rma_receipt.message_2> <venda_ohordnum>.</p>
+	<p><venda_text id=desktop.info.rma_receipt.message_3></p>
+	<p><venda_text id=desktop.info.rma_receipt.message_4></p> 
+	<p><venda_text id=desktop.info.rma_receipt.message_5></p>
+	<p><strong><venda_text id=desktop.info.return_address></strong></p>
+	<venda_ebizname><br>
+	<venda_ebizaddr1><br>
+	<venda_block label=74,ebizaddr2=notnull><venda_ebizaddr2><br></venda_block label=74>
+	<venda_ebizcity><br>
+	<venda_ebizstate> <venda_ebizzipc><br>
+	<venda_ebizcntry><br><br>
+</venda_detblock1>
+<html lang="en">
+<head>
+<title><venda_ebizname> <venda_text id=desktop.heading.email.rma_receipte> - <venda_ohordnum></title>
+<venda_inctemplate name=htmlEmailCss,type=emailIncludes>
+</head>
+<body style ="background: #c2e3e6 !important; font-family:Arial, Helvetica, sans-serif !important; padding-top: 20px;">
+	<div class="body-container" style="color: #000000 !important; padding-bottom: 20px;">
+		<table class="emails-table-header" border="0" cellpadding="0" cellspacing="0" style="background:#008194; width: 92%; padding: 10px; margin: 0 auto !important;">
+			<tr>
+				<td class="nor-col" style="font-family:Arial, Helvetica, sans-serif; text-align: left !important;padding-left:10px !important;">
+					<venda_inctemplate name=htmlEmailLogo,type=emailIncludes>
+				</td>
+				<td class="force-col" valign="bottom" style="font-family:Arial, Helvetica, sans-serif !important; text-align: right; vertical-align: bottom; color: #ffffff; position:relative !important; bottom: -15px !important;">
+					<venda_block label=832,ohusgrrf!=ebayguest><h1 style="font-size:16px; font-weight: bold;color: #fff"><venda_text id=desktop.heading.email.rma_receipt>  - <venda_ohordnum></h1></venda_block label=832>
+					<venda_block label=833,ohusgrrf=ebayguest><h1 style="font-size:20px;color: #fff"><venda_text id=desktop.heading.email.rma_receipt_ebay>- <venda_ohordnum></h1></venda_block label=833>	
+				</td>
+			</tr>
+		</table>
+		<table class="emails-table-body" border="0" cellpadding="0" cellspacing="0" bgcolor="white" style="background:white;width: 92%;padding: 10px;text-align: left; margin: 0 auto;">
+			<tr>
+				<td valign="middle" style="font-family:Arial, Helvetica, sans-serif !important; font-size: 16px !important;padding: 10px;">
+				    <venda_inctemplate name=htmlEmailHeader,type=emailIncludes>
+				    <venda_detail1>
+				    <venda_inctemplate name=htmlEmailMessage,type=emailIncludes>
+				    <venda_inctemplate name=htmlEmailFooter,type=emailIncludes>
+				</td>
+			</tr>
+		</table>
+    </div>
+</body>
+</html>

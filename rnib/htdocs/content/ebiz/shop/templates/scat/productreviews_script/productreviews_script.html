@@ -1,0 +1,15 @@
+<venda_tpcomment>// treat this template like an external .js file</venda_tpcomment>
+<venda_tpcomment>// changes the back link behaviour if viewing via popup div</venda_tpcomment>
+isPopup = document.getElementById('popupcontent');
+if(isPopup){YAHOO.util.Event.addListener("back_link", "click", Venda.Widget.InvtPopups.featureHide);}
+
+Venda.Widget.InvtPopups.showWriteReview = function(e) {
+	YAHOO.util.Event.preventDefault(e);
+	<venda_tpcomment>// must check first that we are still on the product detail</venda_tpcomment>
+	if(isPopup){ <venda_tpcomment>// there is an id called popupcontent so we can proceed with the popup parameters and ajax function</venda_tpcomment>
+		featurePanel.setHeader("<div class=\"tl\"></div><span><venda_text id=desktop.button.write_review></span><div class=\"tr\"></div>");
+		featurePanel.show();
+		}
+	ajaxFunction('<venda_dispview invt=<venda_scatref>>&temp=writereview&layout=noheaders','popupcontent',null,Venda.Widget.InvtPopups.loadInvtScript);
+}
+YAHOO.util.Event.addListener("writeownreview_link", "click", Venda.Widget.InvtPopups.showWriteReview);

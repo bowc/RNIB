@@ -1,0 +1,42 @@
+<venda_tpcomment><!-- add refinement --></venda_tpcomment> 
+<venda_detblock_facet_result>
+	<venda_block label=results,count!=0,chosen=0><option class="termtext<venda_block label=558,chosen!=0> chosen</venda_block label=558><venda_block label=559,count=0> zerocount</venda_block label=559>" value="<venda_block label=558,chosen=0,count!=0><venda_faceturl></venda_block label=558>"<venda_block label=33,field=price> data-price="<venda_facet>"</venda_block label=33>>
+	<venda_block label=333,field=price><venda_currsym></venda_block label=333><venda_block label=365,facetname=null><venda_facet></venda_block label=365><venda_block label=366,facetname=notnull><venda_facetname></venda_block label=366> (<venda_count>)</option>
+	</venda_block label=results>
+</venda_detblock_facet_result>
+
+<venda_detblock_facets>
+	<venda_block label=resultsnotcatref,totalcount!=0,field!=categories,field!=dailysalesrank,field!=usersalesrank>
+		<div data-role="fieldcontain" class="ui-hide-label">
+		<label for="<venda_field>"><venda_dispfield></label>
+		<select id="<venda_field>" class="refineselect"><option id="<venda_field>" class="collateheading" data-role="list-divider"><venda_dispfield></option>
+		<venda_detail_facet_result numericsort=price></select></div>
+	</venda_block label=resultsnotcatref>
+</venda_detblock_facets>
+
+<venda_tpcomment><!-- remove refinement --></venda_tpcomment>
+<venda_detblock_searched_fields>
+	<venda_block label=331,facetref!=*,field!=categories,field!=dailysalesrank,field!=usersalesrank><div id="<venda_field><venda_facetref>" class="refine-list boxContent<venda_block label=333,facetref=*><venda_block label=012,mode=value,<venda_tpxt mode=get,name=parentCatRef>!=> star</venda_block label=012></venda_block label=333>">
+		<div class="refine-left"> <span class="refine-text"><venda_dispfield>: </span><a href="<venda_searchurlremove>" rel="<venda_field>=<venda_facetref>" id="remove<venda_field><venda_facetref>" class="refine-link removesearch"><venda_block label=332,field=price><venda_currsym></venda_block label=332><venda_block label=265,facetname=null><venda_facetref></venda_block label=265><venda_block label=266,facetname=notnull><venda_facetname></venda_block label=266></a>
+		<a href="<venda_searchurlremove>" rel="<venda_field>=<venda_facetref>" id="remove<venda_field><venda_facetref>" class="refine-link removeicon" data-ajax="false"><span class="ui-icon ui-icon-delete ui-icon-shadow ui-btn-inline"></span></a>
+		</div><venda_tpxt mode=set,name=term,value=<venda_facetref>>
+	</div></venda_block label=331>
+	<venda_block label=1671,field=q>
+		<venda_tpcomment><!-- stores current keyword value in tpxt:activekeyword --></venda_tpcomment><venda_tpxt mode=set,name=activekeyword,value=<venda_facetref>>
+	</venda_block label=1671>
+	<venda_block label=1672,field!=>
+		<venda_tpxt mode=set,name=active<venda_field>,value=<venda_facetref>>
+	</venda_block label=1672>
+	<venda_block label=1670,field=categories>
+		<venda_tpcomment><!-- stores pcatid or cat value in tpxt:activecategory --></venda_tpcomment><venda_tpxt mode=set,name=activecategory,value=<venda_facetref>>
+	</venda_block label=1670>
+</venda_detblock_searched_fields>
+
+<div class="refineDialog">		
+		<div id="term" class="term"><venda_block label=321,mode=value,<venda_tpxt mode=get,name=term>!=><h2><venda_text id=mobile.info.searchby>:</h2></venda_block label=321>
+			<venda_detail_searched_fields>
+		</div>
+	<venda_block label=345,totalresults!=0>
+	<div id="collate" class="collate"><h2><venda_text id=mobile.info.refineby>...</h2><venda_detail_facets></div>
+	</venda_block label=345>
+</div>

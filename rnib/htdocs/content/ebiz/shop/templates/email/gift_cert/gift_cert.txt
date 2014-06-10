@@ -1,0 +1,61 @@
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email.gift_cert><cr>
+==============================================================================<cr><cr>
+
+<venda_text id=desktop.info.dear> <venda_to><cr>
+
+<venda_from> <venda_text id=desktop.info.sent_you> <venda_amount> <venda_text id=desktop.info.gift_certificate><cr>
+
+<venda_text id=desktop.info.to_title> <venda_to><cr>
+<venda_text id=desktop.info.from_title> <venda_from><cr>
+<venda_text id=desktop.info.message> <venda_comment><cr><cr>
+
+<venda_text id=desktop.info.amount> <venda_amount><cr>
+<venda_text id=desktop.info.claim_code> <venda_giftcode><cr>
+<venda_text id=desktop.info.giftcert_expiry_date> <venda_block label=611,gcexpirydate!=0><venda_gcexpires></venda_block label=611><venda_block label=612,gcexpirydate=0><venda_text id=desktop.info.no_expiry_date></venda_block label=612><cr><cr>
+
+==============================================================================<cr>
+<venda_text id=desktop.info.gift_cert_howto><cr>
+==============================================================================<cr><cr>
+
+- <venda_text id=desktop.info.go_to> <venda_serveradd>.
+
+- <venda_text id=desktop.info.gift_cert_howto_1>
+
+- <venda_text id=desktop.info.gift_cert_howto_2>
+
+- <venda_text id=desktop.info.gift_cert_howto_3>
+
+- <venda_text id=desktop.info.gift_cert_howto_4>
+
+- <venda_text id=desktop.info.gift_cert_howto_5>
+
+- <venda_text id=desktop.info.gift_cert_howto_6>
+
+<venda_text id=desktop.info.gift_cert_howto_7>
+
+==============================================================================<cr>
+<venda_text id=desktop.button.terms_and_conditions><cr>
+==============================================================================<cr><cr>
+
+   1. <venda_text id=desktop.info.gift_cert_terms_1> <venda_serveradd>. 
+
+   2. <venda_text id=desktop.info.gift_cert_terms_2>
+
+   3. <venda_text id=desktop.info.gift_cert_terms_3>
+
+   4. <venda_text id=desktop.info.gift_cert_terms_4>
+
+   5. <venda_text id=desktop.info.gift_cert_terms_5>
+
+   6. <venda_text id=desktop.info.gift_cert_terms_6>
+   
+   7. <venda_text id=desktop.info.gift_cert_terms_7>
+
+	8. <venda_text id=desktop.info.gift_cert_terms_8>
+
+	9. <venda_text id=desktop.info.gift_cert_terms_9>
+
+	10. <venda_text id=desktop.info.gift_cert_terms_10> <venda_ebizurl>.
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

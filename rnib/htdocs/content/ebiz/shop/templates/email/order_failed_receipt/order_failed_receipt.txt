@@ -1,0 +1,17 @@
+<venda_inctemplate name=textEmailDetblocks,type=emailIncludes>
+
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email.order_failed> - <venda_ohordnum><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader,type=emailIncludes>
+
+<venda_block label=20,msg=notnull><venda_msg><cr></venda_block label=20>
+
+<venda_text id=desktop.info.order_failed.message_1><cr>
+<venda_text id=desktop.info.order_failed.message_2><cr>
+<venda_text id=desktop.info.order_failed.message_3><cr>
+
+<venda_inctemplate name=textEmailBody,type=emailIncludes>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

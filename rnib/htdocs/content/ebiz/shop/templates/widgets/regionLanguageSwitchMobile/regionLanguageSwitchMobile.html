@@ -1,0 +1,32 @@
+<div class="regionLangPanel">
+	<div id="closeDiv" class="closeDiv"><a id="closeBtn" data-role="button" data-mini="true" data-inline="true" data-ajax="false"><venda_text id=mobile.button.close></a></div>
+	<div id="flagContent" class="flagContent">
+		<div class="ui-hide-label">
+		<label for="region"><venda_text id=mobile.info.select_region></label>
+		<select name="region" id="region"<venda_block label=22,ustype=R> disabled="disabled"</venda_block label=22>>
+			<option value=""><venda_text id=mobile.info.select_region></option>
+			<option value="us"<venda_block label=121,mode=value,<venda_sessionlocation>=us> selected="selected"</venda_block label=121>><venda_text id=mobile.info.region_us></option>
+			<option value="ca"<venda_block label=122,mode=value,<venda_sessionlocation>=ca> selected="selected"</venda_block label=122>><venda_text id=mobile.info.region_ca></option>
+			<option value="fr"<venda_block label=123,mode=value,<venda_sessionlocation>=fr> selected="selected"</venda_block label=123>><venda_text id=mobile.info.region_fr></option>
+			<option value="de"<venda_block label=124,mode=value,<venda_sessionlocation>=de> selected="selected"</venda_block label=124>><venda_text id=mobile.info.region_de></option>
+			<option value="uk"<venda_block label=125,mode=value,<venda_sessionlocation>=uk> selected="selected"</venda_block label=125>><venda_text id=mobile.info.region_uk></option>
+		</select>
+		</div>
+
+		<div class="ui-hide-label">
+		<label for="lang"><venda_text id=mobile.info.select_language></label>
+		<select name="lang" id="lang">
+			<option value=""><venda_text id=mobile.info.select_language></option>
+			<option value="ae"<venda_block label=131,mode=value,<venda_sessionlanguage>=ae> selected="selected"</venda_block label=131>><venda_text id=mobile.info.lang_ae></option>
+			<option value="fr"<venda_block label=132,mode=value,<venda_sessionlanguage>=fr> selected="selected"</venda_block label=132>><venda_text id=mobile.info.lang_fr></option>
+			<option value="de"<venda_block label=133,mode=value,<venda_sessionlanguage>=de> selected="selected"</venda_block label=133>><venda_text id=mobile.info.lang_de></option>
+			<option value="en"<venda_block label=134,mode=value,<venda_sessionlanguage>=en> selected="selected"</venda_block label=134>><venda_text id=mobile.info.lang_en></option>
+		</select>
+		</div>
+	</div>
+</div>
+
+<div id="tag-issearch" style="display:none;"><venda_searchtwo></div>
+<div id="tag-sessionlocation" style="display:none;"><venda_sessionlocation></div>
+<div id="tag-sessionlanguage" style="display:none;"><venda_sessionlanguage></div>
+<div id="tag-serveradd" style="display:none;"><venda_serveradd></div>

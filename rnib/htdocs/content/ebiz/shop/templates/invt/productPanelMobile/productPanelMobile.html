@@ -1,0 +1,21 @@
+<li>
+<a href="<venda_dispview invt=<venda_invtref>>" data-ajax="false">
+	<venda_block label=10,med-small=notnull><venda_media rec=invt,type=movie-swf-pict,key=multi,dyn=yes,default=small></venda_block label=10>
+	<venda_block label=11,med-small=null><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="<venda_text id=mobile.info.no_product_image>"></venda_block label=11>
+	<h3><venda_invtname></h3>
+	<venda_inctemplate type=includes,name=priceFormatMobile>
+	<p class="swatch"><venda_mediagrid template=swatchMobile></p>
+
+	<venda_block label=119,invtref!=giftcert>
+	<venda_block label=51,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewslocayta>=1>
+		<venda_tpcomment><!-- power reviews snippets for product reviews --></venda_tpcomment>
+		<div class="powerreview">
+			<script type="text/javascript">
+				var pr_page_id = '<venda_invtref>';
+				snippet(document);
+			</script>
+		</div>
+	</venda_block label=51>
+	</venda_block label=119>
+</a>
+</li>

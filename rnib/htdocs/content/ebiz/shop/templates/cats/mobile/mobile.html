@@ -1,0 +1,14 @@
+<venda_detblock>
+	<li><a href="<venda_dispview icat=<venda_icatref1>>"><h2><venda_icatname1></h2></a></li>
+</venda_detblock>
+
+<div class="categories">
+	<venda_block label=3,icatref!=shop>
+	<div class="catBanner">
+		<venda_block label=4,med-headermobile=notnull><h1><venda_media rec=icat,type=movie-swf-pict,key=headermobile></h1></venda_block label=4>
+		<venda_block label=5,med-headermobile=null><h1><div class="noImage"><venda_icatname></div></h1></venda_block label=5>
+	</div>
+	</venda_block label=3>
+	<venda_block label=50,cattot&gt;0><ul data-role="listview"><venda_detail></ul></venda_block label=50>
+	<venda_block label=51,cattot&lt;1><venda_category temp=mobile,ref=<venda_ref>,rec=icat></venda_block label=51>
+</div>

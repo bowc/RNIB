@@ -1,0 +1,101 @@
+<venda_block label=78,invtref!=giftcert>
+<div class="row">
+<div class="js-oneProduct marg-top" id="oneProduct_<venda_invtuuid>">
+<div class="large-10 columns ">
+<div class="row">
+	<div class="small-8 large-7 columns">
+		<p>
+			<venda_block label=4,med-xsmall=notnull><venda_media rec=invt,type=movie-swf-pict,key=xsmall></venda_block label=4>
+			<venda_block label=5,med-xsmall=null>
+				<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="<venda_text id=desktop.info.no_product_image>">
+			</venda_block label=5>
+		</p>
+	</div>
+
+	<div class="small-14 large-17 columns">
+	<div>
+		<p><venda_invtname><br>
+		<venda_text id=desktop.info.sku>: <venda_invtref><venda_block label=71,invtsuplsku=notnull> (<venda_invtsuplsku>)</venda_block label=71>
+		</p>
+	</div>
+	<div class="<venda_block label=101,chkatt=notnull>js-attributesPrice js-attrFeedback</venda_block label=101>">
+		<venda_inctemplate type=includes,name=priceFormat>
+	</div>
+	</div>
+	<div class="small-2 columns">
+			<a href="#" title="<venda_text id=desktop.button.remove>" class="show-for-small" onclick="Venda.Ebiz.qshopRemove('<venda_invtref>'); return false;"><i class="icon-trash icon-large"></i></a>
+	</div>
+</div>
+</div>
+
+<div class="large-12 columns">
+	<div class="js-custom">
+	<venda_block label=onhand,invtonhand&gt;0>
+		<div class="quantity quickshopDiv">
+			<div id="addproductbox" class="row">
+  				<div class="small-6 large-6 columns"><label for="qtylist" class="inline right"><venda_text id=desktop.info.qty>:</label></div>
+    				<div class="small-18 large-18 columns"><input type="hidden" name="itemlist" value="<venda_invtref>"><input name="qtylist" id="qty" type="text" value="1" size="3" maxlength="3" class="js-qty small-4 large-4"></div>
+			</div>
+		</div>
+		<!--div>
+			<p>
+				<venda_text id=desktop.info.na>
+			</p>
+		</div-->
+	</venda_block label=onhand>
+	<div class="columns">
+	<span class="hide"><venda_text id=desktop.info.out_of_stock></span>
+	<!-- note sure what this does yet, cannot delete --><span class="hide attr<venda_invtref>"></span>
+	<p class="js-attroutofstock" id="emwbis_link" style="display:none"><a href="<venda_dispview invt=<venda_invtref>>&temp=emailinstock" class="js-doDialog" title="<venda_text id=desktop.button.email_when_in_stock>"  data-track="open-emwbis"><venda_text id=desktop.button.email_when_in_stock></a></p>
+	</div>
+	<venda_block label=100,chkatt=null></venda_block label=100>
+	<venda_block label=101,chkatt=notnull>
+	<venda_block label=onhand,invtonhand&gt;0>
+		<div>
+		<venda_inctemplate name=attributeData,type=invt>
+			<div id="attributeInputs">
+				<venda_block label=21,selatt1=notnull>
+    			<div class="row">
+    				<div class="large-6 columns"><label for="att1" class="inline right hide-for-small"><venda_att1>:</label></div>
+    				<div class="large-18 columns"><select name="att1" id="att1_<venda_invtuuid>"><option value=""><venda_text id=desktop.info.please_select> <venda_att1></option><venda_selatt1></select></div>
+    			</div>
+				</venda_block label=21>
+				<venda_block label=22,selatt2=notnull>
+				<div class="row">
+    				<div class="large-6 columns"><label for="att2" class="inline right hide-for-small"><venda_att2>:</label></div>
+				<div class="large-18 columns"><select name="att2" id="att2_<venda_invtuuid>"><option value=""><venda_text id=desktop.info.please_select> <venda_att2></option><venda_selatt2></select></div>
+				</div>
+				</venda_block label=22>
+				<venda_block label=23,selatt3=notnull>
+				<div class="row">
+    				<div class="large-6 columns"><label for="att3" class="inline right hide-for-small"><venda_att3>:</label></div>
+				<div class="large-18 columns"><select name="att3" id="att3_<venda_invtuuid>"><option value=""><venda_text id=desktop.info.please_select> <venda_att3></option><venda_selatt3></select></div>
+				</div>
+				</venda_block label=23>
+				<venda_block label=24,selatt4=notnull>
+				<div class="row">
+    				<div class="large-6 columns"><label for="att4" class="inline right hide-for-small"><venda_att4>:</label></div>
+				<div class="large-18 columns"><select name="att4" id="att4_<venda_invtuuid>"><option value=""><venda_text id=desktop.info.please_select> <venda_att4></option><venda_selatt4></select></div>
+				</div>
+				</venda_block label=24>
+			</div>
+		</div>
+	</venda_block label=onhand>
+	</venda_block label=101>
+
+	<venda_block label=outofstock,invtonhand&lt;1>
+	<div class="js-prodoutofstock columns">
+		<div><p><a href="<venda_dispview invt=<venda_invtref>>&temp=emailinstock" title="<venda_text id=desktop.button.email_when_in_stock>" class="js-doDialog"><venda_text id=desktop.button.email_when_in_stock></a></p></div>
+		<div><p><venda_text id=desktop.info.out_of_stock></p></div>
+	</div>
+	</venda_block label=outofstock>
+	</div>
+
+</div>
+<div class="large-2 columns">
+		<a href="#" title="<venda_text id=desktop.button.remove>" class="button tiny alert expand hide-for-small" onclick="Venda.Ebiz.qshopRemove('<venda_invtref>'); return false;"><venda_text id=desktop.button.remove></a>
+</div>
+</div>
+</div>
+<hr>
+</venda_block label=78>

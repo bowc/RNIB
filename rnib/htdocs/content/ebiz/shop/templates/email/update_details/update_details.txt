@@ -1,0 +1,8 @@
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email.update_details><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader2,type=emailIncludes>
+<venda_text id=desktop.info.update_details_message><cr><cr>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

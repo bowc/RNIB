@@ -1,0 +1,147 @@
+<venda_tpcomment><!--
+Form param notes:
+- param1: used to pass email address between this step and password reminder
+- param2: used to determine if previous step was password reminder
+Known issues:
+- On error, layout is lost, unless passed through as a hidden field
+- On error co_comn-login is used directly instead of as an include
+- On error venda_wizurl tags are untranslated
+--></venda_tpcomment>
+
+<venda_block label=desktop,workflow!=checkoutmobile,workflow!=registermobile>
+<div class="<venda_workflow> <venda_curstep> thickmarg-top">
+
+<h1 class="hidescreenreadersafe"><venda_text id=desktop.heading.log_in></h1>
+<venda_block label=errors,errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=errors>
+
+<venda_block label=sent,param2=passwordsent>
+<div>
+	<p><venda_text id=desktop.info.password_reminder_info1></p>
+</div>
+</venda_block label=sent>
+
+<venda_block label=facebookconnect,mode=value,<venda_setting type=ebiz,name=facebookappid>!=>
+<div>
+   <p><venda_text id=desktop.info.facebook_1>:</p>
+   <a href="<venda_block label=ischeckout,workflow=checkout><venda_codehttps>?ex=co_wizr-<venda_workflow>&bsref=<venda_bsref>&step=confirm</venda_block label=ischeckout><venda_block label=islogin,workflow=register><venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>&step=myaccount</venda_block label=islogin>&log=1&auth=facebook" class="button radius"><venda_text id=desktop.button.log_in_facebook></a>
+   <p><venda_text id=desktop.info.facebook_2>:</p>
+</div>
+</venda_block label=facebookconnect>
+
+<div class="row">
+	<div class="<venda_block label=70,mode=value,<venda_workflow>!=checkout>large-12</venda_block label=70><venda_block label=80,mode=value,<venda_workflow>=checkout>large-8</venda_block label=80> columns">
+	<div class="box">
+		<form method="post" name="<venda_curstep>form-existing" action="<venda_codehttps>" id="existingcustomer">
+		<venda_esat>
+		<input type="hidden" name="workflowid" value="<venda_workflowid>">
+		<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>">
+		<input type="hidden" name="log" value="1">
+		<input type="hidden" name="trrfext" value="1">
+		<input type="hidden" name="registered" value="1">
+		<venda_block label=notcheckout,workflow!=checkout><venda_tpcomment><!-- Step selection for register workflow --></venda_tpcomment>
+		<input type="hidden" name="ex" value="co_wizr-myaccount">
+		<input type="hidden" name="step" value="myaccount">
+		<input type="hidden" name="curlayout" value="1column"><venda_tpcomment><!-- Preserve layout on error --></venda_tpcomment>
+		</venda_block label=notcheckout>
+		<venda_block label=checkout,workflow=checkout><venda_tpcomment><!-- Step selection for checkout workflow and on error for register workflow --></venda_tpcomment>
+		<input type="hidden" name="ex" value="co_wizr-<venda_workflow>">
+		<input type="hidden" name="step" value="ordersummary">
+		<input type="hidden" name="curlayout" value="checkout"><venda_tpcomment><!-- Preserve layout on error --></venda_tpcomment>
+		</venda_block label=checkout>
+		<input type="hidden" name="glxt" value="<venda_glxt mode=make,glxtusertype=>"><venda_tpcomment><!-- To reset the glxt if the user was partially registered (guest checkout) --></venda_tpcomment>
+		<fieldset>
+			<h2 class="box-header"><venda_text id=desktop.heading.returning_customer></h2>
+			<div class="box-body">
+			<div>
+				<p><venda_text id=desktop.info.returning_customer_1></p>
+				<label for="email" id="lLoginEmail"><venda_text id=desktop.form.email>:</label>
+				<input type="email" name="email" id="email" value="<venda_block label=pwrm,param2=passwordsent,param2=passwordcancel,operator=or><venda_param1></venda_block label=pwrm><venda_block label=notpwrm,param2=null,ustype=R><venda_userinfo><venda_sesusemail></venda_userinfo></venda_block label=notpwrm>" size="20" maxlength="150" placeholder="<venda_text id=desktop.form.email>">
+				<label for="password" id="lLoginPassword"><venda_text id=desktop.form.password>:</label> <input type="password" name="password" id="password" size="20" maxlength="30" autocomplete="off" placeholder="<venda_text id=desktop.form.password>">
+				<p><a id="passwordreminder" href="<venda_codehttps>?ex=co_wizr-<venda_block label=registeronerror2,workflow=myaccount>register</venda_block label=registeronerror2><venda_block label=checkoutonerror2,workflow!=myaccount><venda_workflow></venda_block label=checkoutonerror2>&workflowid=<venda_workflowid>&bsref=<venda_bsref>&step=passwordreminder"><venda_text id=desktop.button.forgotten_password></a></p>
+			</div>
+			<div><input type="submit"<venda_block label=692,workflow=checkout> data-trackEvent="Checkout"</venda_block label=692> value="<venda_text id=desktop.button.log_in>" class="button radius marg-top"></div>
+			</div>
+		</fieldset>
+		</form>
+	</div>
+	</div>
+	<div class="<venda_block label=50,mode=value,<venda_workflow>!=checkout>large-12</venda_block label=50><venda_block label=60,mode=value,<venda_workflow>=checkout>large-8</venda_block label=60> columns">
+	<div class="box">
+	
+		<h2 class="box-header"><venda_text id=desktop.heading.new_customer></h2>
+			<div class="box-body">
+				<div>
+					<p><venda_text id=desktop.info.new_customer_1></p>
+				</div>
+
+			
+				<form method="post" name="<venda_curstep>form-register" action="<venda_codehttps>" id="newcustomer">
+				<venda_esat>
+				<input type="hidden" name="ex" value="co_wizr-<venda_block label=registeronerror1,workflow=myaccount>register</venda_block label=registeronerror1><venda_block label=checkoutonerror1,workflow!=myaccount><venda_workflow></venda_block label=checkoutonerror1>">
+				<input type="hidden" name="workflowid" value="<venda_workflowid>">
+				<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>">
+				<input type="hidden" name="log" value="2">
+				<input type="hidden" name="trrfext" value="1">
+				<input type="hidden" name="registered" value="0">
+				<input type="hidden" name="glxt" value="<venda_glxt mode=make,glxtusertype=>"><venda_tpcomment><!-- To reset the glxt if the user was partially registered (guest checkout) --></venda_tpcomment>
+				<input type="hidden" name="step" value="billingaddressadd">
+
+				<input type="hidden" value="vatexempt" name="tmpgrp">
+				<input type="hidden" value="vatexempt" name="assignusgrref">
+				
+				<fieldset>			
+					
+					<p>If you are registered blind or partially sighted, or buying on behalf of someone who is, to ensure you do not pay VAT on selected products please register as a VAT-exempt customer.</p>
+					
+					<div><input type="submit"<venda_block label=691,workflow=checkout> data-trackEvent="Checkout"</venda_block label=691> value="Registration for VAT-exempt customers" class="button radius"></div>
+					
+				</fieldset>
+				</form>
+				
+				<form method="post" name="<venda_curstep>form-register" action="<venda_codehttps>" id="newcustomer">
+				<venda_esat>
+				<input type="hidden" name="ex" value="co_wizr-<venda_block label=registeronerror1,workflow=myaccount>register</venda_block label=registeronerror1><venda_block label=checkoutonerror1,workflow!=myaccount><venda_workflow></venda_block label=checkoutonerror1>">
+				<input type="hidden" name="workflowid" value="<venda_workflowid>">
+				<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>">
+				<input type="hidden" name="log" value="2">
+				<input type="hidden" name="trrfext" value="1">
+				<input type="hidden" name="registered" value="0">
+				<input type="hidden" name="glxt" value="<venda_glxt mode=make,glxtusertype=>"><venda_tpcomment><!-- To reset the glxt if the user was partially registered (guest checkout) --></venda_tpcomment>
+				<input type="hidden" name="step" value="billingaddressadd">
+
+				<fieldset>
+					
+					<p>If you are not blind or partially sighted, complete this registration form:</p>
+								
+					<div><input type="submit"<venda_block label=691,workflow=checkout> data-trackEvent="Checkout"</venda_block label=691> value="Registration for non-VAT-exempt customers" class="button radius"></div>
+				</fieldset>
+				</form>
+				
+			</div>
+		
+		</div>
+	</div>
+	<venda_block label=69,mode=value,<venda_workflow>=checkout>
+	<div class="large-8 columns">
+	<div class="box" id="guestcustomer">
+		<h2 class="box-header"><venda_text id=desktop.heading.guest_customer></h2>
+		<div class="box-body">
+			<div>
+				<p><venda_text id=desktop.info.checkout_without_registering_1></p>
+				<p><venda_text id=desktop.info.checkout_without_registering_2></p>
+			</div>
+			<div>
+				<a class="button radius" href="<venda_codehttps>?ex=co_wizr-<venda_workflow>&workflowid=<venda_workflowid>&bsref=<venda_bsref>&step=billingaddressadd&log=2&glxt=<venda_glxt mode=make,glxtusertype=p>" data-trackEvent="Checkout"><venda_text id=desktop.button.continue_without_registering></a>
+			</div>
+		</div>
+	</div>
+	</div>
+	</venda_block label=69>
+</div>
+</div>
+<venda_tpcomment><!-- Used for session expire message --></venda_tpcomment>
+<venda_tpxt mode=set,name=login,value=1>
+<venda_tpcomment><!-- trackingstep tpxt used in templates/tracking/shared  --></venda_tpcomment>
+<venda_tpxt mode=set,name=trackingstep,value=login>
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+</venda_block label=desktop>

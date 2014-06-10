@@ -1,0 +1,19 @@
+<venda_detblock>
+	<venda_block label=1,icatref1!=home>
+		<venda_block label=11,mode=value,<venda_cattree index=1,value=catref>=<venda_icatref1>><li id="nav<venda_icatref1>" class="nav-<venda_icatref1>"></venda_block label=11>
+	</venda_block label=1>
+	<venda_block label=2,icatref1=home>
+		<li id="navhome" class="nav-home">
+	</venda_block label=2>
+	<venda_category rec=icat,ref=<venda_icatref1>,temp=catnavSubcategories,incattree=1,itemsperpage=100>
+	</li>
+</venda_detblock>
+
+<venda_block label=50,cattot!=>
+<div class="box">
+<div class="box-header hidescreenreadersafe"><h2 class="cat-name">Category Options</h2></div>
+<ul id="categoryNavigation" class="box-body">
+<venda_detail>
+</ul>
+</div>
+</venda_block label=50>

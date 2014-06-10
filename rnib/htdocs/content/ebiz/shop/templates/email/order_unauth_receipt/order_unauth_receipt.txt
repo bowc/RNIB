@@ -1,0 +1,19 @@
+<venda_inctemplate name=textEmailDetblocks,type=emailIncludes>
+
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email.order_unauth_receipt> - <venda_ohordnum><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader,type=emailIncludes>
+
+<venda_block label=20,msg=notnull><venda_msg><cr></venda_block label=20>
+
+<venda_text id=desktop.info.order_receipt.message_1> <venda_ebizname>. <venda_text id=desktop.info.order_receipt.message_2> <venda_ohordnum>.<cr>
+
+<venda_text id=desktop.info.order_unauth_receipt_message><cr>
+
+<venda_text id=desktop.info.order_receipt.message_4><cr>
+
+<venda_inctemplate name=textEmailBody,type=emailIncludes>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

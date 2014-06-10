@@ -1,0 +1,337 @@
+<div class="<venda_workflow> ordersummary"><venda_tpcomment><!-- harded code as venda_curstep is null --></venda_tpcomment>
+	<div class="checkoutmobile-wrapper">
+		<div class="checkoutmobile-content">
+			<div class="checkoutmobile-header">
+				<h1><venda_text id=mobile.heading.delivery_options><venda_block label=2,workflow=checkoutmobile><span class="hdr-pci"></span></venda_block label=2></h1>
+				<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+			</div>
+			<venda_block label=14,realpktot&gt;1><venda_block label=15,ohship&gt;0.00><p class="seperatetext"><venda_text id=mobile.info.delivery_charge></p></venda_block label=15></venda_block label=14>
+
+			<venda_tpcomment><!-- start: Delivery Packages (detblock1) --></venda_tpcomment>
+			<venda_detblock1>
+				<div class="orderInfo">
+				<venda_block label=471,pkshipreq!=1><p class="seperatetext"><venda_text id=mobile.info.order_details_services_and_gift_certificates></p></venda_block label=471>
+				<venda_block label=47,pkshipreq=1>
+				<div class="deliverto borderBt bgDark">
+				<span class="start"><venda_text id=mobile.info.deliver_to> "</span><span class="addr1"><venda_pkaddr1>.......</span><span class="end">"<span></div>
+				<div data-role="collapsible" data-collapsed="true" class="borderBt">
+					<h2><span class="collapsibleLabel"><venda_text id=mobile.heading.delivery_address></span></h2>
+
+					<div class="address"><venda_tpcomment><!-- start: Delivery Address --></venda_tpcomment>
+
+							<venda_block label=181,pktitle=notnull><venda_pktitle> </venda_block label=181><venda_pkfname> <venda_pklname><br>
+							<venda_block label=71,pkcompany=notnull><venda_pkcompany><br></venda_block label=71>
+							<venda_block label=182,pknum=notnull><venda_pknum> </venda_block label=182><venda_block label=183,pkaddr1=notnull><venda_pkaddr1><br></venda_block label=183>
+							<venda_block label=72,pkaddr2=notnull><venda_pkaddr2><br></venda_block label=72>
+							<!-- if country is US or US entities display this formatting -->
+							<venda_block label=999,mode=value,<venda_pkcntry>=United States,<venda_pkcntry>=United States Non-48,<venda_pkcntry>=United States Armed Forces,operator=or>
+							<venda_block label=184,pkcity=notnull><venda_pkcity>, </venda_block label=184>
+							<venda_block label=185,pkstate=notnull><venda_pkstate> </venda_block label=185><venda_pkzipc><br>
+							</venda_block label=999>
+							<!-- if country is NOT US or US entities display this formatting -->
+							<venda_block label=9991,mode=value,<venda_pkcntry>!=United States,<venda_pkcntry>!=United States Non-48,<venda_pkcntry>!=United States Armed Forces,operator=and>
+							<venda_block label=184,pkcity=notnull><venda_pkcity><br></venda_block label=184>
+							<venda_block label=185,pkstate=notnull><venda_pkstate> </venda_block label=185><venda_pkzipc><venda_block label=1234,pkstate=notnull,pkzipc=notnull,operator=or><br></venda_block label=1234>
+							</venda_block label=9991>
+
+							<venda_block label=56,pkcntry=notnull><venda_pkcntry><br></venda_block label=56>
+							<venda_block label=43,pkphone=notnull,operator=or><venda_text id=mobile.info.phone_number> <venda_pkphone></venda_block label=43>
+
+							<div>
+								<venda_block label=90,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p>
+									<a href="<venda_wizurl step=addressbook>&param2=adbook&curstep=ordersummary" data-role="button" data-inline="true" data-mini="true" class="edit"><venda_text id=mobile.button.change_address></a>
+								</venda_block label=90>
+
+								<venda_tpcomment><!-- Partially registered user (Express checkout) - edit single delivery address only --></venda_tpcomment>
+								<venda_block label=91,mode=value,<venda_glxt mode=get,name=glxtusertype>=p>
+								<a href="<venda_wizurl step=deliveryaddressedit>&param1=copybillto" data-ajax="false" data-role="button" data-inline="true" data-mini="true" class="edit"><venda_text id=mobile.button.edit></a>
+								</venda_block label=91>
+							</div><venda_tpcomment><!-- Fully registered user - address book --></venda_tpcomment>
+						</div><venda_tpcomment><!-- /address --></venda_tpcomment>
+					</div><venda_tpcomment><!-- End: Delivery Address (deliverto) --></venda_tpcomment>
+
+					<div data-role="collapsible" data-collapsed="true" class="shipmethod borderBt">
+						<h2><span class="collapsibleLabel"><venda_text id=mobile.heading.delivery_method></span></h2>
+						<fieldset data-role="controlgroup" data-mini="true" class="selectgroup">
+							<venda_tpcomment><!-- Form to update deilvery option --></venda_tpcomment>
+							<form method="post" name="<venda_curstep>form-changerate" action="<venda_codehttps>" id="form-changerate<venda_pkrfnbr>" data-ajax="false">
+								<venda_tpcomment><!-- Core parameters --></venda_tpcomment>
+								<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+								<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+								<input type="hidden" name="curstep" value="<venda_curstep>" />
+								<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+								<input type="hidden" name="mode" value="" />
+								<venda_block errors=null><input type="hidden" name="curlayout" value="checkoutmobile" /></venda_block>
+								<venda_tpcomment><!-- Specific to this step --></venda_tpcomment>
+								<input type="hidden" name="step" value="ordersummary" />
+								<input type="hidden" name="exgroup" value="all" />
+								<input type="hidden" name="param1" value="0" /> <venda_tpcomment><!-- allows change of delivery option --></venda_tpcomment>
+								<input type="hidden" name="param2" value="changerate" /> <venda_tpcomment><!-- allows change of delivery option --></venda_tpcomment>
+
+								<venda_tpcomment><!-- can't use a html select tag due to odd behaviour of the app to put loads of hidden fields in  --></venda_tpcomment>
+								<venda_detblock3><venda_tpcomment><!-- start: detblock3 - Delivery Options --></venda_tpcomment>
+									<input type="radio" name="shipmethod_<venda_pkrfnbr>" value="<venda_shipmethod>" id="<venda_shipmethod>"<venda_block label=100,shipcheck=1> checked="checked"</venda_block label=100>> <label for="<venda_shipmethod>"><venda_shipname></label>
+								</venda_detblock3><venda_tpcomment><!-- End: detblock3 - Delivery Options --></venda_tpcomment>
+
+								<venda_detail3>
+							</form>
+						 </fieldset>
+						<noscript><input type="submit" data-role="button" value="Update" data-ajax="false"></noscript>
+					</div>
+				</venda_block label=47>
+
+				<div data-role="collapsible" data-collapsed="false">
+					<h2><span><venda_text id=mobile.heading.items_to_address></span></h2>
+					<ul data-role="listview" data-inset="true" class="orderdetailItem">
+						<venda_detail2>
+					</ul>
+				</div>
+				</div><venda_tpcomment><!-- /orderInfo --></venda_tpcomment>
+
+			</venda_detblock1><venda_tpcomment><!-- End: detblock1 - Delivery Packages --></venda_tpcomment>
+
+			<venda_detblock2><venda_tpcomment><!-- start: detblock2 - Product Information --></venda_tpcomment>
+			<li>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+					<div class="image">
+						<venda_tpcomment><!-- giftcertificate image --></venda_tpcomment>
+						<venda_block label=50,oiitype=3>
+							<venda_block label=150,med-xsmall=notnull><venda_media rec=invt,type=movie-swf-pict,key=xsmall></venda_block label=150>
+							<venda_block label=151,med-xsmall=null><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setordersummaryimagekey>.gif" alt="<venda_text id=mobile.info.no_product_image>"></venda_block label=151>
+						</venda_block label=50>
+						<venda_tpcomment><!-- <!-- normal product image --></venda_tpcomment>
+						<venda_block label=51,oiitype!=3,oiitype!=5,operator=and>
+							<venda_block label=21,med-setxsmall=notnull>
+								<venda_block label=22,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=setxsmall,img=no,medatr=yes>=notnull>
+									<venda_tpcomment><!--if 'set' prefix with att association value--></venda_tpcomment>
+									<venda_media rec=invt,type=movie-swf-pict,key=setxsmall,medatr=yes>
+								</venda_block label=22>
+								<venda_block label=23,mode=value,<venda_media rec=invt,type=movie-swf-pict,key=setxsmall,img=no,medatr=yes>=null>
+									<venda_block label=231,med-xsmall=notnull>
+										<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+										<venda_media rec=invt,type=movie-swf-pict,key=xsmall>
+									</venda_block label=231>
+									<venda_block label=232,med-xsmall=null>
+										<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+										<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_xsmall.gif" alt="<venda_text id=mobile.info.no_product_image>">
+									</venda_block label=232>
+								</venda_block label=23>
+							</venda_block label=21>
+							<venda_block label=24,med-setxsmall=null>
+								<venda_tpcomment><!--if not 'set' prefix - no alt. images functionality--></venda_tpcomment>
+								<venda_block label=25,med-xsmall=notnull>
+									<venda_tpcomment><!--use key=xsmall--></venda_tpcomment>
+									<venda_media rec=invt,type=movie-swf-pict,key=xsmall>
+								 </venda_block label=25>
+								 <venda_block label=26,med-xsmall=null>
+									<venda_tpcomment><!--use noimage graphic if 'xsmall' is null--></venda_tpcomment>
+									<img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_xsmall.gif" alt="<venda_text id=mobile.info.no_product_image>">
+								</venda_block label=26>
+							</venda_block label=24>
+						</venda_block label=51>
+					</div>
+					</div><!-- /ui-block-a -->
+
+					<div class="ui-block-b">
+					<div class="prodInfo">
+						<p class="prodName"><venda_oiivname><venda_block label=111,invtatt1=notnull> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>, <venda_invtatt2></venda_block label=112><venda_block label=113,invtatt3=notnull>, <venda_invtatt3></venda_block label=113><venda_block label=114,invtatt4=notnull>, <venda_invtatt4></venda_block label=114>)</venda_block label=111><venda_block label=151,oiitype!=3></venda_block label=151></p>
+						<venda_block label=151,oiitype!=3>
+							<p class="sku"><venda_text id=mobile.info.sku>: <venda_invtref></p>
+						</venda_block label=151>
+
+						<p class="price"><venda_ohcursym><venda_oiextsub></strong></p>
+						<p class="qty"><venda_text id=mobile.info.qty>: <venda_oiqty></p>
+
+						<venda_tpcomment><!-- Gift Certificate --></venda_tpcomment>
+						<venda_block label=45,oiitype=3>
+							<p><venda_text id=mobile.info.giftcert_sent_to>
+							<venda_block label=880,gcexpires=notnull>
+							<venda_text id=mobile.info.giftcert_expiry_date> <venda_block label=88,mode=value,<venda_setting type=ebiz,name=mmdddates>!=1><venda_gcexpires></venda_block label=88><venda_block label=89,mode=value,<venda_setting type=ebiz,name=mmdddates>=1><venda_dateformat type=digit,format=mm/dd/yyyy,suffix=0,date=<venda_gcexpires>></venda_block label=89>
+							</venda_block label=880></p>
+							<p><venda_text id=mobile.info.giftcert_message> <venda_oicmt></p>
+							<!-- <br>From: <strong><venda_gcfrom></strong> -->
+						</venda_block label=45>
+
+						<venda_tpcomment><!-- Giftwrapping --></venda_tpcomment>
+						<venda_block label=490,oigwrefqty=notnull><p><venda_text id=mobile.info.giftwrapping>: <venda_inventory ref=<venda_oigwref>,temp=productName></p>
+						<venda_block label=456,oicmtmsgqty=notnull><p><venda_text id=mobile.info.message>: <venda_oicmt></p></venda_block label=456>
+						</venda_block label=490>
+					</div>
+					</div><!-- /ui-block-b -->
+				</div>
+			</li>
+			</venda_detblock2><venda_tpcomment><!-- End: detblock2 - Product Information --></venda_tpcomment>
+
+			<venda_detail1>
+
+			<venda_tpcomment><!-- Start: Promotions --></venda_tpcomment>
+			<div id="additionalservices" class="promotion">
+				<div id="ajax-error"></div>
+
+				<form method="post" name="promotionform" action="<venda_codehttps>" id="promotionform">
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<label for="vcode" class="ui-hidden-accessible"><venda_text id=mobile.form.apply_promo_code>:</label>
+							<input type="text" id="vcode" name="vcode" value="" placeholder="<venda_text id=mobile.form.enter_a_promo_code>" data-value="<venda_text id=mobile.form.enter_a_promo_code>" />
+						</div>
+						<div class="ui-block-b">
+							<input type="submit" id="vcode_submit_shopcart" class="button" value="<venda_text id=mobile.button.apply>" data-inline="true" data-mini="true">
+						</div>
+					</div>
+				</form>
+
+				<venda_detblock9>
+					<div class="value-discount"><venda_codesc></div>
+				</venda_detblock9>
+
+				<venda_block label=43,totaldisc&gt;0.00>
+				  <div id="promotions" class="promotionApplied">
+					<h4><venda_text id=mobile.heading.promotions_applied>:</h4>
+					<venda_detail9>
+				  </div>
+				</venda_block label=43>
+			</div><venda_tpcomment><!-- End: Promotions --></venda_tpcomment>
+			<hr>
+
+			<venda_tpcomment><!-- Start: Additional Services --></venda_tpcomment>
+			<div data-role="controlgroup" class="additional-opt">
+				<venda_block label=75,workflow=checkoutmobile,curstep=ordersummary>
+					<venda_block label=16,mode=value,<venda_giftwrapavail>&gt;0,<venda_setting type=ebiz,name=giftmessageonly>=1,operator=or>
+						<venda_block label=193,mode=value,<venda_setting type=ebiz,name=addgwcombinedpage>!=1>
+							<a class="giftwrap" href="<venda_wizurl step=giftwrapping>" data-ajax="false" data-role="button" data-icon="giftwrap" data-iconpos="right"><venda_text id=mobile.button.giftwrap></a>
+						</venda_block label=193>
+					</venda_block label=16>
+				</venda_block label=75>
+				<venda_block label=76,workflow=checkoutmobile,curstep=ordersummary>
+					<venda_block label=194,mode=value,<venda_setting type=ebiz,name=addgwcombinedpage>!=1>
+						<venda_block label=93,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p><venda_userinfo><venda_block label=65,sesallowmultideladdress=1>
+							<a class="multiaddr" href="<venda_wizurl step=multipledeliveryaddresses>" data-ajax="false" data-role="button" data-icon="multiaddr" data-iconpos="right"><venda_text id=mobile.button.multiple_delivery_address><span class="icon"></span></a></venda_block label=65></venda_userinfo>
+						</venda_block label=93>
+					</venda_block label=194>
+				</venda_block label=76>
+			</div><venda_tpcomment><!-- End: Additional Services --></venda_tpcomment>
+			<hr>
+
+			<venda_tpcomment><!-- Start: Billing Address --></venda_tpcomment>
+			<div data-role="collapsible" data-collapsed="true" class="billing">
+				<h2 class="hdr-billingads"><span class="collapsibleLabel"><venda_text id=mobile.heading.billing_address></span></h2>
+				<div class="address">
+					<venda_tpcomment><!-- Remove the contact details box if the payment type is PayPal (ohpaytype=12) --></venda_tpcomment>
+					<venda_block label=255,ohpaytype!=12>
+
+					<venda_ohtitle> <venda_ohfname><venda_block label=77,ohmname=notnull> <venda_ohmname></venda_block label=77> <venda_ohlname><br>
+					<venda_block label=76,ohcompany=notnull><venda_ohcompany><br></venda_block label=76>
+					<venda_block label=71,ohnum=notnull><venda_ohnum> </venda_block label=71><venda_ohaddr1><br>
+					<venda_block label=74,ohaddr2=notnull><venda_ohaddr2><br></venda_block label=74>
+
+					<!-- if country is US or US entities display this formatting -->
+					<venda_block label=999,mode=value,<venda_ohcntry>=United States,<venda_ohcntry>=United States Non-48,<venda_ohcntry>=United States Armed Forces,operator=or>
+					<venda_ohcity>, <venda_block label=75,ohstate=notnull><venda_ohstate></venda_block label=75> <venda_ohzipc><br>
+					</venda_block label=999>
+
+					<!-- if country is NOT US or US entities display this formatting -->
+					<venda_block label=9991,mode=value,<venda_ohcntry>!=United States,<venda_ohcntry>!=United States Non-48,<venda_ohcntry>!=United States Armed Forces,operator=and>
+					<venda_ohcity><br>
+					<venda_block label=751,ohstate=notnull><venda_ohstate></venda_block label=751> <venda_ohzipc><venda_block label=1234,ohstate=notnull,ohzipc=notnull,operator=or><br></venda_block label=1234>
+					</venda_block label=9991>
+
+					<venda_ohcntry><br>
+					<venda_usemail><br>
+
+					<venda_block label=43,oharea=notnull,ohphone=notnull,operator=or><span class="addrPhone"><venda_text id=mobile.info.phone_number> <venda_block label=100,mode=value,<venda_setting type=ebiz,name=hidearea>!=1><venda_block label=11,oharea=notnull><venda_oharea>&nbsp;</venda_block label=11></venda_block label=100><venda_block label=12,ohphone=notnull><venda_ohphone></venda_block label=12></span></venda_block label=43>
+					<br>
+					<a href="<venda_wizurl step=billingaddressedit,param1=show,param2=edit,mode=process>&trrfnbr=<venda_trrfnbr>" class="edit" data-ajax="false" data-role="button" data-inline="true" data-mini="true"><venda_text id=mobile.button.edit></a>
+					</venda_block label=255>
+				</div>
+			</div><venda_tpcomment><!-- End: Billing Address --></venda_tpcomment>
+			<hr>
+
+			<div class="orderTotals"><venda_tpcomment><!-- Start: Order Totals --></venda_tpcomment>
+				<h3 class="hdr-orderTotals hide"><venda_text id=mobile.heading.order_totals></h3>
+				<div class="labeltext"><span><venda_text id=mobile.info.subtotal>:</span></div>
+				<div class="value"><span><venda_ohcursym><venda_ohsub></span></div>
+
+				<venda_block label=64,showdiscount=1>
+				<!-- start discount -->
+				<div class="labeltext"><span><venda_text id=mobile.info.discount>:</span></div>
+				<div class="value"><span>-<venda_ohcursym><venda_ohdisc></span></div>
+				<!-- end discount -->
+				</venda_block label=64>
+
+				<div class="labeltext"><span><venda_text id=mobile.info.delivery_cost>:</span></div>
+				<div class="value"><span><venda_ohcursym><venda_ohship></span></div>
+
+				<venda_block label=91,ohtax!=0.00,ohtax=notnull>
+				<div class="labeltext"><span><venda_text id=mobile.info.estimated_tax>:</span></div>
+				<div class="value"><span><venda_ohcursym><venda_ohtax></span></div>
+				</venda_block label=91>
+
+				<venda_block label=68,ohgwtot&gt;0>
+				<div class="labeltext"><span><venda_text id=mobile.info.giftwrapping_cost>:</span></div>
+				<div class="value"><span><venda_ohcursym><venda_ohgwtot></span></div>
+				</venda_block label=68>
+
+				<div class="orderTotalSum">
+					<div class="labeltext"><span><venda_text id=mobile.info.order_total>:</span></div>
+					<div class="value"><span><venda_ohcursym><venda_ohtot></span></div>
+					<venda_block label=191,ohtaxinc!=0.00,ohtaxinc=notnull>
+						<div class="value value-vatInc"><span class="label-vatInc"><venda_text id=mobile.info.including_vat></span></div>
+					</venda_block label=191>
+				</div>
+
+				<venda_taxbreakdown ohrfnbr=<venda_ohrfnbr>,template=shipTaxBreakDown>
+				<venda_block label=65,showaccount=1,storecreditused&gt;0.00,creditused&gt;0.00,operator=or>
+					<venda_block label=82,enablestorecredit=1,creditused&gt;0.00,operator=or>
+						<venda_block label=80,showpayments=null>
+							<input type="hidden" name="ohpaytype" value="4" />
+						</venda_block label=80>
+						<input type="hidden" name="usestorecredit" value="1" />
+						<venda_block label=601,workflow=<venda_workflow>,curstep=<venda_curstep>>
+						<venda_block label=180,storecredit=notnull,storecredit&gt;0.00>
+						<venda_block label=280,balance=0.00>
+								<div class="labeltext"><span><venda_text id=mobile.info.store_credit_available>:</span></div>
+								<div class="value"><span><venda_ohcursym><venda_storecredit></span></div>
+						</venda_block label=280>
+								<div class="labeltext"><span><venda_text id=mobile.info.store_credit_used>:</span></div>
+								<div class="value"><span><venda_ohcursym><venda_account></span></div>
+						</venda_block label=180>
+
+						<venda_block label=181,balance&gt;0.00>
+							<div class="labeltext balanceToPay"><span><venda_text id=mobile.info.store_credit_balance>:</span></div>
+							<div class="value balanceToPay"><span><venda_ohcursym><venda_balance></span></div>
+						</venda_block label=181>
+						<venda_block label=821,storecreditremain&gt;0.00>
+								<div class="labeltext"><span><venda_text id=mobile.info.store_credit_remaining></span></div>
+								<div class="value"><span><venda_ohcursym><venda_storecreditremain></span></div>
+						</venda_block label=821>
+						</venda_block label=601>
+					</venda_block label=82>
+				</venda_block label=65>
+				<venda_block label=66,enablefreeorder=1>
+					<venda_block label=661,ohbal=0.00>
+					<input type="hidden" name="ohpaytype" value="8" />
+						<div class="freeorder"><venda_text id=mobile.info.free_order></div>
+					</venda_block label=661>
+				</venda_block label=66>
+			</div><venda_tpcomment><!-- End: Order Totals --></venda_tpcomment>
+		</div><!--end checkoutmobile-content -->
+	</div><!--end checkoutmobile-wrapper -->
+
+	<div class="submitButton"><a href="<venda_wizurl step=paymentoptions,mode=process>" data-ajax="false" data-role="button"><venda_text id=mobile.button.proceed_to_payment></a></div>
+</div>
+
+<venda_tpcomment><!-- Dictionary id to pass to JS --></venda_tpcomment>
+<div id="tag-shipWaitMsg" style="display:none"><venda_text id=mobile.info.applying_shipping_method></div>
+<venda_tpcomment><!-- promotion code --></venda_tpcomment>
+<div id="tag-promoprotocol" style="display:none;"><venda_codehttps></div>
+<div id="tag-promoWaitMsg" style="display:none"><venda_text id=mobile.info.applying_promotion></div>
+<venda_block label=dts,mode=value,<venda_setting type=ebiz,name=delivertostore>=1>
+	<div class="hide js-dtsenabled"></div>
+</venda_block label=dts>
+<venda_tpcomment><!-- Tracking --></venda_tpcomment>
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_tpcomment><!-- Used for checkout step indicators --></venda_tpcomment>
+<venda_tpxt mode=set,name=curstep,value=step4>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=mobile.heading.delivery_options>>

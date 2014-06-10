@@ -1,0 +1,204 @@
+<venda_tpcomment><!-- only need to call cloudzoom here, not sitewide --></venda_tpcomment>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/cloudzoom.js"></script>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Widget/handleCloudzoom.js"></script>
+
+<div id="content-search-body" class="content-search-body">
+    <a id="content-top"></a>
+<venda_block label=334,totalresults!=0>
+    <nav id="sidebar" role="navigation" class="search-refine large-7">
+	<div id="box-refinelist" class="box thinmarg-topbottom show-for-small">
+		<div class="box-header text-center">
+			<h2 class="js-togglebox" data-toggle="js-refinelist" data-toggle-icon="icon-minus">Refine Search<i class="icon-plus right"></i></h2>
+		</div>
+	</div>
+        <div id="refinelist" class="hide-for-small js-refinelist">
+            <venda_inctemplate name=refineList,type=search>
+        </div>
+    </nav>
+</venda_block label=334>
+    <section id="searchResults" role="main" class="search-results js-column large-17">
+        <a name="content" id="content"></a>
+		
+			   <venda_block label=333,totalresults!=0>
+			<div class="main-header marg-bottom">
+				<venda_block label=isKeyword,mode=value,<venda_tpxt mode=get,name=categorySearch>=>
+				<h1 class="search-header"><venda_text id=desktop.heading.search_results></h1>
+				</venda_block label=isKeyword>
+
+				 <venda_block label=isCategory,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
+					<venda_category rec=icat,ref=<venda_tpxt mode=get,name=activecategory>,temp=categorysearchbanner,cacheall=1>
+				 </venda_block label=isCategory>
+
+			</div>
+	</venda_block label=333>
+	
+            <div id="response">
+                <venda_block label=1,errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=1>
+            </div>
+
+            <venda_block label=345,totalresults!=0>
+
+                <div class="search-body">
+				
+				
+				<div class="search-result-detail">
+					<div class="search-result-msg">
+					<venda_block label=isKeyword,mode=value,<venda_tpxt mode=get,name=categorySearch>=>
+					<p>
+					<venda_block label=suggest,suggestion=notnull><venda_text id=desktop.info.search_suggest> "<a href="/search?q=<venda_suggestion>"><venda_suggestion></a>"? </venda_block label=suggest>
+
+					<venda_text id=desktop.info.search_your_search> <venda_block label=410,primarysearchtext=notnull,primarysearchtext!=*:*><venda_text id=desktop.info.search_for> <span class="search-primary-search-text">"<span id="paramq" class="search-keyword-search-text"><venda_primarysearchtext></span>"</span> </venda_block label=410><venda_text id=desktop.info.search_returned>
+
+					<venda_block label=ss,suggestedsearch=notnull><venda_text id=desktop.info.search_match> <span class="search-corrected-query">"<span class="search-corrected-query-text"><venda_suggestion></span>"</span> <venda_text id=desktop.info.search_which></venda_block label=ss> <span class="search-total-results"><venda_totalresults></span> <venda_block label=991,totalresults=1><venda_text id=desktop.info.search_result></venda_block label=991><venda_block label=99,totalresults!=1><venda_text id=desktop.info.search_results></venda_block label=99>
+					</p>
+					</venda_block label=isKeyword>
+
+					<venda_block label=isCategory,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
+					<p>
+					<venda_tpcomment><!-- searched by category : Found N results in Music. --></venda_tpcomment>
+					<venda_text id=desktop.info.search_found> <span class="search-total-results"><venda_totalresults></span> <venda_block label=10003,totalresults=1><venda_text id=desktop.info.search_result></venda_block label=10003><venda_block label=1000,totalresults!=1><venda_text id=desktop.info.search_results></venda_block label=1000> <venda_text id=desktop.info.in> <venda_category rec=icat,ref=<venda_tpxt mode=get,name=activecategory>,temp=categoryname,cacheall=1>.
+					</p>
+					</venda_block label=isCategory>
+					</div>
+
+				</div> <venda_tpcomment><!-- end: .search-result-detail div --></venda_tpcomment>
+
+
+                <div id="productPreview" style="display:none">
+                <div class="js-productPreviewImage js-loadingimg"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/spacer.gif"></div>
+                <div><div><venda_text id=desktop.info.price> <span class="js-productPrice"></span></div><div class="js-productDesc"></div></div>
+                <div class="js-productPreviewArrow"></div></div>
+
+                <venda_detblock_sortedby>
+                    <option value="<venda_url>"<venda_block sortedon=notnull> selected="selected"</venda_block>><venda_option></option>
+                </venda_detblock_sortedby>
+
+                <div class="js-pagn search-pagination search-pagination-top" id="pagnTop">
+                    <div>
+                        <div class="small-12 large-10 columns">
+                            <form>
+                                <div class="row collapse search-sort">
+                                    <div class="large-6 columns hide-for-small"><label for="sortby" class="inline"><venda_text id=desktop.info.sortby>:</label></div>
+                                    <div class="large-18 columns js-custom">
+                                        <select name="sortby" id="sortby">
+                                            <venda_block label=12,mode=value,<venda_setting type=ebiz,name=sortrelevantfirst>=1>
+                                                <option value="<venda_searchurl sort=,setpagenum=1>"><venda_text id=desktop.info.sortby_relevance></option>
+                                            </venda_block label=12>
+                                            <venda_detail_sortedby options=price~desc:asc;name~asc:desc>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <venda_pagination template=items>
+                    </div>
+                    <div><venda_pagination template=pagination></div>
+                </div>
+
+                <venda_inctemplate name=compareItems,type=widgets>
+
+                <venda_detblock_results>
+                    <li class="prod prod-search-results js-prod">
+                        <form name="form<venda_ref>" action="<venda_codehttp>" method="get" id="addproduct<venda_ref>form">
+                            <venda_inventory ref=<venda_ref>,temp=searchInvt,displayunpublished=1>
+                        </form>
+                    </li>
+                </venda_detblock_results>
+                <venda_tpcomment><!-- we use small-block-grid-3 for the default desktop view then manipulate it in the CSS media queries to show the grid in 4 and 2 columns --></venda_tpcomment>
+                <ul class="js-viewstyle js-viewGrid small-block-grid-3" aria-live="polite" aria-relevant="additions" aria-atomic="true" id="viewtoggle">
+                    <venda_detail_results>
+                </ul>
+
+                <div class="js-pagn search-pagination search-pagination-bottom" id="pagnBtm">
+                    <div class="row collapse">
+                        <venda_pagination template=items>
+                    </div>
+                    <venda_pagination template=pagination>
+                </div>
+
+                </div>
+            </venda_block label=345>
+
+        <venda_block label=346,totalresults=0>
+		<div class="search-body">
+			<h1><venda_text id=desktop.heading.search_no_results></h1>
+            <h2>
+                <venda_text id=desktop.info.search_your_search> <venda_block label=95,primarysearchtext=notnull><venda_text id=desktop.info.search_for> <span class="search-primary-search-text">"<span class="search-keyword-search-text"><venda_primarysearchtext></span>"</span> </venda_block label=95><venda_text id=desktop.info.search_no_results>
+            </h2>
+		</div>
+        </venda_block label=346>
+    </section>
+    <div style="display:none;" id="multirefine-tmpl">
+        <label>
+            <input type="checkbox" value="" class="js-updatesearch">
+            <span class="js-facet"></span>
+        </label>
+    </div>
+    <div id="loadingsearch" class="search-loading text-center" style="display:none;"><i class="icon-spinner icon-spin icon-5x"></i></div>
+</div>
+<venda_tpcomment><!-- Hidden tags for JS --></venda_tpcomment>
+<div id="tag-error" style="display:none;"><venda_text id=desktop.info.search_error></div>
+<div id="tag-primarysearchtext" style="display:none;"><venda_primarysearchtext></div>
+<div id="tag-totalresults" style="display:none;"><venda_totalresults></div>
+<script>
+jQuery(function() {
+    jQuery(Venda.Search.start);
+});
+
+    jQuery('#content-search').bind('search-loading-end', function(evt) {
+        if(jQuery('.js-refine-list').length > 0 ){
+            jQuery('#term').show();
+        }
+         jQuery('.js-search-collate-facet').each(function(){
+            if(jQuery(this).find('.js-termtext').length == 1 ){
+               jQuery(this).parent('.box').hide();
+            }
+         });
+
+        <venda_block label=CompareProductsInt,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
+            // Compare - Product compare
+            Venda.Widget.Compare.loadCompareItems();
+        </venda_block label=CompareProductsInt>
+
+        <venda_block label=powerreviewsSnippet,mode=value,<venda_setting type=ebiz,name=powerreviews>=1,<venda_setting type=ebiz,name=powerreviewslocayta>=1>
+        jQuery.ajax({
+                type: "GET",
+                url: "<venda_serveradd>/partners/pwr/engine/js/full.js",
+                dataType: "script",
+                cache: true
+        }).done(function( html ) {
+                var     pr = jQuery('.reviewstar'),
+                        pr_array = jQuery.makeArray(pr);
+
+        jQuery.each(pr_array,function() {
+
+                var     $this = jQuery(this),
+                        pr_page_id1 = $this.children('.pr_page_id').val(),
+                        pr_write_review1 = $this.children('.pr_write_review').val(),
+                        pr_read_review1 = $this.children('.pr_read_review').val();
+
+                POWERREVIEWS.display.snippet(
+                { write : function(content) { jQuery('div#prs-'+pr_page_id1).append(content); } }, {
+                        pr_site_id : 1,
+                        pr_zip_location : '<venda_serveradd>/partners/',
+                        pr_style_sheet : '<venda_entmediaadd>/ebiz/<venda_bsref>/resources/css/powerreviews.css',
+                        pr_page_id : pr_page_id1,
+                        pr_write_review : pr_write_review1,
+                        pr_read_review : pr_read_review1,
+                        pr_snippet_min_reviews : 0
+                });
+        });
+        });
+        </venda_block label=powerreviewsSnippet>
+
+		// fix euro sign on Selected refinements, price refinements, product prices.
+		jQuery('#term .js-refine-list, #priceresults .js-facet, .js-prod-price, #pricerangevalues, #updateTotal').html(function(idx, price) {
+			return price.replace(/\u0080([\d.]+)/g, "\u20ac$1");
+		});
+    });
+    <venda_block label=CompareProductsEvents,mode=value,<venda_tpxt mode=get,name=categorySearch>!=>
+        // Compare - Product compare
+        jQuery("#compareAll").on("click", function() 		{ Venda.Widget.Compare.toCompare(); });
+        jQuery("#compareClearAll").on("click", function() { Venda.Widget.Compare.deleteAll(); });
+    </venda_block label=CompareProductsEvents>
+</script>

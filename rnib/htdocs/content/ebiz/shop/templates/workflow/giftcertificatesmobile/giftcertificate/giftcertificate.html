@@ -1,0 +1,81 @@
+<venda_inventory ref=giftcert,temp=giftcertvariables>
+<div id="tag-msg_giftcert_greater_than" style="display:none;"><venda_text id=mobile.validation.giftcert_greater_than></div>
+<div id="tag-msg_giftcert_less_than" style="display:none;"><venda_text id=mobile.validation.giftcert_less_than></div>
+
+<div class="<venda_workflow> addressform giftcertificate">
+
+	<form method="post" enctype="multipart/form-data" name="giftcertificatesform" action="<venda_codehttp>" data-ajax="false" id="giftcertificatesform">
+	<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+	<input type="hidden" name="step" value="shopcart" />
+	<input type="hidden" name="mode" value="process" />
+	<input type="hidden" name="param1" value="" />
+	<input type="hidden" name="param2" value="" />
+	<input type="hidden" name="param3" value="" />
+	<input type="hidden" name="check" value="" />
+	<input type="hidden" name="trrfnbr" value="" />
+	<input type="hidden" name="wizard" value="shopcartmobile" />
+	<input type="hidden" name="trrfext" value="<venda_block label=15,mode=value,<venda_protocol>=https>1</venda_block label=15>" />
+	<input type="hidden" name="curstep" value="giftcertificate" />
+	<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+	<input type="hidden" name="bsref" value="<venda_bsref>" />
+	<venda_block errors=null><input type="hidden" name="curlayout" value="mobile" /></venda_block>
+	<input type="hidden" name="layout" value="mobile" />
+	<input type="hidden" name="textcount" value="" />
+
+		<div class="static-wrapper">
+			<div class="static-content">
+				<div class="static-header">
+					<h1><venda_text id=mobile.heading.gift_certificates></h1>
+					<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+				</div>
+
+				<div class="boxContent">
+					<p><venda_text id=mobile.info.gift_certificates_1></p>
+					<p><venda_text id=mobile.info.gift_certificates_2></p>
+				</div>
+
+				<venda_tpcomment><!-- Start: Recipient Details --></venda_tpcomment>
+				<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="to"><venda_text id=mobile.form.recipient_name> </label> <input type="text" name="to" id="to" value="<venda_to>" maxlength="50" placeholder="<venda_text id=mobile.form.recipient_name> <venda_text id=mobile.form.required>" required>
+				</div>
+
+				<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="email"><venda_text id=mobile.form.recipient_email></label> <input type="email" name="email" id="email" value="<venda_email>" placeholder="<venda_text id=mobile.form.recipient_email> <venda_text id=mobile.form.required>" maxlength="50" required>
+				</div>
+
+				<div data-role="fieldcontain" class="ui-hide-label">
+				<div class="giftInfo"><div class="contents">
+					<p><venda_inventory ref=giftcert,temp=giftcertpricing></p>
+					<p><venda_text id=mobile.info.gift_certificates_3></p>
+				</div></div>
+				<label for="amount"><venda_text id=mobile.form.giftcert_amount></label> <input type="number" name="amount" id="amount" value="<venda_amount>" maxlength="3" placeholder="<venda_text id=mobile.form.giftcert_amount> <venda_text id=mobile.form.required>" required>
+				</div><venda_tpcomment><!-- End: Recipient Details --></venda_tpcomment>
+
+				<venda_tpcomment><!-- Start: Your Details --></venda_tpcomment>
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="comment"><venda_text id=mobile.form.your_message></label> <textarea name="comment" id="comment" cols="25" rows="5" required placeholder="<venda_text id=mobile.form.your_message> <venda_text id=mobile.form.required>"><venda_comment></textarea>
+					<p><span class="textMsgCount">250</span> <venda_text id=mobile.info.characters_remaining></p>
+				</div>
+
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="from"><venda_text id=mobile.form.your_name></label> <input type="text" name="from" id="from" value="<venda_from>" maxlength="50" placeholder="<venda_text id=mobile.form.your_name> <venda_text id=mobile.form.required>" required>
+				</div>
+				<venda_tpcomment><!-- End: Your Details --></venda_tpcomment>
+
+				<venda_tpcomment><!-- Start: Terms and Conditions --></venda_tpcomment>
+				<div data-role="fieldcontain">
+			   		<input type="hidden" name="giftcerttandc" id="giftcerttandc" value="1">
+			   		<label for="giftcerttandc"><p><venda_text id=mobile.info.terms_and_conditions1> <a href="<venda_dispview page=terms>" target="_blank" title="<venda_text id=mobile.button.terms_and_conditions><venda_text id=mobile.info.open_new_window>" data-ajax="false"><venda_text id=mobile.button.terms_and_conditions></a>.</p>
+			   		</label>
+				</div><venda_tpcomment><!-- End: Terms and Conditions --></venda_tpcomment>
+			</div><!--end checkoutmobile-content -->
+		</div><!--end checkoutmobile-wrapper -->
+		<div class="submitButton">
+			<input type="submit" value="<venda_text id=mobile.button.continue>">
+		</div>
+	</form>
+</div>
+
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=mobile.heading.gift_certificates>>

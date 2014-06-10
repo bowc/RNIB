@@ -1,0 +1,26 @@
+<venda_detblock_item>
+	<venda_block label=12,oiivref=notnull>
+		<li>
+
+			<span><venda_text id=desktop.info.order_history_3></span>
+			<venda_tpcomment><!-- if product is not a gift certificate --></venda_tpcomment>
+
+			<venda_block label=35,oiivref!=giftcert>
+				<venda_block label=111,invtatt1=notnull><venda_tpcomment><!-- attributes --></venda_tpcomment><a href="<venda_dispview invt=<venda_invtparef>>"><venda_oiivname><venda_block label=211,oicf_description=notnull> - <venda_oicf_description></venda_block label=211></a> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>, <venda_invtatt2></venda_block label=112><venda_block label=113,invtatt3=notnull>, <venda_invtatt3></venda_block label=113><venda_block label=114,invtatt4=notnull>, <venda_invtatt4></venda_block label=114>)</venda_block label=111>
+				<venda_block label=115,invtatt1=null><venda_tpcomment><!-- no attributes --></venda_tpcomment><a href="<venda_dispview invt=<venda_oiivref>>"><venda_oiivname><venda_block label=215,oicf_description=notnull> - <venda_oicf_description></venda_block label=215></a></venda_block label=115>
+			</venda_block label=35>
+
+			<venda_tpcomment><!-- if product is a gift certificate --></venda_tpcomment>
+			<venda_block label=36,oiivref=giftcert><a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><venda_oiivname></a>
+			<input type=hidden name=amount-<venda_lineid> value="<venda_invtsymsell>">
+			<input type=hidden name=comment-<venda_lineid> value="<venda_oicmt>">
+			<input type=hidden name=email-<venda_lineid> value="<venda_rpemail>">
+			<input type=hidden name=to-<venda_lineid> value="<venda_gcto>">
+			<input type=hidden name=from-<venda_lineid> value="<venda_gcfrom>">
+			</venda_block label=36>
+		</li>
+	</venda_block label=12>
+</venda_detblock_item>
+
+<venda_detail_item>
+

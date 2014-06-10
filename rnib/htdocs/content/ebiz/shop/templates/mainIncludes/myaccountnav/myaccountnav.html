@@ -1,0 +1,51 @@
+<div class="box nomarg">
+	<div class="box-body">
+    <a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>"><i class="icon-user icon-large"></i> My Account</a>
+	</div>
+</div>
+
+<div class="box js-orderhistory nomarg">
+    <div class="box-header"><h3><venda_text id=desktop.heading.order_history></h3></div>
+    <div class="box-body">
+        <ul>
+            <li class="js-vieworderhistory"><a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>&log=22&step=orderhistory"><venda_text id=desktop.button.view_order_history></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="box js-accountdetails nomarg">
+    <div class="box-header"><h3><venda_text id=desktop.heading.account_details></h3></div>
+    <div class="box-body">
+        <ul>
+            <li class="js-emailpwd"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,pass=change>"><venda_text id=desktop.button.edit_email_password></a></li>
+            <li class="js-billingadd"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,addr=change>"><venda_text id=desktop.heading.edit_billing_address></a></li>
+            <!--<li class="js-profile"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&param1=profile"><venda_text id=desktop.button.edit_profile></a></li>-->
+            <li class="js-comms"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,comm=change>"><venda_text id=desktop.button.edit_communication_options></a></li>
+            <li class="js-storecredit"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&param1=storecredit"><venda_text id=desktop.button.view_remaining_store_credit></a></li>
+            <li class="js-addbook"><a href="<venda_codehttps>?ex=co_wizr-myaccount&log=22&step=addressbook&bsref=<venda_bsref>"><venda_text id=desktop.button.view_address_book></a></li>
+        </ul>
+    </div>
+</div>
+
+<venda_tpcomment><!--
+<div class="box js-refer">
+    <div class="box-header"><h3><venda_text id=desktop.heading.refer_a_friend></h3></div>
+    <div class="box-body">
+            <ul>
+                <li class="js-referafriend"><a href="<venda_codehttps>?ex=co_wizr-referafriend&bsref=<venda_bsref>&layout=myaccount">Refer a friend</a></li>
+                <li class="js-referredfriends"><a href="<venda_codehttp>?ex=co_disp-refer&bsref=<venda_bsref>&page=referlist&layout=myaccount">View Referred Friends</a></li>
+                <li class="js-referterms"><a href="<venda_dispview page=terms>" class="js-doDialog" rel="550,450,terms" target="_blank">View Terms & Conditions</a></li>
+            </ul>
+    </div>
+</div>
+--></venda_tpcomment>
+
+<div class="box js-helpdesk nomarg">
+    <div class="box-header"><h3><venda_text id=desktop.info.help_1></h3></div>
+    <div class="box-body">
+        <ul>
+            <li class="js-helpdeskemail"><venda_text id=desktop.info.by_email>: </span><a href="mailto:<venda_setting type=ebiz,name=email>"><venda_setting type=ebiz,name=email></a></li>
+            <li class="js-helpdeskphone"><venda_text id=desktop.info.by_phone>: </span><venda_setting type=ebiz,name=phone></li>
+        </ul>
+    </div>
+</div>

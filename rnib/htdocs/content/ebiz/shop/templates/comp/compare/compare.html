@@ -1,0 +1,48 @@
+<!--N.B YOU WILL HAVE TO SET UP COMPARE/CONFIG under PRODUCTS/COMPARE TYPES in the Venda control panel-->
+<div id="compare">
+<h1><venda_text id=desktop.heading.compare></h1>
+<table cellpadding="0" cellspacing="0" border="0">
+<thead>
+<tr>
+	<th>&nbsp;</th>
+	<venda_detail1>
+</tr>
+</thead>
+<tbody>
+	<venda_detail2>
+</tbody>
+</table>
+<a href="#" id="closeCompare">Close</a>
+</div>
+<venda_detblock1>
+<th scope="col">
+	<venda_inventory ref=<venda_invtref>,temp=compare,displayunpublished=1>
+</th>
+</venda_detblock1>
+<venda_detblock2>
+<tr>
+	<th scope="row"><strong><venda_fldname></strong></th>
+	<venda_detail3>
+</tr>
+</venda_detblock2>
+
+<venda_detblock3>
+<td>
+<venda_block label=30,rectype=0>
+<venda_block label=70,data=notnull>
+<venda_data>
+</venda_block label=70>
+</venda_block label=30>
+
+<venda_block label=31,rectype=1>
+<venda_block label=32,showdata=notnull>
+<venda_block label=33,data=1><venda_text id=desktop.info.yes></venda_block label=33>
+<venda_block label=34,data=null><venda_text id=desktop.info.no></venda_block label=34>
+</venda_block label=32>
+</venda_block label=31>
+
+<venda_block label=71,data=null>
+&nbsp;
+</venda_block label=71>
+</td>
+</venda_detblock3>

@@ -1,0 +1,34 @@
+<venda_tpcomment><!-- tags read by Pennies.js --></venda_tpcomment>
+<div id="tag-xml" style="display:none;">/content/ebiz/<venda_bsref>/resources/euro_rates.xml</div>
+<div id="tag-currencycode" style="display:none;"><venda_currencycode></div>
+
+<div class="box regionlang-switch" id="currencyConverter">
+	<div class="box-body"><a href="#" id="flag" class="flag"><i class="icon-money icon-large hide-for-desktop-up"></i><span class="show-for-desktop-up">Convert Currency</span> (<span id="currently"><venda_currencycode></span>) <i class="icon-caret-down icon-large"></i></a></div>
+	<div id="flagContent" class="flag-content" style="display: none; ">
+		<div class="region">
+		<p>Convert Currency:</p>
+			<ul class="currency-list">
+				<venda_block label=1,mode=value,<venda_currencycode>=USD>
+					<li><a rel="USD" href="#" class="secondary button js-resetcurrency USD">US Dollar - $ USD</a></li>
+				</venda_block label=1>
+				<venda_block label=1a,mode=value,<venda_currencycode>!=USD>
+					<li><a rel="USD" href="#" class="secondary button js-loadcurrency USD">US Dollar - $ USD</a></li>
+				</venda_block label=1a>
+
+				<venda_block label=2,mode=value,<venda_currencycode>=EUR>
+					<li><a rel="EUR" href="#" class="secondary button js-resetcurrency EUR">Euro - € EUR</a></li>
+				</venda_block label=2>
+				<venda_block label=2a,mode=value,<venda_currencycode>!=EUR>
+					<li><a rel="EUR" href="#" class="secondary button js-loadcurrency EUR">Euro - € EUR</a></li>
+				</venda_block label=2a>
+
+				<venda_block label=3,mode=value,<venda_currencycode>=GBP>
+					<li><a rel="GBP" href="#" class="secondary button js-resetcurrency GBP">UK Pound - £ GBP</a></li>
+				</venda_block label=3>
+				<venda_block label=3a,mode=value,<venda_currencycode>!=GBP>
+					<li><a rel="GBP" href="#" class="secondary button js-loadcurrency GBP">UK Pound - £ GBP</a></li>
+				</venda_block label=3a>
+			</ul>
+		</div>
+	</div>
+</div>

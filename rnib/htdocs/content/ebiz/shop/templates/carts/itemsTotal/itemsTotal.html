@@ -1,0 +1,16 @@
+<venda_tpcomment><!-- Use this format "Items: 1" for items if set 'true'
+Use this format "1 Item" for items if set 'false'--></venda_tpcomment>
+<div id="tag-itemBD" style="display:none;"><venda_text id=desktop.info.item></div>
+<div id="tag-itemsBD" style="display:none;"><venda_text id=desktop.info.items></div>
+
+<a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22" class="minicart nopad right">
+    <venda_tpcomment><!-- <h3 class="minicart-header"><span class="minicart-header-text"><venda_text id=desktop.heading.minicart></span></h3>--></venda_tpcomment>
+    <div class="minicart-body" data-trackEvent="Shopping">
+        <i class="icon-shopping-cart"></i>
+    	<span class="minicart-items">
+            <span id="updateItems" class="js-updateItems minicart-items-number"><venda_cartitemtotal></span>
+            <span class="js-updateItemsText show-for-desktop-up"> <venda_block label=19,cartitemtotal=1><venda_text id=desktop.info.item></venda_block label=19><venda_block label=20,cartitemtotal!=1><venda_text id=desktop.info.items></venda_block label=20></span> <span class="show-for-desktop-up">&mdash;</span>
+        </span>
+    	<span class="minicart-total"><span id="updateTotal" class="js-updateTotal"><venda_total></span></span>
+    </div>
+</a>

@@ -1,0 +1,62 @@
+<nav id="js-canvas-content-left" role="navigation" class="off-canvas-content off-canvas-left" aria-live="polite">
+    <ul>
+        <li class="welcome first">
+            <div class="off-canvas-title">
+                <h2><venda_block label=1,ustype=R><venda_userinfo><span><venda_text id=desktop.info.welcome_back></span> <span><venda_sesfname> <venda_seslname></span></venda_userinfo></venda_block label=1><venda_block label=2,ustype!=R><span><venda_text id=desktop.info.welcome_to></span> <venda_setting type=ebiz,name=name></venda_block label=2></h2>
+            </div>
+            <div id="offCanvasClose" class="js-offCanvasClose right"><i class="icon-remove-circle"></i><span class="hidescreenreadersafe"><venda_text id=desktop.button.close></span></div>
+        </li>
+
+        <li class="regionLang">
+            <venda_block label=100,mode=value,<venda_ebxtcurrencyConvert>=1>
+                <venda_tpcomment><!-- currencyConverter --></venda_tpcomment>
+                <a href="<venda_dispview page=currencyconverter>"><i class="icon-money icon-large"></i></a>
+            </venda_block label=100>
+            <venda_block label=201,mode=value,<venda_ebxtcurrencyConvert>!=1>
+                <a href="<venda_dispview page=landingswitcher>&layout=1column"><i class="regionlang-icon <venda_sessionlanguage>"></i>
+                <span> <venda_currencycode> (
+                    <venda_block label=013,mode=value,<venda_sessionlocation>=fr><venda_text id=desktop.info.region_fr></venda_block label=013>
+                    <venda_block label=014,mode=value,<venda_sessionlocation>=de><venda_text id=desktop.info.region_de></venda_block label=014>
+                    <venda_block label=015,mode=value,<venda_sessionlocation>=uk><venda_text id=desktop.info.region_uk></venda_block label=015>
+                    <venda_block label=016,mode=value,<venda_sessionlocation>=es><venda_text id=desktop.info.region_es></venda_block label=016>
+                    <venda_block label=017,mode=value,<venda_sessionlocation>=it><venda_text id=desktop.info.region_it></venda_block label=017>
+                )</span>
+                </a>
+            </venda_block label=201>
+        </li>
+
+        <venda_block label=21,ustype!=R>
+            <li class="js-login"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>"><i class="icon-login-box icon-large"></i> <venda_text id=desktop.button.log_in_register></a></li>
+        </venda_block label=21>
+
+        <venda_block label=20,ustype=R>
+            <li class="js-myaccount"><venda_block label=300,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1><a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>"></venda_block label=300><venda_block label=301,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>"></venda_block label=301><i class="icon-user icon-large"></i> <venda_text id=desktop.button.my_account></a></li>
+
+            <li class="js-recentorders-nav"><a href="<venda_dispview page=recentorders>"><i class="icon-menu-box icon-large"></i> <venda_text id=desktop.heading.recent_orders></a>
+                <div id="js-recentorders-content"></div>
+            </li>
+
+            <li class="js-storecredit"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&param1=storecredit"><i class="icon-money icon-large"></i> <venda_text id=desktop.button.view_remaining_store_credit></a></li>
+
+            <li class="js-comms"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,comm=change>"><i class="icon-communication icon-large"></i> <venda_text id=desktop.button.edit_communication_options></a></li>
+
+            <li class="js-emailpwd"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,pass=change>"><i class="icon-edit icon-large"></i> <venda_text id=desktop.button.edit_email_password></a></li>
+
+            <li class="js-billingadd"><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,addr=change>"><i class="icon-settings icon-large"></i> <venda_text id=desktop.button.edit_billing_details></a></li>
+
+            <li class="js-addbook"><a href="<venda_codehttps>?ex=co_wizr-myaccount&log=22&step=addressbook&bsref=<venda_bsref>"><i class="icon-address-book icon-large"></i> <venda_text id=desktop.button.view_address_book></a></li>
+        </venda_block label=20>
+
+        <li class="js-helpdesk"><a href="<venda_dispview pcat=help>" rel="nofollow"><i class="icon-help-and-info-box icon-large"></i> <venda_ebizname> <venda_text id=desktop.button.helpdesk></a></li>
+
+        <li class="js-facebook"><a href="http://www.facebook.com/rnibuk" target="_blank"><i class="icon-facebook-sign icon-large"></i> <venda_text id=desktop.button.facebook></a></li>
+		
+        <li class="js-twitter"><a href="http://twitter.com/rnib" target="_blank"><i class="icon-twitter-sign icon-large"></i> <venda_text id=desktop.button.twitter></a></li>
+
+        <li class="js-youtube"><a href="http://www.youtube.com/rnibuk" target="_blank"><i class="icon-youtube-sign icon-large"></i> YouTube</a></li>
+
+        <venda_block label=20,ustype=R>
+            <li class="js-logout"><a href="<venda_dispview page=home>&log=4"><i class="icon-logout icon-large"></i> <venda_text id=desktop.button.log_out></a></li>
+        </venda_block label=20>
+    </ul>
+</nav>

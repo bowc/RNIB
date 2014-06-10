@@ -1,0 +1,11 @@
+<venda_detblock>
+	<venda_block paymenthidden=notnull><div style="display: none;"></venda_block>
+	<venda_paymenttemplate paymenttype=<venda_paymentname>,templatetype=paytype/frontend,template=paymenttype_<venda_paymentname>_mobile,capture=1,ohrfnbr=<venda_paymentohrfnbr>,entry=1>
+	<venda_block paymenthidden=notnull></div></venda_block>
+</venda_detblock>
+
+<div id="paymentdetails" class="paymentdetails">
+<venda_detail>
+<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,group=7,template=orxfields_set,type=includes>
+<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,group=8,template=orxfields_set,type=includes>
+</div>

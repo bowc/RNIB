@@ -1,0 +1,10 @@
+<h2 class="js-togglebox basket-header show-for-small" id="show-small-basket" data-toggle="js-toggle-basket"><i class="icon-menu"></i> <venda_text id=desktop.heading.shopping_cart></h2>
+<div id="box-basket" class="js-toggle-basket hide-for-small box box-basket">
+<h3 class="box-header"><venda_text id=desktop.heading.item_your_order></h3>
+<div class="box-body">
+    <venda_block label=52,mode=value,<venda_shopcart mode=getqty>!=0><venda_order shopcart=1,template=minicart_detail_checkout></venda_block label=52>
+    <venda_block label=53,mode=value,<venda_shopcart mode=getqty>=0><p><venda_text id=desktop.info.shopping_cart_empty></p></venda_block label=53>
+    <hr>
+    <venda_order ref=<venda_ohrfnbr>,shopcart=0,template=minicartDetailTotal>
+</div>
+</div>

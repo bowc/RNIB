@@ -1,0 +1,29 @@
+<div id="thankyou" class="thickpad">
+	<venda_block label=12,mode=value,<venda_htxt mode=get,name=foo>=writereview>
+	<div id="writereviewthankyou">
+		<h1><venda_text id=desktop.heading.write_review></h1>
+		<p><venda_text id=desktop.info.write_review_thankyou></p>
+		<p><a href="<venda_dispview invt=<venda_invtref>>" id="back_link">Back to product</a></p>
+	</div>
+	</venda_block label=12>
+
+	<venda_block label=14,mode=value,<venda_htxt mode=get,name=foo>=tellafriend>
+	<div id="tellafriendthankyou">
+		<h1><venda_text id=desktop.heading.tell_friend></h1>
+		<p><venda_text id=desktop.info.tell_friend_thankyou></p>
+		<p><a href="<venda_dispview invt=<venda_invtref>>" id="back_link">Back to product</a></p>
+	</div>
+	</venda_block label=14>
+
+	<venda_block label=13,mode=value,<venda_htxt mode=get,name=foo>=emailinstock>
+	<div id="emailinstockthankyou">
+		<h1><venda_text id=desktop.heading.email_when_in_stock></h1>
+		<p><venda_text id=desktop.info.email_when_in_stock_thankyou></p>
+		<p><a href="<venda_dispview invt=<venda_invtref>>" id="back_link">Back to product</a></p>
+	</div>
+	</venda_block label=13>
+</div>
+
+<!-- tpxt used for crumbtrail -->
+<venda_tpxt mode=set,name=invtname,value=<venda_invtname>>
+<venda_tpxt mode=set,name=track,value=thankyou>

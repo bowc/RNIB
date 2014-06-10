@@ -1,0 +1,12 @@
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email.new_register><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader2,type=emailIncludes>
+
+<venda_text id=desktop.info.welcome_to> <venda_ebizname>.<cr>
+
+<venda_text id=desktop.info.new_register_message_1><cr>
+<venda_text id=desktop.info.new_register_message_2><cr><cr>
+<venda_text id=desktop.info.visitmyaccount> <venda_dispview page=signin>.<cr><cr>
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

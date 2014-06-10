@@ -1,0 +1,88 @@
+<div class="prod prod-subpackage">
+	<div class="prod-detail-content js-oneProduct" id="oneProduct_<venda_invtuuid>">
+		<div class="js-oneProductContent">
+			<form action="<venda_codehttp>" method="get" name="addproductform" id="addproduct<venda_invtref>form">
+				<input type="hidden" name="bsref" value="<venda_bsref>">
+				<input type="hidden" name="log" value="22">
+				<input type="hidden" name="mode" value="add">
+				<input type="hidden" name="curpage" value="">
+				<input type="hidden" name="next" value="">
+				<input type="hidden" name="ex" value="co_wizr-shopcart">
+				<input type="hidden" name="buy" value="<venda_invtref>">
+				<input type="hidden" name="invt" value="<venda_invtref>">
+				<input type="hidden" name="ivref" value="<venda_invtref>">
+				<input type="hidden" name="layout">
+
+				<div class="box box-section">
+			        <div class="box-header prod-name"><a href="<venda_dispview invt=<venda_invtref>>"><venda_block label=12,invtaltname=notnull><venda_invtaltname></venda_block label=12><venda_block label=13,invtaltname=null><venda_invtname></venda_block label=13></a></div>
+			        <div class="box-body">
+						<div class="prod-image prod-subpackage-image">
+						<venda_block label=141,med-small=notnull>
+							<a href="<venda_dispview invt=<venda_invtref>>"><venda_media rec=invt,type=movie-swf-pict,key=small></a>
+						</venda_block label=141>
+						<venda_block label=142,med-small=null>
+							<a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_small.gif" alt="<venda_text id=desktop.info.no_product_image>"></a>
+						</venda_block label=142>
+						</div>
+					<!-- display details of sub-skus -->
+					<venda_invtsku template=subpackagesku>
+					<venda_inctemplate type=includes,name=priceFormat>
+					</div>
+				</div>
+
+				<venda_block label=81,invtavail&gt;0>
+				<div class="box box-section prod-detail-buttons">
+                    <div class="box-header in-stock">
+                        <venda_text id=desktop.info.in_stock>
+                    </div>
+                    <div class="box-body">
+					<venda_block label=30,invtpreorder=notnull>
+                    <venda_tpcomment><!-- if future release date --></venda_tpcomment>
+                    <p class="nomarg"><venda_text id=desktop.info.not_yet_released></p>
+                    <p><venda_text id=desktop.info.release_date></p>
+                    </venda_block label=30>
+
+					<div class="row">
+                    <div class="large-8 columns prod-quantity">
+                        <div class="row nomarg thinpad-top">
+                            <div class="small-8 large-14 columns"><label for="qty"><venda_text id=desktop.info.qty>: </label></div>
+                            <div class="small-16 large-10 columns"><input name="qty" id="qty" type="number" value="1" size="3" maxlength="3" class="js-qty" ></div>
+                        </div>
+                    </div>
+                    <venda_block label=34,invtpreorder!=1>
+                    <div class="large-9 columns prod-add">
+                        <input type="submit" id="addproduct" class="success radius button expand js-addproduct" value="<venda_text id=desktop.button.addtobasket>" onclick="document.form<venda_invtref>.ex.value='co_disp-shopc';">
+                    </div>
+                    <div class="large-7 columns prod-buy">
+                        <input type="submit" class="button radius expand js-buynow" value="<venda_text id=desktop.button.buy_now>">
+                    </div>
+                    </venda_block label=34>
+                    <venda_block label=35,invtpreorder=1>
+                    <div class="large-16 columns prod-preorder">
+                        <!-- pre-order with add to basket functionality (stay on the same page) -->
+                        <input type="submit" value="<venda_text id=desktop.button.preorder>" class="button radius expand js-preorder js-addproduct">
+                        <!-- use this instead if you want pre-order with buy now functionality (go to basket page)
+                        <input type="submit" value="<venda_text id=desktop.button.preorder>" class="button radius expand js-preorder"> -->
+                    </div>
+                    </venda_block label=35>
+                </div>
+
+                	</div>
+                </div>
+				</venda_block label=81>
+
+				<venda_block label=26,invtavail&lt;1>
+				<!-- if out of stock -->
+				<div class="box box-section">
+                    <div class="box-header out-of-stock">
+                        <venda_text id=desktop.info.out_of_stock>
+                    </div>
+                    <div class="box-body">
+                        <a href="<venda_dispview invt=<venda_invtref>>&temp=emailinstock" title="<venda_text id=desktop.button.email_when_in_stock>" id="emwbis_link" class="button radius expand js-doDialog"><venda_text id=desktop.button.email_when_in_stock></a>
+                    </div>
+                </div>
+                </venda_block label=26>
+			</form>
+		</div>
+	</div>
+</div>

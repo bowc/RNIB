@@ -1,0 +1,67 @@
+==============================================================================<cr>
+<venda_text id=desktop.heading.billing_details><cr>
+==============================================================================<cr><cr>
+<venda_text id=desktop.info.cardholder>:<cr>
+<venda_ohtitle> <venda_ohfname> <venda_block label=76,ohmname=notnull><venda_ohmname></venda_block label=76> <venda_ohlname><cr><cr>
+
+<venda_text id=desktop.info.billing_address>:<cr>
+<venda_block label=73,ohcompany=notnull><venda_ohcompany><cr></venda_block label=73>
+<venda_ohnum> <venda_ohaddr1><cr>
+<venda_block label=74,ohaddr2=notnull><venda_ohaddr2><cr></venda_block label=74>
+
+<venda_block label=999,mode=value,<venda_ohcntry>=United States,<venda_ohcntry>=United States Non-48,<venda_ohcntry>=United States Armed Forces,operator=or>
+<venda_ohcity>, <venda_block label=75,ohstate=notnull><venda_ohstate></venda_block label=75> <venda_ohzipc><cr>
+</venda_block label=999>
+
+<venda_block label=9991,mode=value,<venda_ohcntry>!=United States,<venda_ohcntry>!=United States Non-48,<venda_ohcntry>!=United States Armed Forces,operator=and>
+<venda_ohcity><cr>
+<venda_block label=751,ohstate=notnull><venda_ohstate></venda_block label=751> <venda_ohzipc><venda_block label=1234,ohstate=notnull,ohzipc=notnull,operator=or><cr></venda_block label=1234>
+</venda_block label=9991>
+
+<venda_ohcntry><cr><cr>
+
+<venda_text id=desktop.info.phone_number>:<cr>
+<venda_oharea> <venda_ohphone><cr>
+
+<venda_block label=155,ohfax=notnull>
+<cr><venda_text id=desktop.info.fax_number>:<cr>
+<venda_ohfarea> <venda_ohfax><cr>
+</venda_block label=155>
+
+<venda_detail1>
+
+==============================================================================<cr>
+<venda_text id=desktop.heading.order_totals><cr>
+==============================================================================<cr><cr>
+<venda_text id=desktop.info.subtotal>: <venda_ohsub> <venda_ohcur><cr>
+<venda_block label=64,ohdisc!=0.00,ohdisc=notnull>
+<venda_text id=desktop.info.discount>: -<venda_ohdisc> <venda_ohcur><cr>
+</venda_block label=64>
+<venda_text id=desktop.info.delivery_cost>: <venda_ohship> <venda_ohcur><cr>
+<venda_block label=65,ohtax!=0.00,ohtax=notnull>
+<venda_text id=desktop.info.estimated_tax>: <venda_ohtax> <venda_ohcur><cr>
+</venda_block label=65>
+<venda_block label=670,ohgwtot&gt;0>
+<venda_text id=desktop.info.giftwrapping>: <venda_ohgwtot> <venda_ohcur><cr>
+</venda_block label=670>
+------------------------------------------------------------------------------<cr>
+<venda_text id=desktop.info.order_total>: <venda_ohtot> <venda_ohcur><cr>
+<venda_block label=92,ohtaxinc!=0.00,ohtaxinc=notnull>
+<venda_text id=desktop.info.including_vat><cr>
+</venda_block label=92>
+------------------------------------------------------------------------------<cr>
+<venda_block label=70,storecreditused&gt;0.00,storecreditused=notnull,creditaccount=notnull>
+<venda_text id=desktop.info.store_credit_used>: <venda_creditaccount> <venda_ohcur><cr>
+<venda_block label=181,balance=notnull,balance&gt;0.00>
+<venda_text id=desktop.info.store_credit_balance_paid>: <venda_balance> <venda_ohcur><cr>
+</venda_block label=181>
+<venda_block label=65,storecredit&gt;0.00,storecredit=notnull>
+<venda_text id=desktop.info.store_credit_remaining>: <venda_storecredit> <venda_ohcur><cr>
+</venda_block label=65>
+</venda_block label=70>
+<cr>
+<venda_block label=62,coupons=notnull>
+<venda_text id=desktop.info.promotions_applied><cr>
+<venda_detail3><cr>
+</venda_block label=62>
+<cr>

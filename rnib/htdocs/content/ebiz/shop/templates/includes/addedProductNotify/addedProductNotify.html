@@ -1,0 +1,28 @@
+<div id="tag-checkoutlink" style="display:none;"><venda_block label=100,ustype=R><venda_block label=210,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1><venda_codehttps>?ex=co_wizr-checkout&bsref=<venda_bsref>&step=ordersummary</venda_block label=210><venda_block label=211,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1><venda_codehttps>?ex=co_wizr-checkout&bsref=<venda_bsref>&step=login</venda_block label=211>
+</venda_block label=100><venda_block label=101,ustype!=R><venda_codehttps>?ex=co_wizr-checkout&bsref=<venda_bsref>&step=login</venda_block label=101>
+</div>
+
+<div id="notifyTemplate" style="display:none;">
+    <div id="notify" class="box box-section addedProductNotify">
+        <!--<div class="box-header info"><venda_text id=site.quickshop.addedmsg></div>-->
+            <div class="box-body info">
+                <div class="row">
+                    <div id="js-aria" class="notifydetails large-24 columns">
+                        <venda_text id=site.quickshop.addedmsg><br/>
+                        <span id="js-notify-text">#{text}</span>
+                        <span id="js-notify-product">#{quantity} x #{product}</span>
+                        <span id="js-notify-details"> &nbsp;#{details}</span>
+                    </div>
+                    <div class="notifydetails-button large-24 columns marg-top">
+                        <div class="view-button small-11 large-11 columns nopad">
+                            <a id="js-aria-viewbasket" class="button small radius" href="#{basketUrl}"><venda_text id=desktop.button.view_shopping_cart></a>
+                        </div>
+                        <div class="checkout-button small-12 large-12 columns nopad text-right">
+                            <a class="button small success radius" id="checkout" href="#{checkoutUrl}">
+                            <venda_text id=desktop.button.checkout></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	</div>
+</div>

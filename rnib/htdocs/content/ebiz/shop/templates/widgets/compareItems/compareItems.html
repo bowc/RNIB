@@ -1,0 +1,30 @@
+<venda_block label=001,mode=value,<venda_setting type=ebiz,name=showcomparebutton>=1>
+<venda_block label=002,mode=value,<venda_tpxt mode=get,name=comparecatref>!=,<venda_tpxt mode=get,name=categorySearch>!=,operator=or>
+<venda_block label=003,mode=value,<venda_tpxt mode=get,name=track>!=categorylist>
+
+<div id="js-compare" style="display: none">
+	<div id="js-compare-codehttp"><venda_codehttp></div>
+	<div id="js-compare-bsref"><venda_bsref></div>
+	<div id="js-compare-ebizurl"><venda_ebizurl></div>
+	<div id="js-compare-currCategory"><venda_block label=41,mode=value,<venda_tpxt mode=get,name=comparecatref>!=><venda_tpxt mode=get,name=comparecatref></venda_block label=41><venda_block label=42,mode=value,<venda_tpxt mode=get,name=comparecatref>=><venda_block label=600,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>=><venda_block label=700,mode=value,<venda_tpxt mode=get,name=categorySearch>!=><venda_block label=800,mode=value,<venda_tpxt mode=get,name=categorySearch>!=><venda_tpxt mode=get,name=categorySearch></venda_block label=800></venda_block label=700><venda_block label=701,mode=value,<venda_tpxt mode=get,name=categorySearch>=><venda_block label=801,mode=value,<venda_tpxt mode=get,name=categorySearch>!=><venda_tpxt mode=get,name=categorySearch></venda_block label=801></venda_block label=701></venda_block label=600></venda_block label=42></div>
+	<div id="js-compare-setalwaysshowcompare"><venda_setting type=ebiz,name=setalwaysshowcompare></div>
+	<div id="js-compare-compareproduct"><venda_text id=desktop.heading.compare></div>
+
+</div>
+<h6 class="toggle-header js-togglebox hide" id="show-small-basket" data-toggle="js-toggle-compare"><i class="icon-menu"></i> <venda_text id=desktop.heading.compare></h6>
+<div class="js-toggle-compare hide-for-small">
+<div id="js-compareProduct" class="compare marg-bottom pad vcard" style="display:none;">
+	<h5 class="compare-header"><span></span><venda_text id=desktop.heading.compare></h5>
+	<div class="compare-content">
+		<p class="compare-desc"><venda_text id=desktop.info.compare_1></p>
+		<ul id="js-cpilist" class="compare-cpilist large-block-grid-5"></ul>
+	</div>
+	<div id="js-compareButton">
+	    <input type="button" class="button tiny" id="compareClearAll" value="<venda_text id=desktop.button.clear_all>"/>
+		<input type="button" class="button tiny right" id="compareAll" value="<venda_text id=desktop.button.compare_products>">
+	</div>
+</div>
+</div>
+</venda_block label=003>
+</venda_block label=002>
+</venda_block label=001>

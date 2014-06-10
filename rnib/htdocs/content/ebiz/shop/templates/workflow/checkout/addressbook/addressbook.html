@@ -1,0 +1,153 @@
+<div id="addressbook">
+<venda_block label=myaccount1,workflow=myaccount>
+<venda_tpcomment><!-- Start: wrapper for myaccount workflow with off canvas myaccountnav --></venda_tpcomment>
+	<div class="thickpad">
+</venda_block label=myaccount1>
+
+<venda_block label=checkout,workflow=checkout>
+<venda_tpcomment><!-- Start: wrapper for checkout workflow --></venda_tpcomment>
+
+<div class="row">
+    <div class="<venda_workflow> <venda_curstep> columns large-16<venda_block label=41,workflow=checkout> marg-top</venda_block label=41><venda_block label=42,workflow=myaccount> push-2</venda_block label=42>">
+</venda_block label=checkout>
+
+		<h1 class="pad-bottom"><venda_text id=desktop.heading.address_book></h1>
+
+		<venda_block label=1,errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=1>
+		<venda_block label=2,param2=add,errors=null><p class="alert-box alert radius" data-alert=""><venda_text id=desktop.info.address_added></p></venda_block label=2>
+
+		<venda_block label=4,param2=edit,param1=null,errors=null><p class="alert-box alert radius" data-alert=""><venda_text id=desktop.info.address_edited></p></venda_block label=4>
+
+		<p><venda_text id=desktop.info.instructions></p>
+
+	    <form method="post" name="<venda_curstep>listform" action="<venda_codehttps>">
+        <input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+        <input type="hidden" name="step" value="<venda_block workflow=checkout>ordersummary</venda_block>">
+        <input type="hidden" name="mode" value="process" />
+        <input type="hidden" name="workflowid" value="<venda_workflowid>" />
+        <venda_block errors=null><input type="hidden" name="curlayout" value="checkout" /></venda_block>
+        <input type="hidden" name="trrfnbr" value="<venda_trrfnbr>" />
+        <input type="hidden" name="curstep" value="<venda_curstep>" />
+        <input type="hidden" name="curparam2" value="<venda_param2>">
+        <venda_block workflow!=checkout><input type="hidden" name="update"></venda_block>
+
+		<div class="row thickpad-bottom">		
+		<div class="large-12 columns"><a href='<venda_wizurl step=addressbookadd,param1=null>' class="button radius"><venda_text id=desktop.button.add_new_address></a></div>
+		<div class="large-12 columns right text-right marg-bottom"><venda_block label=419,workflow=checkout><input type="submit" value="Back to Order Summary" class="button radius" /></venda_block label=419></div>
+		</div>
+    	<div id="addressList">
+			<ul>
+					<venda_detblock>
+					        <li id="Addr<venda_abrfnbr1>" class="address<venda_block adtype1=1> address-billing</venda_block><venda_block adtype1=0> address-delivery</venda_block><venda_block default1=1> address-default</venda_block>">
+
+							<div class="columns large-11 small-11">
+						        <venda_block label=10,abrfnbr1&gt;0>
+
+							        <venda_block label=63,default1=1><input type="hidden" name="update" value="<venda_abrfnbr1>"></venda_block label=63>
+
+									<input type="hidden" name="abrfnbr" value="<venda_abrfnbr1>">
+
+									<h2 class="address-header js-addressname">
+									<venda_block label=101,adtype1=1>
+										<venda_text id=desktop.heading.billing_address>
+									</venda_block label=101>
+									<venda_block label=102,adtype1=0>
+										<venda_block label=11,mode=value,<venda_company1>=c/o <venda_setting type=ebiz,name=name>><venda_text id=desktop.heading.deliver_to_store></venda_block label=11>
+										<venda_block label=12,mode=value,<venda_company1>!=c/o <venda_setting type=ebiz,name=name>><venda_text id=desktop.heading.delivery_address>
+										</venda_block label=12>
+										<venda_block label=13,addrname1=notnull> - <venda_addrname1></venda_block label=13>
+									</venda_block label=102>
+									</h2>
+
+									<div class="vcard small-24 large-12 left">
+										<span class="fn"><strong><venda_title1> <venda_fname1><venda_block label=77,mname1=notnull> <venda_mname1></venda_block label=77> <venda_lname1></strong></span><br>
+										<span class="org"><venda_block label=31,company1=notnull><venda_company1><br></venda_block label=31></span>
+										<span class="adr">
+						                    <span class="street-address"><venda_block label=41,num1=notnull><venda_num1> </venda_block label=41><venda_addr11><venda_block label=3,addr21=notnull><br><venda_addr21></venda_block label=3></span><br>
+
+						    				<venda_tpcomment><!-- if country is US or US Non-48 display this formatting --></venda_tpcomment>
+						    				<venda_block label=999,mode=value,<venda_cntry1>=United States,<venda_cntry1>=United States Non-48,<venda_cntry1>=United States Armed Forces,operator=or>
+						    				<span class="locality"><venda_city1></span>, <venda_block label=42,state1=notnull><span class="region"><venda_state1></span> </venda_block label=42><span class="postal-code"><venda_zipc1></span><br>
+						                    </venda_block label=999>
+
+						    				<venda_tpcomment><!-- if country is NOT US or US entities display this formatting --></venda_tpcomment>
+						    				<venda_block label=9991,mode=value,<venda_cntry1>!=United States,<venda_cntry1>!=United States Non-48,<venda_cntry1>!=United States Armed Forces,operator=and>
+						    				<span class="locality"><venda_city1></span><br>
+						    				<venda_block label=42,state1=notnull><span class="region"><venda_state1></span> </venda_block label=42><span class="postal-code"><venda_zipc1></span><venda_block label=1234,state1=notnull,zipc1=notnull,operator=or><br></venda_block label=1234>
+						    				</venda_block label=9991>
+
+						    				<span class="country-name"><venda_cntry1></span>
+						                </span>
+						                <venda_block label=12,phone1=notnull><br><span class="tel"><venda_phone1></span></venda_block label=12>
+									</div>
+
+								</venda_block label=10>
+
+					        </div>
+					      	<div class="columns large-12 small-12 marg-top">
+
+					      		<venda_tpcomment><!-- Default delivery address --></venda_tpcomment>
+					      		<venda_block label=delivery,default1=1><p><strong>Delivery Address</strong></p></venda_block label=delivery>
+
+					      		<venda_block label=5,default1=0>
+						        	<a href='<venda_wizurl step=addressbook,mode=process>&abrfnbr=<venda_abrfnbr1>&update=<venda_abrfnbr1>&trrfnbr=<venda_trrfnbr1>&trrfext=1&curstep=addressbook' class="button radius small secondary marg-bottom"><venda_text id=desktop.button.make_default_address></a>
+						        </venda_block label=5>
+
+						        
+
+							        <venda_tpcomment><!-- Edit billing address / only when on myaccount workflow --></venda_tpcomment>
+
+						        	<venda_block label=billing,adtype1=1>
+										<venda_block label=myaccount,workflow=myaccount><a href="<venda_codehttps>?ex=tl_user-myform&bsref=<venda_bsref>&layout=myaccount&htxt=<venda_htxt mode=make,addr=change>" class="button radius small secondary"><venda_text id=desktop.button.edit_billing_details></a></venda_block label=myaccount>
+									</venda_block label=billing>
+
+							        <venda_tpcomment><!-- Edit delivery address --></venda_tpcomment>
+
+									<venda_block label=132,adtype1=0>
+
+						                <venda_block label=330,mode=value,<venda_company1>!=c/o <venda_setting type=ebiz,name=name>>
+						                <venda_tpcomment><!-- User delivery address --></venda_tpcomment>
+											<a href='<venda_wizurl step=addressbookedit,param1=<venda_abrfnbr1>,param2=edit>' class="button small radius secondary"><venda_text id=desktop.button.edit></a>
+										</venda_block label=330>
+
+										<venda_block label=331,mode=value,<venda_company1>=c/o <venda_setting type=ebiz,name=name>>
+										<venda_tpcomment><!-- Deliver to Store --></venda_tpcomment>
+											<a href='<venda_wizurl step=delivertostoreedit,param1=<venda_abrfnbr1>,param2=storeadd><venda_block label=9,workflow=myaccount>&layout=1column</venda_block label=9>' class="button small radius secondary"><venda_text id=desktop.button.edit></a>
+										</venda_block label=331>
+
+									</venda_block label=132>
+								
+					      	</div>
+					    </li>
+					</venda_detblock>
+            		<venda_detail>
+          		</ul>
+		</div>
+		<div class="row thickpad-bottom">
+		<div class="large-12 columns right text-right marg-bottom"><venda_block label=416,workflow=checkout><input type="submit" value="Back to Order Summary" class="button radius" /></venda_block label=416></div>
+		<div class="large-12 columns"><venda_block label=417,workflow=myaccount><a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>" class="button radius"><venda_text id=desktop.button.my_account></a></venda_block label=417></div>
+		</div>
+	    </form>
+
+
+<venda_block label=checkout2,workflow=checkout>
+<venda_tpcomment><!-- End: wrapper for checkout workflow --></venda_tpcomment>
+	</div>
+	
+	<div class="large-7 columns marg-top">
+        <venda_inctemplate name=minicart_detail,type=includes>
+    </div>
+</div>
+</venda_block label=checkout2>
+
+<venda_block label=myaccount2,workflow=myaccount>
+<venda_tpcomment><!-- End: wrapper for myaccount workflow with left myaccountnav --></venda_tpcomment>
+	</div>
+</venda_block label=myaccount2>
+
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+<venda_tpcomment><!-- Used for checkout step indicators --></venda_tpcomment>
+<venda_tpxt mode=set,name=curstep,value=step3>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.address_book>>
+</div>

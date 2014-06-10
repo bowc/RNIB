@@ -1,0 +1,15 @@
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/mobile/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/mobile/Venda.js"></script>
+
+<venda_tpcomment><!-- attributes.js --></venda_tpcomment>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/mobile/attributes.js"></script>
+
+<venda_tpcomment><!-- countrySelect.js and Tracking.js --></venda_tpcomment>
+<venda_block label=3,workflow=checkoutmobile,workflow=registermobile,workflow=myaccountmobile,workflow=addresslookup,workflow=shopcartmobile,operator=or>
+    <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/mobile/countrySelect.js"></script>
+    <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/mobile/Tracking.js"></script>
+</venda_block label=3>
+<venda_block label=4,mode=value,<venda_tpxt mode=get,name=trackingstep>=myaccount/user-myform>
+    <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/mobile/countrySelect.js"></script>
+    <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/mobile/Tracking.js"></script>
+</venda_block label=4>

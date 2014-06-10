@@ -1,0 +1,64 @@
+<div id="communicationoptions">
+<input type="hidden" name="page" value="myaccount">
+<!-- Hit Ext fields need be passed again, if errors are not null -->
+<input type="hidden" name="htxt" value="<venda_htxt mode=make,comm=change>">
+<input type="hidden" name="title" value="<venda_title>">
+<input type="hidden" name="fname" value="<venda_fname>">
+<input type="hidden" name="mname" value="<venda_mname>">
+<input type="hidden" name="lname" value="<venda_lname>">
+<input type="hidden" name="usemail" value="<venda_usemail>">
+<input type="hidden" name="uspswd" value="<venda_uspswd>">
+<input type="hidden" name="uspswd2" value="<venda_uspswd2>">
+<input type="hidden" name="zipc" value="<venda_zipc>">
+
+<div class="main-header"><h1><venda_text id=desktop.heading.communication_options></h1></div>
+<venda_block label=3,errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=3>
+
+<venda_tpcomment><!-- Start: Your Communication Options --></venda_tpcomment>
+
+<div class="hideoverflow">
+	<div class="large-6 columns textlabel">
+		<span><venda_text id=desktop.form.preferences></span>
+	</div>
+	<div class="large-18 columns communication-options">
+		
+		<fieldset class="thickmarg-bottom">
+			<legend class="thickmarg-bottom"><venda_text id=desktop.form.company_communication_options></legend>
+			<div>
+				<input type="checkbox" name="blkemail" value="1"<venda_block label=002,blkemail=1> checked</venda_block label=002>><label for="blkemail" class="display-inline thinmarg-left">By email</label>
+			</div>
+			<div>
+				<input type="checkbox" name="blkpost" value="1"<venda_block label=001,blkpost=1> checked</venda_block label=001>><label for="blkpost" class="display-inline thinmarg-left">By post</label>		
+			</div>			
+		</fieldset>
+		
+		<fieldset class="thickmarg-bottom thickmarg-top">
+			<legend class="thickmarg-bottom"><venda_text id=desktop.form.3rdparty_communication_options></legend>
+			<input type="checkbox" name="blktrdcomm" value="1"<venda_block label=004,blktrdcomm=1> checked</venda_block label=004>><label for="blktrdcomm" class="display-inline thinmarg-left">By email</label>		
+		</fieldset>		
+		
+		
+	</div>
+</div>
+
+<venda_tpcomment><!-- bulksms only works if the site uses the area phone field. We no longer use this so the validation needs removing from the core code. User extended fields will need to used for this is required  --></venda_tpcomment>
+
+<div class="hideoverflow">
+	<div class="large-6 columns">
+		<label for="usmailform" class="inline"><venda_text id=desktop.form.email_format></label>
+	</div>
+	<div class="large-18 columns">
+		<select name="usmailform" id="usmailform">
+			<option value="0"><venda_text id=desktop.form.email_format_default></option>
+			<option value="1"<venda_block label=usmailform1,usmailform=1> selected</venda_block label=usmailform1>><venda_text id=desktop.form.email_format_html></option>
+			<option value="2"<venda_block label=usmailform2,usmailform=2> selected</venda_block label=usmailform2>><venda_text id=desktop.form.email_format_text></option>
+		</select>
+	</div>
+</div>
+
+<venda_tpcomment><!-- End: Your Communication Options --></venda_tpcomment>
+<div id="buttons" class="thickpad-bottom thickpad-top hideoverflow">
+<div class="large-12 columns marg-bottom"><a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>" class="button secondary radius"><venda_text id=desktop.button.my_account></a></div>
+<div class="large-12 columns right text-right"><input type="submit" value="<venda_text id=desktop.button.save_changes>" class="button radius"></div>
+</div>
+</div>

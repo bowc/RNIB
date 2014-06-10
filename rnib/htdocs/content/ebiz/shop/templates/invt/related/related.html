@@ -1,0 +1,35 @@
+<venda_block label=78,invtref!=giftcert>
+<li class="prod">
+	<div class="prod-image">
+		<venda_block label=4,med-<venda_setting type=ebiz,name=setrelatedprodimagekey>=notnull>
+		<a href="<venda_dispview invt=<venda_invtref>>&bklist=<venda_bklist>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setrelatedprodimagekey>></a>
+		</venda_block label=4>
+		<venda_block label=5,med-<venda_setting type=ebiz,name=setrelatedprodimagekey>=null>
+		<a href="<venda_dispview invt=<venda_invtref>>&bklist=<venda_bklist>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setrelatedprodimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>"></a>
+		</venda_block label=5>
+	</div>
+	<div class="prod-details">
+		<h3 class="prod-name"><a href="<venda_dispview invt=<venda_invtref>>&bklist=<venda_bklist>"><venda_invtname></a></h3>
+		<div class="prod-pricedetails">
+		<venda_inctemplate type=includes,name=priceFormat>
+		</div>
+	</div>
+</li>
+</venda_block label=78>
+
+<venda_block label=79,invtref=giftcert>
+<li class="prod prod-giftcert">
+	<div class="prod-image">
+		<venda_block label=412,med-<venda_setting type=ebiz,name=setrelatedprodimagekey>=notnull>
+		<a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setrelatedprodimagekey>></a>
+		</venda_block label=412>
+		<venda_block label=422,med-<venda_setting type=ebiz,name=setrelatedprodimagekey>=null>
+		<a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setrelatedprodimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>"></a>
+		</venda_block label=422>
+	</div>
+	<div class="prod-details">
+		<h3 class="prod-name"><a href="<venda_codehttp>?ex=co_wizr-giftcertificates&bsref=<venda_bsref>"><venda_invtname></a></h3>
+		<div class="prod-pricedetails"><venda_inctemplate type=includes,name=priceFormat></div>
+	</div>
+</li>
+</venda_block label=79>

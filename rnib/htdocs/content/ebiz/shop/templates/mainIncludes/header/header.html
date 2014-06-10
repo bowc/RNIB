@@ -1,0 +1,62 @@
+<venda_tpcomment><!-- tag values used for minicart update without reload --></venda_tpcomment>
+<div id="tag-addedmsgref" style="display:none;"><venda_addedmsg msg=addedref></div>
+<div id="tag-bsref" style="display:none;"><venda_bsref></div>
+<div id="tag-addedmsg" style="display:none;"><venda_block label=32,mode=value,<venda_addedmsg msg=addedref>=notnull><venda_addedmsg msg=addedref></venda_block label=32></div>
+<div id="tag-headertext" style="display:none;"><span><venda_text id=desktop.heading.your_cart></span></div>
+<venda_tpcomment><!-- shown for tablet portrait and larger --></venda_tpcomment>
+<div class="logo columns show-for-tablet-portrait-up"><venda_block label=nothome,pageref!=home><a href="<venda_dispview page=home>"><img id="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/rnib.png" alt="<venda_ebizname>"> <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/rnib-strapline.png" alt="supporting blind and partially sighted people"></a></venda_block label=nothome><venda_block label=home,pageref=home><h1><img id="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/rnib.png" alt="<venda_ebizname>"> <img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/rnib-strapline.png" alt="supporting blind and partially sighted people"></h1></venda_block label=home></div>
+<div class="header-row-one show-for-tablet-portrait-up">
+
+        <div class="large-16 columns nopad">
+            <div class="right">
+                <ul class="user-login inline-list">
+                    <li class="welcome"><venda_block label=1,ustype=R><venda_userinfo><venda_text id=desktop.info.welcome_back> <span class="show-for-desktop-up"><venda_sesfname> <venda_seslname></span></venda_userinfo></venda_block label=1><venda_block label=2,ustype!=R><venda_text id=desktop.info.welcome_to> <venda_setting type=ebiz,name=name></venda_block label=2></li>
+                    <venda_block label=20,ustype=R>
+                    <li class="js-myaccount"><venda_block label=300,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1><a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>"></venda_block label=300><venda_block label=301,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>"></venda_block label=301><venda_text id=desktop.button.my_account></a></li>
+                    <li class="js-logout"><a href="<venda_dispview page=home>&log=4"><venda_text id=desktop.button.log_out></a></li>
+                    </venda_block label=20>
+                    <venda_block label=21,ustype!=R>
+                    <li class="js-login"><a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>"><venda_text id=desktop.button.log_in_register></a></li>
+                    </venda_block label=21>
+                </ul>
+                <venda_block label=200,mode=value,<venda_ebxtcurrencyConvert>=1>
+                    <venda_tpcomment><!-- currencyConverter --></venda_tpcomment>
+                    <venda_inctemplate name=currencyConverter,type=widgets>
+                </venda_block label=200>
+
+            </div>
+        </div>
+        <div class="large-8 columns hide-for-small nopad">
+            <div id="basketSection">
+			    <div class="js-addingtobasket" style="display:none;"><venda_text id=desktop.button.addingtobasket></div>
+                <div class="js-addtobasket" style="display:none;"><venda_text id=desktop.button.addtobasket></div>
+                <venda_minicart template=itemsTotal>
+                <div id="minicartDetailWrapper" class="minicartDetailWrapper"></div>
+            </div>
+        </div>
+
+</div>
+<venda_tpcomment><!-- shown for mobile/small only --></venda_tpcomment>
+<div class="header-row-one show-for-small" id="header-row-one">
+    <ul class="row">
+        <li class="small-6 columns header-user"><a href="#js-canvas-content-left" id="js-canvas-left" class="js-canvas-left" aria-controls="js-canvas-content-left"><span class="hidescreenreadersafe"><venda_text id=desktop.button.my_account></span> <i class="icon-angle-left"></i><i class="icon-user"></i></a></li>
+        <li class="small-12 columns header-logo"><div class="logo columns"><venda_block label=nothome,pageref!=home><a href="<venda_dispview page=home>"><img id="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/rnib.png" alt="<venda_ebizname>"></a></venda_block label=nothome><venda_block label=home,pageref=home><h1><img id="logo" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/rnib.png" alt="<venda_ebizname>"></h1></venda_block label=home></div></li>
+        <li class="small-6 columns end header-cart"><a href="#js-canvas-content-right" id="js-canvas-right" class="js-canvas-right right"
+		aria-controls="js-aria-minicart"><span class="hidescreenreadersafe"><venda_text id=desktop.button.view_shopping_cart></span><i class="icon-shopping-cart"></i><venda_minicart template=itemsTotalMini><i class="icon-angle-right"></i></a></li>
+    </ul>
+</div>
+
+<div class="header-row-two thinpad-bottom" id="header-row-two">
+    <div class="row">
+        <div class="search">
+            <h5 class="search-header hide"><venda_text id=desktop.heading.search></h5>
+            <form id="formsolrsearch" name="formsolrsearch" action="/search">
+              <div class="small-24 medium-24 large-24 columns nopad">
+                <label for="q"><venda_text id=desktop.form.keyword>:</label>
+                <input type="search" size="20" id="q" name="q" placeholder="<venda_text id=desktop.form.enter_keyword>" class="search-input">
+                <input type="submit" class="secondary button search-button" value="Go" id="searchsubmit">
+              </div>
+            </form>
+        </div>
+    </div>
+</div>

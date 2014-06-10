@@ -1,0 +1,31 @@
+<div class="<venda_workflow> <venda_curstep>">
+	<div class="checkoutmobile-wrapper">
+		<div class="checkoutmobile-content">
+			<div class="checkoutmobile-header borderBt">
+				<h1><venda_text id=mobile.heading.order_receipt></h1>
+				<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+			</div>
+			<div class="checkoutmobile-content-inner">
+				<p class="thankyou"><venda_text id=mobile.info.order_receipt_thankyou></p>
+				<p><venda_text id=mobile.info.order_number>: <venda_ohordnum></p>
+				<p><venda_text id=mobile.info.order_email_message></p>
+			</div>
+		</div><!--end checkoutmobile-content -->
+	</div><!--end checkoutmobile-wrapper -->
+
+	<div class="submitButton">
+		<a class="continue" href="<venda_dispview page=home>" data-role="button"><venda_text id=mobile.button.continue_shopping></a>
+	</div>
+	<div class="submitButton">
+		<venda_block label=83,mode=value,<venda_glxt mode=get,name=glxtusertype>!=p,<venda_ohpaytype>!=12>
+		<a href="<venda_dispview page=myaccount>" data-role="button"><venda_text id=mobile.button.my_account></a>
+		</venda_block label=83>
+	</div>
+</div>
+
+<venda_tpcomment><!-- Used for checkout step indicators --></venda_tpcomment>
+<venda_tpxt mode=set,name=curstep,value=step5>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=mobile.heading.order_receipt>>
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_inctemplate name=orderReceipt,type=tracking/mobile/shared>

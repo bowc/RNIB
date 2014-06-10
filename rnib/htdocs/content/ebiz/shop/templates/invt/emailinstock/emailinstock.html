@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    jQuery(function() {
+        jQuery("body").trigger("emailmebackform-loaded");
+    });
+</script>
+<div class="thickpad">
+<form action="<venda_codehttp>" method="get" id="emailmebackform" name="emailmebackform">
+<input type="hidden" name="ex" value="tl_emlinstock-emailme">
+<input type="hidden" name="bsref" value="<venda_bsref>">
+<input type="hidden" name="invtref" value="<venda_invtref>"><input type="hidden" name="dispviewref" value="<venda_invtref>">
+<input type="hidden" name="invt" value="<venda_invtref>">
+<input type="hidden" name="layout" value="">
+<input type="hidden" name="temp" value="thankyou">
+<input type="hidden" name="htxt" value="<venda_htxt mode=make,foo=emailinstock>">
+<input type="hidden" name="page" value="">
+<div id="emailmeback">
+	<h1><venda_text id=desktop.heading.email_when_in_stock></h1>
+	<div><label for="bisemail" class="inline"><venda_text id=desktop.form.email></label> <input name="bisemail" type="email" value="<venda_block label=1,ustype=R><venda_userinfo><venda_sesusemail></venda_userinfo></venda_block label=1>" id="bisemail" maxlength="150"></div>	
+	
+	<div id="buttons" class="row thickpad-bottom">
+		<div class="large-12 columns small-12 marg-bottom"><a href="<venda_dispview invt=<venda_invtref>>" id="back_link" class="button radius"><venda_text id=desktop.button.cancel></a></div>
+		<div class="large-12 columns small-12 right text-right marg-bottom"><input type="submit" alt="<venda_text id=desktop.button.continue>" id="<venda_text id=desktop.button.continue>" value="<venda_text id=desktop.button.continue>" class="button radius"></div>
+	</div>
+	
+</div>
+</form>
+
+<div id="email-when-in-stock-invtref" style="display: none"><venda_invtref></div>
+<div id="email-when-in-stock-invtname" style="display: none"><venda_invtname></div>
+
+<!-- tpxt used for crumbtrail -->
+<venda_tpxt mode=set,name=invtname,value=<venda_invtname>>
+<venda_tpxt mode=set,name=track,value=emailinstock>
+</div>

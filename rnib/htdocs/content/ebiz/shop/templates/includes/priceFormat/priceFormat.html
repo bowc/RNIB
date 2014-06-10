@@ -1,0 +1,179 @@
+<venda_tpcomment><!-- NON ATTRIBUTE --></venda_tpcomment>
+<venda_block label=noatt,invtatrtot&lt;1>
+	<venda_tpcomment><!-- no savings --></venda_tpcomment>
+	<venda_block label=noatt_nosavings,mode=value,<venda_invtsavingonwas>=>
+	
+	<!-- if vat inclusive price exists -->
+		<venda_block label=showmsrp,mode=value,<venda_invtmsrp>&gt;<venda_invtsell>>
+			<p class="inc-vat">
+			<venda_currsym><venda_invtmsrp> inc VAT
+			</p>
+			<p class="prod-pricefield">
+				<span class="prod-pricenow"><span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtsell> ex VAT</span></span>
+			</p>
+		</venda_block label=showmsrp>
+		
+	<!-- if nobody pays vat on a product -->
+		<venda_block label=hidemsrp,mode=value,<venda_invtmsrp>=<venda_invtsell>>
+			<div class="single-price">
+				<p class="prod-pricefield single-price">
+					<span class="prod-pricenow"><span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtsell> </span></span>
+				</p>
+			</div>
+		</venda_block label=hidemsrp>
+		
+	</venda_block label=noatt_nosavings>
+	<venda_tpcomment><!-- savings --></venda_tpcomment>
+	<venda_block label=noatt_savings,mode=value,<venda_invtsavingonwas>!=>		
+	
+	<!-- if vat inclusive price exists -->
+		<venda_block label=showmsrp,mode=value,<venda_invtmsrp>&gt;<venda_invtsell>>
+			<p class="inc-vat">Including VAT
+				<span class="prod-pricenow"><span><venda_text id=desktop.info.price_now></span> <span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtmsrp></span></span>,
+				<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span class="prod-price-was js-prod-price" id="atrwas"><venda_currsym><venda_invtcost></span></span>
+			</p>		
+			<p class="prod-pricefield">Excluding VAT 
+				<span class="prod-pricenow"><span><venda_text id=desktop.info.price_now></span> <span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtsell></span></span>, 
+				<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span class="prod-price-was js-prod-price" id="atrwas"><venda_currsym><venda_invtwas></span></span>
+			</p>
+		</venda_block label=showmsrp>
+		
+	<!-- if nobody pays vat on a product -->
+		<venda_block label=hidemsrp,mode=value,<venda_invtmsrp>=<venda_invtsell>>		
+			<div class="single-price">
+				<p class="prod-pricefield">
+					<span class="prod-pricenow"><span><venda_text id=desktop.info.price_now></span> <span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtsell> </span></span> 
+					<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span class="prod-price-was js-prod-price" id="atrwas"><venda_currsym><venda_invtwas></span></span>
+				</p>
+			</div>
+		</venda_block label=hidemsrp>
+		
+	</venda_block label=noatt_savings>
+</venda_block label=noatt>
+
+
+<venda_tpcomment><!-- ATTRIBUTE --></venda_tpcomment>
+<venda_block label=att,invtatrtot&gt;0>
+
+	<venda_tpcomment><!-- no savings --></venda_tpcomment>
+	<venda_block label=att_nosavings,mode=value,<venda_invtatrminsubsell>=0.00,<venda_invtatrminsubsell>&gt;<venda_invtatrminsubwas>,<venda_invtatrminsubsell>=<venda_invtatrminsubwas>,operator=or>
+
+			<venda_block label=att_nosavings_basic,mode=value,<venda_invtatrminsubsell>=0.00>
+
+				<venda_block label=att_nosavings_basic_nowas,mode=value,<venda_invtsavingonwas>=>
+				
+						<!-- if vat inclusive price exists -->
+						<venda_block label=showmsrp,mode=value,<venda_invtmsrp>&gt;<venda_invtsell>>
+							<p class="inc-vat">
+							<venda_currsym><venda_invtmsrp> inc VAT
+							</p>
+							<p class="prod-pricefield">
+								<span class="prod-pricenow"><span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtsell> ex VAT</span></span>
+							</p>
+						</venda_block label=showmsrp>
+				
+						<!-- if nobody pays vat on a product -->
+							<venda_block label=hidemsrp,mode=value,<venda_invtmsrp>=<venda_invtsell>>
+								<div class="single-price">
+									<p class="prod-pricefield single-price">
+										<span class="prod-pricenow"><span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtsell> </span></span>
+									</p>
+								</div>
+							</venda_block label=hidemsrp>
+		
+				</venda_block label=att_nosavings_basic_nowas>
+
+				<venda_block label=att_nosavings_basic_was,mode=value,<venda_invtsavingonwas>!=>
+				
+					<!-- if vat inclusive price exists -->
+						<venda_block label=showmsrp,mode=value,<venda_invtmsrp>&gt;<venda_invtsell>>
+							<p class="inc-vat">Including VAT
+								<span class="prod-pricenow"><span><venda_text id=desktop.info.price_now></span> <span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtmsrp></span></span>,
+								<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span class="prod-price-was js-prod-price" id="atrwas"><venda_currsym><venda_invtcost></span></span>
+							</p>		
+							<p class="prod-pricefield">Excluding VAT 
+								<span class="prod-pricenow"><span><venda_text id=desktop.info.price_now></span> <span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtsell></span></span>, 
+								<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span class="prod-price-was js-prod-price" id="atrwas"><venda_currsym><venda_invtwas></span></span>
+							</p>
+						</venda_block label=showmsrp>
+				
+					<!-- if nobody pays vat on a product -->
+						<venda_block label=hidemsrp,mode=value,<venda_invtmsrp>=<venda_invtsell>>		
+							<div class="single-price">
+								<p class="prod-pricefield">
+									<span class="prod-pricenow"><span><venda_text id=desktop.info.price_now></span> <span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtsell> </span></span>, 
+									<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span class="prod-price-was js-prod-price" id="atrwas"><venda_currsym><venda_invtwas></span></span>
+								</p>
+							</div>				
+				
+				</venda_block label=att_nosavings_basic_was>
+
+			</venda_block label=att_nosavings_basic>
+			<venda_block label=att_nosavings_adv,mode=value,<venda_invtatrminsubsell>!=0.00>
+
+				<venda_tpcomment><!-- same price --></venda_tpcomment>
+				<venda_block label=att_nosavings_adv_sameprice,mode=value,<venda_invtatrminsubsell>=<venda_invtatrmaxsubsell>>
+					<div class="single-price">
+						<p class="prod-pricefield">
+							<span class="prod-pricenow"><span class="prod-price js-prod-price" id="price" itemprop="price"><venda_currsym><venda_invtatrminsubsell></span></span>
+						</p>
+					</div>
+				</venda_block label=att_nosavings_adv_sameprice>
+
+				<venda_tpcomment><!-- different price --></venda_tpcomment>
+				<venda_block label=att_nosavings_adv_diffprice,mode=value,<venda_invtatrminsubsell>!=<venda_invtatrmaxsubsell>>
+					<div class="single-price">
+						<p class="prod-pricefield">
+							<span class="prod-pricenow"><span class="prod-price js-prod-price" id="price"><span itemprop="price"><venda_currsym><venda_invtatrminsubsell></span> - <venda_currsym><venda_invtatrmaxsubsell></span></span>
+						</p>
+					</div>
+				</venda_block label=att_nosavings_adv_diffprice>
+
+			</venda_block label=att_nosavings_adv>
+		
+	</venda_block label=att_nosavings>
+
+	<venda_tpcomment><!-- savings --></venda_tpcomment>
+	<venda_block label=att_savings,mode=value,<venda_invtatrminsubsell>!=0.00,<venda_invtatrminsubsell>&lt;<venda_invtatrminsubwas>,operator=and>
+		
+
+			<venda_block label=att_savings_basic,mode=value,<venda_invtatrminsubsell>=>
+				<div class="single-price">
+					<p class="prod-pricefield"><span class="prod-pricenow"><span id="price" class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtsell></span></span></p>
+				</div>
+			</venda_block label=att_savings_basic>
+
+			<venda_block label=att_savings_adv,mode=value,<venda_invtatrminsubsell>!=>
+
+				<venda_tpcomment><!-- same price --></venda_tpcomment>
+				<venda_block label=att_savings_adv_sameprice,mode=value,<venda_invtatrminsubsell>=<venda_invtatrmaxsubsell>>
+					<p class="inc-vat">
+						<span class="prod-pricenow"><span><venda_text id=desktop.info.price_now></span> <span class="prod-price js-prod-price" id="price" itemprop="price"><venda_currsym><venda_invtatrminsubsell></span></span>, 
+						<venda_block label=att_savings_adv_sameprice_single,mode=value,<venda_invtatrminsubwas>=<venda_invtatrmaxsubwas>>
+							<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span class="prod-price-was js-prod-price" id="atrwas"><venda_currsym><venda_invtatrminsubwas></span></span>
+						</venda_block label=att_savings_adv_sameprice_single>
+						<venda_block label=att_savings_adv_sameprice_range,mode=value,<venda_invtatrminsubwas>!=<venda_invtatrmaxsubwas>>
+							<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span id="atrwas"><span class="prod-price-was js-prod-price"><venda_currsym><venda_invtatrminsubwas></span> - <span class="prod-price-was js-prod-price"><venda_currsym><venda_invtatrmaxsubwas></span></span></span>
+						</venda_block label=att_savings_adv_sameprice_range>
+					</p>
+				</venda_block label=att_savings_adv_sameprice>
+
+				<venda_tpcomment><!-- different price --></venda_tpcomment>
+				<venda_block label=att_savings_adv_diffprice,mode=value,<venda_invtatrminsubsell>!=<venda_invtatrmaxsubsell>>
+				<p class="inc-vat">
+					<span class="prod-pricenow"><span id="price"><venda_text id=desktop.info.price_now> <span class="prod-price js-prod-price" itemprop="price"><venda_currsym><venda_invtatrminsubsell></span> - <span class="prod-price js-prod-price"><venda_currsym><venda_invtatrmaxsubsell></span></span></span>, 
+						<venda_block label=att_savings_adv_diffprice_single,mode=value,<venda_invtatrminsubwas>=<venda_invtatrmaxsubwas>>
+							<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span id="atrwas"><span class="prod-price-was js-prod-price"><venda_currsym><venda_invtatrminsubwas></span></span></span>
+						</venda_block label=att_savings_adv_diffprice_single>
+						<venda_block label=att_savings_adv_diffprice_range,mode=value,<venda_invtatrminsubwas>!=<venda_invtatrmaxsubwas>>
+							<span class="prod-price-was"><span><venda_text id=desktop.info.price_was></span> <span id="atrwas"><span class="prod-price-was js-prod-price"><venda_currsym><venda_invtatrminsubwas></span> - <span class="prod-price-was js-prod-price"><venda_currsym><venda_invtatrmaxsubwas></span></span></span>
+						</venda_block label=att_savings_adv_diffprice_range>
+				</p>
+				</venda_block label=att_savings_adv_diffprice>
+
+			</venda_block label=att_savings_adv>
+
+		
+	</venda_block label=att_savings>
+
+</venda_block label=att>

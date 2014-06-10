@@ -1,0 +1,17 @@
+<venda_block label=62,paymentavailable=notnull>
+    <fieldset class="f-fortis thickmarg-topbottom">
+        <legend><venda_text id=desktop.info.fortis></legend>
+        <div class="fortis">
+            <input type="radio" name="ohpaytype" value="13" id="fortis" <venda_block label=65,paymentused=notnull>checked</venda_block label=65>><label for="fortis"><span class="thinpad-side"><venda_text id=desktop.form.fortis></span></label>
+        </div>
+        <br>
+        <p class="fortistext nomarg"><venda_text id=desktop.info.fortis.placeorder_text></p>
+        <select name="pm" id="methodtype"><venda_paymentselectmethod></select>
+    </fieldset>
+    <hr>
+    <venda_block label=67,checkfullamount=notnull>
+    <script type="text/javascript">
+        document.wizform.sendpaypaid.readOnly=true;
+    </script>
+    </venda_block label=67>
+</venda_block label=62>

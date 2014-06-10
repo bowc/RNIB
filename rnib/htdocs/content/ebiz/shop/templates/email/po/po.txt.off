@@ -1,0 +1,87 @@
+<venda_detblock1><cr>
+==============================================================================<cr>
+<venda_text id=desktop.heading.post_purchase><cr>
+==============================================================================<cr><cr>
+<venda_text id=desktop.info.recipient_c> <venda_pktitle> <venda_pkfname><venda_block label=75,pkmname=notnull><venda_pkmname></venda_block label=75> <venda_pklname><cr><cr>
+<venda_text id=desktop.heading.delivery_address> <venda_block label=77,pkcompany=notnull><venda_pkcompany><cr></venda_block label=77>
+<venda_pknum> <venda_pkaddr1><cr>
+<venda_block label=72,pkaddr2=notnull><venda_pkaddr2><cr></venda_block label=72>
+<venda_block label=720,pkcity=notnull><venda_pkcity><cr></venda_block label=720>
+<venda_block label=73,pkstate=notnull><venda_pkstate> </venda_block label=73><venda_block label=721,pkzipc=notnull><venda_pkzipc><cr></venda_block label=721>
+<venda_pkcntry><cr>
+<venda_text id=desktop.form.phone>: <venda_block label=76,pkphone=notnull><venda_pkarea> <venda_pkphone><cr></venda_block label=76>
+<venda_block label=41,pkshipmthd=notnull>
+<venda_text id=desktop.info.delivery_method>: <venda_pkshipmthd><cr><cr>
+</venda_block label=41>
+
+==============================================================================<cr>
+<venda_text id=desktop.info.items>:<cr>
+==============================================================================<cr><cr>
+<venda_detail2>
+</venda_detblock1>
+
+<venda_detblock2>
+<venda_oiivname>
+<venda_block label=111,invtatt1=notnull> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>, <venda_invtatt2></venda_block label=112>)</venda_block label=111>
+<venda_block label=221,oigwref=notnull> (<venda_text id=desktop.info.gift_wrapped>)</venda_block label=221>
+ (<venda_invtsell> <venda_ohcur>) x <venda_oiqty> = <venda_oiextsub> <venda_ohcur>
+	(<venda_ohstatus>)
+<cr>
+<venda_block label=45,oiitype=3>
+<venda_text id=desktop.info.send_to>: <venda_gcto> <venda_text id=desktop.info.at> <venda_gcemail><cr>
+<venda_block label=880,gcexpires=notnull><venda_text id=desktop.form.expiry_date>: <venda_gcexpires><cr></venda_block label=880>
+<venda_text id=desktop.info.message>: <venda_oicmt><cr>
+<cr>
+</venda_block label=45>
+</venda_detblock2>
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.purchase_order> - <venda_ponum><cr>
+==============================================================================<cr><cr>
+
+<venda_text id=desktop.info.dear> <venda_toname><cr><cr>
+
+<venda_text id=desktop.info.po_message_1><cr>
+<venda_text id=desktop.info.order_number> <venda_ohordnum>.<cr>
+<venda_text id=desktop.info.order_date>: <venda_ohstmp><cr><cr>
+
+==============================================================================<cr>
+<venda_text id=desktop.info.business_details><cr>
+==============================================================================<cr><cr>
+<venda_text id=desktop.form.name>: <venda_ebizname><cr>
+<venda_text id=desktop.form.address>: <venda_ebizaddr1><cr>
+<venda_block label=711,ebizaddr2=notnull><venda_ebizaddr2><cr></venda_block label=711>
+<venda_block label=714,ebizcity=notnull><venda_ebizcity><cr></venda_block label=714>
+<venda_block label=712,ebizstate=notnull><venda_ebizstate> </venda_block label=712><venda_block label=713,ebizzipc=notnull><venda_ebizzipc><cr></venda_block label=713>
+<venda_ebizcntry><cr>
+<venda_text id=desktop.form.phone>: <venda_ebizarea> <venda_ebizphone><cr>
+<venda_text id=desktop.info.fax_number>: <venda_ebizfarea> <venda_ebizfax><cr><cr>
+
+==============================================================================<cr>
+<venda_text id=desktop.info.contact_details><cr>
+==============================================================================<cr><cr>
+<venda_text id=desktop.info.cardholder>:<cr>
+<venda_ohtitle> <venda_ohfname> <venda_ohlname><cr><cr>
+<venda_text id=desktop.form.address>: <venda_block label=811,ohcompany=notnull><venda_ohcompany><cr></venda_block label=811>
+<venda_ohnum> <venda_ohaddr1><cr>
+<venda_block label=812,ohaddr2=notnull><venda_ohaddr2><cr></venda_block label=812>
+<venda_block label=816,ohcity=notnull><venda_ohcity><cr></venda_block label=816>
+<venda_block label=813,ohstate=notnull><venda_ohstate> </venda_block label=813><venda_block label=817,ohzipc=notnull><venda_ohzipc><cr></venda_block label=817>
+<venda_ohcntry><cr>
+<venda_block label=814,oharea=notnull,ohphone=notnull><venda_text id=desktop.form.phone>: <venda_oharea> <venda_ohphone><cr></venda_block label=814>
+<venda_block label=815,ohemail=notnull><venda_text id=desktop.form.email>: <venda_ohemail><cr></venda_block label=815>
+<venda_detail1><cr>
+------------------------------------------------------------------------------<cr>
+<venda_text id=desktop.info.items>: <venda_ohsub> <venda_ohcur><cr>
+<venda_text id=desktop.info.delivery_cost> <venda_ohship> <venda_ohcur><cr>
+<venda_block label=651,ohtax!=0.00,ohtax=notnull>
+<venda_text id=desktop.info.estimated_tax> <venda_ohtax> <venda_ohcur><cr>
+</venda_block label=651>
+<venda_block label=670,ohgwtot&gt;0>
+<venda_text id=desktop.info.giftwrapping> <venda_ohgwtot> <venda_ohcur><cr>
+</venda_block label=670>
+------------------------------------------------------------------------------<cr>
+<venda_text id=desktop.info.order_total>  n<venda_ohtot> <venda_ohcur><cr>
+<venda_block label=92,ohtaxinc!=0.00,ohtaxinc=notnull>
+<venda_text id=desktop.info.including_vat_text><cr>
+</venda_block label=92>
+------------------------------------------------------------------------------<cr>

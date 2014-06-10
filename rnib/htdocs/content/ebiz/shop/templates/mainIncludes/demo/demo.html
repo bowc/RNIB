@@ -1,0 +1,22 @@
+<!-- start instore bar -->
+<venda_block label=100,usgrref=instore>
+<venda_block label=101,workflow!=instore>
+	<venda_inctemplate name=instorebar,type=mainIncludes>
+</venda_block label=101>
+</venda_block label=100>
+<!-- end instore bar -->
+<venda_block label=39,mode=value,<venda_islive>!=1>
+<!-- start demo bar -->
+<div class="row notices" id="demo">
+    <div class="large-24 columns">
+        <div class="alert-box alert radius">
+            <div class="row">
+                <div class="small-12 columns"><venda_text id=desktop.info.demo_warning></div>
+                <div class="small-11 columns end text-right">v14.1</div>
+            </div>
+            <a class="close icon-remove" href="#"><span class="hidescreenreadersafe"><venda_text id=desktop.button.close></span></a>
+        </div>
+    </div>
+</div>
+<!-- end demo bar -->
+</venda_block label=39>

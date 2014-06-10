@@ -1,0 +1,14 @@
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email.pw_reminder><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader2,type=emailIncludes>
+
+<venda_text id=desktop.info.pw_reminder_message_1><cr>
+<venda_text id=desktop.info.pw_reminder_message_2><cr><cr>
+
+<venda_text id=desktop.info.email_address> <venda_block label=1,usemail=notnull><venda_usemail></venda_block label=1><venda_block label=2,usemail=null,uslogin=notnull><venda_uslogin></venda_block label=2><cr><cr>
+
+<venda_text id=desktop.info.password> <venda_block label=3,password=notnull><venda_password></venda_block label=3><cr><cr>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes> 

@@ -1,0 +1,51 @@
+<li class="box">
+
+    <form method="post" enctype="multipart/form-data" name="wizform<venda_ohrfnbr>" action="<venda_codehttp>" class="boxContent">
+    <input type="hidden" name="ex" value="co_wizr-myaccount" />
+    <input type="hidden" name="step" value="--shopcart" />
+    <input type="hidden" name="param1" value="reorder" />
+    <input type="hidden" name="param2" value="<venda_ohrfnbr>" />
+    <input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+    <input type="hidden" name="trrfext" value="<venda_block label=115,mode=value,<venda_protocol>=https>1</venda_block label=115>" />
+    <input type="hidden" name="curstep" value="orderlist" />
+    <input type="hidden" name="workflowid" value="<venda_workflow>" />
+    <input type="hidden" name="curlayout" value="myaccount" />
+    <input type="hidden" name="bsref" value="<venda_bsref>" />
+
+    <venda_detblock_package>
+    <table summary="<venda_text id=desktop.info.order_history_table_summary>" title="<venda_text id=desktop.info.order_history_table_title>" class="wizrtable">
+    <tr>
+        <th scope="row" class="hdrOrderDate" align="right" valign="top"><venda_text id=desktop.info.order_date>:</th>
+        <td class="orderDate"><venda_ohdeldate><venda_tpcomment><!-- ohodateen,ohodatemonth,ohodateday,ohodateyear tags don't translate here --></venda_tpcomment></td>
+    </tr>
+    <tr>
+        <th scope="row" class="hdrOrderNum" align="right" valign="top"><venda_text id=desktop.info.order_number>:</th>
+        <td class="orderNum"><venda_ohordnum></td>
+    </tr>
+    <tr>
+        <th scope="row" class="hdrOrderStatus" align="right" valign="top"><venda_text id=desktop.info.order_status>:</th>
+        <td class="orderStatus">
+        <venda_block label=10,mode=value,<venda_ohstatus>=On Hold><venda_text id=desktop.info.order_status_in_progress></venda_block label=10>
+        <venda_block label=11,mode=value,<venda_ohstatus>=Released for delivery><venda_text id=desktop.info.order_status_released_for_delivery></venda_block label=11>
+        <venda_block label=12,mode=value,<venda_ohstatus>=Backordered><venda_text id=desktop.info.order_status_backordered></venda_block label=12>
+        <venda_block label=13,mode=value,<venda_ohstatus>=Delivered><venda_text id=desktop.info.order_status_delivered></venda_block label=13>
+        <venda_block label=14,mode=value,<venda_ohstatus>=Returned><venda_text id=desktop.info.order_status_returned></venda_block label=14>
+        <venda_block label=15,mode=value,<venda_ohstatus>=Cancelled><venda_text id=desktop.info.order_status_cancelled></venda_block label=15>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="hdrItems" align="right" valign="top"><venda_text id=desktop.info.items_in_this_order></th>
+        <td class="items">
+        <ul><venda_order ref=<venda_ohrfnbr>,shopcart=1,template=orderHistoryItemDisplay,formfields=true></ul>
+        </td>
+    </tr>
+    </table>
+    <div class="buttonsHistory">
+        <a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>&step=displayorder&param1=<venda_ohrfnbr>&param2=user&formid=<venda_ohrfnbr>&layout=checkout" class="button buttonAlt vieworder"><venda_text id=desktop.button.view_order> <venda_ohordnum></a>
+        <venda_block label=1500,mode=value,<venda_setting type=ebiz,name=disablereorderbutton>!=1><input type="submit" value="<venda_text id=desktop.button.reorder> <venda_ohordnum>" class="button buttonAlt buttonArrow submit right"></venda_block label=1500>
+    </div>
+    </venda_detblock_package>
+
+    <venda_detail_package>
+    </form>
+</li>

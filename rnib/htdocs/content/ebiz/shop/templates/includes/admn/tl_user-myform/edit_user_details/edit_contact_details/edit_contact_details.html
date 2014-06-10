@@ -1,0 +1,109 @@
+<venda_tpcomment><!-- this is used (required!) by Facebook Connect --></venda_tpcomment>
+<fieldset>
+<div>
+       <label for="title"><venda_text id=desktop.form.title></label>
+   <select name="title" id="title">
+      <option value="Mr"<venda_block label=mr,mode=value,<venda_title>=Mr> selected</venda_block label=mr>><venda_text id=desktop.form.title.mr></option>
+           <option value="Mrs"<venda_block label=mrs,mode=value,<venda_title>=Mrs> selected</venda_block label=mrs>><venda_text id=desktop.form.title.mrs></option>
+           <option value="Miss"<venda_block label=miss,mode=value,<venda_title>=Miss> selected</venda_block label=miss>><venda_text id=desktop.form.title.miss></option>
+           <option value="Ms"<venda_block label=ms,mode=value,<venda_title>=Ms> selected</venda_block label=ms>><venda_text id=desktop.form.title.ms></option>
+           <option value=" "<venda_block label=other,mode=value,<venda_title>=null> selected</venda_block label=other>><venda_text id=desktop.form.title.other></option>
+   </select>
+   </div>
+   <hr>
+   <div>
+      <label for="fname"><venda_text id=desktop.form.fname></label>
+      <input type="text" name="fname" id="fname" value="<venda_fname>" placeholder="<venda_text id=desktop.form.fname> <venda_text id=desktop.form.required>" required="required"  />
+   </div>
+   <hr>
+      <div>
+      <label for="lname"><venda_text id=desktop.form.lname></label>
+      <input type="text" name="lname" id="lname" value="<venda_lname>" placeholder="<venda_text id=desktop.form.lname> <venda_text id=desktop.form.required>" required="required" />
+   </div>
+</fieldset>
+<hr>
+<fieldset>
+   <div>
+      <label for="company"><venda_text id=site.contact_address.label.company></label>
+      <venda_company field=text,maxlength=60>
+   </div>
+   <hr>
+   <venda_block mode=value,<venda_setting type=ebiz,name=nohousenum>!=1>
+   <div>
+      <label for="num"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.house_name_flat_number></label>
+      <venda_num field=text,maxlength=20,required=yes>
+   </div>
+   <hr>
+   </venda_block>
+   <div>
+      <label for="addr1"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.address></label>
+      <venda_addr1 field=text,maxlength=50,required=yes>
+   </div>
+   <hr>
+   <div>
+      <label for="addr2"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.address2></label>
+      <venda_addr2 field=text,maxlength=50>
+   </div>
+   <hr>
+   <div>
+      <label for="city"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.city></label>
+      <venda_city field=text,maxlength=30,required=yes>
+   </div>
+   <hr>
+   <div id="stateDiv">
+      <label for="state" id="stateLabel"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.county></label>
+      <span id="statelistbox"><select id="statelist" name="statelist"></select></span>
+      <span id="statetextbox"><input type="text" id="statetext" name="state" value="<venda_state>" maxlength="20" /></span>
+   </div>
+   <hr>
+   <div id="zipcDiv">
+      <label for="zipc" id="zipcLabel"><venda_text id=site.edit_contact_address.label.postcode></label>
+      <venda_zipc field=text,maxlength=20>
+   </div>
+   <hr>
+   <div id="countryDiv">
+      <label for="cntry" id="countryLabel"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.country></label>
+      <venda_cntry field=combo,required=yes>
+   </div>
+   <hr>
+   <div>
+      <label for="phone"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.phone_number></label>
+      <venda_phone field=text,size=18,maxlength=20,required=yes>
+   </div>
+   <venda_block mode=value,<venda_setting type=ebiz,name=hidearea>!=1>
+   <hr>
+   <div>
+      <label for="areacode"><venda_text id=site.my_account.edit_user_details.edit_contact_details.label.phone_area_code></label>
+      <venda_area field=text,size=4,maxlength=6,required=yes>
+   </div>
+   </venda_block>
+   <venda_block label=showfax,mode=value,<venda_setting type=ebiz,name=showfax>=1>
+   <hr>
+   <div>
+      <label for="fax"><venda_text id=site.contact_address.label.fax_number></label>
+      <venda_fax field=text,size=18,maxlength=20>
+   </div>
+   <venda_block label=hidearea,mode=value,<venda_setting type=ebiz,name=hidearea>!=1>
+   <hr>
+   <div>
+      <label><venda_text id=site.contact_address.label.fax_area_code></label>
+      <venda_farea field=text,size=4,maxlength=6>
+   </div>
+   </venda_block label=hidearea>
+   </venda_block label=showfax>
+</fieldset>
+<venda_tpxt mode=set,name=myacctrack,value=editdetails>
+
+<!-- Venda vars to be passed to JS -->
+<div id="venda_cntry" style="display: none;"><venda_cntry></div>
+<div id="venda_state" style="display: none;"><venda_state></div>
+<div id="venda_locn" style="display: none;"><venda_sessionlocation></div>
+
+<!-- Localisation to be passed to JS -->
+<div id="user_details_label_required" style="display: none;"><venda_text id=site.accessible.label.required></div>
+<div id="user_details_label_us_state" style="display: none;"><venda_text id=site.contact_address.label.us_state></div>
+<div id="user_details_label_us_zip" style="display: none;"><venda_text id=site.contact_address.zipc.us_zipcode></div>
+<div id="user_details_label_uk_county" style="display: none;"><venda_text id=site.contact_address.label.uk_county></div>
+<div id="user_details_label_non_us_postcode" style="display: none;"><venda_text id=site.contact_address.zipc.non_us_postcode></div>
+<div id="user_details_label_non_us_uk_region" style="display: none;"><venda_text id=site.contact_address.label.non_us_uk_region></div>
+<div id="please_select_multi_dot" style="display: none;"><venda_text id=site.attributes.product_detail.please_select_multi_dot></div>

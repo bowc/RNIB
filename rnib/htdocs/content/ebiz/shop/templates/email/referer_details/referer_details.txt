@@ -1,0 +1,20 @@
+<venda_detblock1>
+<venda_nameref>: <venda_emailref><cr>
+</venda_detblock1>
+
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=site.email.referer_details.title><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader2,type=emailIncludes>
+
+<venda_text id=site.email.referer_details.msg1><cr>
+
+<venda_text id=site.email.referer_details.msg2><cr>
+<venda_detail1><cr><cr>
+
+<venda_ebizname> <venda_text id=site.email.referer_details.text.msg3><cr><cr>
+
+<venda_inctemplate name=textEmailTandC,type=emailIncludes>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

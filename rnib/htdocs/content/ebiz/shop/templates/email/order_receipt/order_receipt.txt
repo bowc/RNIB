@@ -1,0 +1,27 @@
+<venda_inctemplate name=textEmailDetblocks,type=emailIncludes>
+
+==============================================================================<cr>
+<venda_ebizname> <venda_block label=76,ohreplnbr=null><venda_text id=desktop.heading.email.order_receipt></venda_block label=76><venda_block label=77,ohreplnbr=notnull><venda_block label=78,ohpaytype=6><venda_text id=desktop.heading.email.order_receipt_free></venda_block label=78> <venda_text id=desktop.heading.email.order_receipt_repl_order> - <venda_ohordnum></venda_block label=77><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader,type=emailIncludes>
+
+<venda_block label=66,ohreplnbr=null>
+<venda_text id=desktop.info.order_receipt.message_1> <venda_ebizname>.
+
+<venda_text id=desktop.info.order_receipt.message_2> <venda_ohordnum>.
+</venda_block label=66>
+<venda_block label=67,ohreplnbr=notnull>
+<venda_text id=desktop.info.order_receipt.message_3> <venda_ohordnum>.
+</venda_block label=67>
+
+<venda_text id=desktop.info.order_receipt.message_4>
+
+<venda_inctemplate name=textEmailBody,type=emailIncludes>
+<venda_block mode=value,label=121,<venda_tpxt mode=get,name=hasdownload>!=>
+<venda_text id=desktop.info.order_receipt.message_5> <venda_text id=desktop.info.my_account_page>: <venda_dispview page=myaccount>.<cr>
+</venda_block label=121>
+<venda_block label=68,ohreplnbr=null>
+<venda_inctemplate name=textEmailMessage,type=emailIncludes>
+</venda_block label=68>
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

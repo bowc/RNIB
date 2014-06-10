@@ -1,0 +1,31 @@
+<venda_detblock_shiptaxbreakdown>
+	<venda_block label=160,showshipdetails=1,vcp=null>
+		<venda_block label=170,shipamnt!=0.00,shipamnt=notnull>
+			<tr><td><venda_shipname> <venda_currsym><venda_shipamnt></td></tr>
+		</venda_block label=170>
+	</venda_block label=160>
+</venda_detblock_shiptaxbreakdown>
+
+<venda_detblock_shipdetail>
+	<td><venda_currsym><venda_taxvalue> (<venda_taxrate>%)</td>
+</venda_detblock_shipdetail>
+
+<venda_detblock_shiptax_title>
+	<th><venda_taxname></th>
+</venda_detblock_shiptax_title>
+
+<venda_block label=1500,showshiptax=1,showshipbd=1,operator=or>
+
+	<venda_block label=200,showshiptax=1,showshipbd=1,vcpgen=1>
+		<tr><td></td><venda_detail_shiptax_title></tr>
+	</venda_block label=200>
+	<venda_detail_shiptaxbreakdown>
+	<venda_block label=250,vcpgen=1>
+		<tr><th scope="row" class="text-left"><venda_text id=order.shipTaxBreakDown.subtot> <venda_currsym><venda_pkship></th>
+		<venda_block label=300,showshiptax=1,showshipbd=1>
+			<td class="text-right"><venda_text id=order.shipTaxBreakDown.taxsubtot> <venda_pktaxtot> (<venda_pktaxratetot>%)</td>
+		</venda_block label=300>
+		</tr>
+	</venda_block label=250>
+
+</venda_block label=1500>

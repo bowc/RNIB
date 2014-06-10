@@ -1,0 +1,23 @@
+<venda_block errors=notnull><p><venda_errors></p></venda_block>
+
+<p><venda_text id=desktop.info.facebook_3></p>
+
+<form name="connect_login_form" target="_top" method="post" action="/login/facebook" id="addressform">
+   <fieldset>
+      <div>
+         <label><venda_text id=adm_47></label>
+         <venda_email field=text,maxlength=30>
+      </div>
+      <hr>
+      <div>
+         <label><venda_text id=adm_48></label>
+         <venda_password field=password,maxlength=30>
+      </div>
+   </fieldset>
+   <div>
+      <input name="submit_button" type="submit" value="<venda_text id=desktop.button.connect_facebook>" class="button" />
+   </div>
+</form>
+<!-- template: templates/facebook/connectauth/connectauth.html -->
+<venda_tpxt mode=set,name=trackingstep,value=facebook-connect>
+<venda_inctemplate name=workflowSteps,type=tracking/shared>

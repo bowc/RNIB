@@ -1,0 +1,9 @@
+<venda_block label=72,paymentavailable=notnull>
+    <fieldset class="f-purchaseorder thickmarg-topbottom">
+        <legend><venda_text id=desktop.info.purchaseorder></legend>
+        <div class="po">
+            <input type="radio" name="ohpaytype" value="3" id="purchaseorder" <venda_block label=76,paymentused=notnull,paymenttypestot=1,operator=or>checked</venda_block label=76><venda_block label=24,paymenttypestot=1> style="display:none"</venda_block label=24>><label for="purchaseorder"><span class="thinpad-side"><venda_text id=desktop.form.purchaseorder></span></label>
+            <div class="ohponum"><label for="ohponum"><venda_text id=desktop.form.ohponum></label> <venda_ohponum field=text,maxlength=15,onfocus="document.getElementById('purchaseorder').checked=true"></div>
+        </div>
+    </fieldset>
+</venda_block label=72>

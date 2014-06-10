@@ -1,0 +1,46 @@
+<title>
+<venda_tpcomment><!-- Product --></venda_tpcomment>
+<venda_block label=1,rtype=invt>
+<venda_block label=11,pdxtseotitle=notnull><venda_pdxtseotitle></venda_block label=11>
+<venda_block label=12,pdxtseotitle=null><venda_block label=555,invtbrand=notnull>"<venda_invtbrand>" </venda_block label=555><venda_invtname> <venda_text id=mobile.info.at> <venda_setting type=ebiz,name=name></venda_block label=12>
+</venda_block label=1>
+<venda_tpcomment><!-- Category --></venda_tpcomment>
+<venda_block label=2,rtype=icat>
+<venda_block label=icxttitle,icxtseotitle=notnull><venda_icxtseotitle></venda_block label=icxttitle>
+<venda_block label=noicxttitle,icxtseotitle=null>
+<venda_icatname>
+<venda_block label=icatsearch,mode=value,<venda_tpxt mode=get,name=activecategory>=notnull> <venda_search_terms template=titleMobile></venda_block label=icatsearch> <venda_text id=mobile.info.at> <venda_setting type=ebiz,name=name>
+</venda_block label=noicxttitle>
+</venda_block label=2>
+<venda_tpcomment><!-- Page --></venda_tpcomment>
+<venda_block label=3,rtype=page>
+<venda_block label=31,pgxtseotitle=notnull><venda_pgxtseotitle></venda_block label=31>
+<venda_block label=32,pgxtseotitle=null><venda_pagename> <venda_text id=mobile.info.at> <venda_setting type=ebiz,name=name></venda_block label=32>
+</venda_block label=3>
+<venda_tpcomment><!-- Page Category --></venda_tpcomment>
+<venda_block label=4,rtype=pcat>
+<venda_block label=41,pcxtseotitle=notnull><venda_pcxtseotitle></venda_block label=41>
+<venda_block label=42,pcxtseotitle=null><venda_pcatname> <venda_text id=mobile.info.at> <venda_setting type=ebiz,name=name></venda_block label=42>
+</venda_block label=4>
+<venda_tpcomment><!-- Story --></venda_tpcomment>
+<venda_block label=5,stryref=notnull>
+<venda_block label=51,stxtseotitle=notnull><venda_stxtseotitle></venda_block label=51>
+<venda_block label=52,stxtseotitle=null><venda_stryname> <venda_text id=mobile.info.at> <venda_setting type=ebiz,name=name></venda_block label=52>
+</venda_block label=5>
+<venda_tpcomment><!-- Story Category --></venda_tpcomment>
+<venda_block label=6,rtype=scat>
+<venda_block label=61,scxtseotitle=notnull><venda_scxtseotitle></venda_block label=61>
+<venda_block label=62,scxtseotitle=null><venda_scatname> <venda_text id=mobile.info.at> <venda_setting type=ebiz,name=name></venda_block label=62>
+</venda_block label=6>
+<venda_tpcomment><!-- Search  --></venda_tpcomment>
+<venda_block label=search,mode=value,<venda_tpxt mode=get,name=activekeyword>=notnull><venda_search_terms template=titleMobile>
+<venda_block label=searchnotstar,mode=value,<venda_tpxt mode=get,name=activekeyword>!=*> <venda_text id=mobile.info.at> </venda_block label=searchnotstar><venda_setting type=ebiz,name=name></venda_block label=search>
+<venda_tpcomment><!-- checkout  --></venda_tpcomment>
+<venda_block label=7,workflow=notnull>
+    <venda_block label=71,errors=null><venda_block label=72,mode=value,<venda_tpxt mode=get,name=title>=notnull><venda_tpxt mode=get,name=title> <venda_text id=mobile.info.at> </venda_block label=72></venda_block label=71><venda_setting type=ebiz,name=name>
+</venda_block label=7>
+
+<venda_tpcomment><!-- Errors --></venda_tpcomment>
+<venda_block label=9,errors=notnull> <venda_text id=mobile.info.errors_on_page></venda_block label=9>
+</title>
+<venda_tpcomment><!-- Set TPXT --></venda_tpcomment><venda_block label=9,pageref=home><venda_tpxt mode=set,name=home,value=1></venda_block label=9><venda_block label=10,icatref=notnull><venda_tpxt mode=set,name=icatref,value=<venda_icatref>></venda_block label=10>

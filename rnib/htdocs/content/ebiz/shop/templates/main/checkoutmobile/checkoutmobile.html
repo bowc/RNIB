@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="<venda_block label=40,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=40><venda_block label=41,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=41>">
+<head>
+	<venda_inctemplate name=titleMobile,type=mainIncludes>
+	<venda_inctemplate name=metatagsMobile,type=mainIncludes>
+	<venda_inctemplate name=jsHeadMobile,type=mainIncludes>
+	<venda_inctemplate name=cssMobile,type=mainIncludes>
+</head>
+
+<body> 
+	<div id="mobile" class="checkoutmobilelayout" data-role="page" data-theme="a">
+		<div data-role="header">
+			<venda_block label=111,workflow=shopcartmobile,workflow=myaccountmobile,workflow=registermobile,operator=or>
+				<venda_inctemplate name=headerMobile,type=mainIncludes>
+			</venda_block label=111>
+			<venda_block label=222,workflow!=shopcartmobile,workflow!=myaccountmobile,workflow!=registermobile>
+				<venda_inctemplate name=checkoutHeaderMobile,type=mainIncludes>
+			</venda_block label=222>
+		</div><!-- /header -->
+		
+		<div data-role="content">
+			<venda_content>		
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<venda_inctemplate name=footerMobile,type=mainIncludes>
+		</div><!-- /footer -->
+	</div><!-- /page -->
+
+	<venda_tpcomment><!-- validation defs --></venda_tpcomment>
+	<venda_inctemplate name=validationMobile,type=includes>
+	<venda_inctemplate name=jsCheckoutMobile,type=mainIncludes>
+	<venda_inctemplate name=bodyBottom,type=tracking/mobile/shared>
+</body>
+</html>

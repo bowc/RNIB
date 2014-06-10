@@ -1,0 +1,11 @@
+ ==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email.abandcart_notification><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader2,type=emailIncludes>
+
+<venda_text id=desktop.info.abandcart_notification_message_1> <venda_ebizname>.<cr>
+<venda_text id=desktop.info.abandcart_notification_message_2> <venda_serveradd> <venda_text id=desktop.info.abandcart_notification_message_3> <venda_dispview page=signin>.<cr>
+<venda_text id=desktop.info.abandcart_notification_message_4><cr>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

@@ -1,0 +1,17 @@
+<li class="prod<venda_block label=25,itemcount=1> prod-first</venda_block label=25>">
+<div class="prod-image">
+	<venda_block label=141,med- <venda_setting type=ebiz,name=setspotlightproductsimagekey>=notnull>
+		<a href="<venda_dispview invt=<venda_invtref>>"><venda_media rec=invt,type=movie-swf-pict,key=<venda_setting type=ebiz,name=setspotlightproductsimagekey>></a>
+	</venda_block label=141>
+	<venda_block label=142,med-<venda_setting type=ebiz,name=setspotlightproductsimagekey>=null>
+		<a href="<venda_dispview invt=<venda_invtref>>"><img src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/images/no_image_<venda_setting type=ebiz,name=setspotlightproductsimagekey>.gif" alt="<venda_text id=desktop.info.no_product_image>"></a>
+	</venda_block label=142>
+</div>
+<div class="prod-details">
+	<h3 class="prod-name"><a href="<venda_dispview invt=<venda_invtref>>"><venda_invtname></a></h3>
+	<venda_inctemplate type=includes,name=priceFormat>
+	<venda_block label=120,mode=value,<venda_tpxt mode=get,name=more>!=>
+	<p class="prod-moreinfo"><a class="small success button" href="<venda_dispview invt=<venda_invtref>>" title="<venda_text id=desktop.info.no_product_image>"><venda_tpxt mode=get,name=more> <i class="icon-double-angle-right"></i></a></p>
+	</venda_block label=120>
+</div>
+</li>

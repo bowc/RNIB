@@ -1,0 +1,155 @@
+<div id="billingaddressedit">
+<div class="row js-editaddressform">
+
+    <div class="<venda_workflow> <venda_curstep> large-16 columns marg-top">
+    	<div>
+    		<h1 class="pad-bottom"><venda_text id=desktop.heading.edit_billing_address></h1>
+    		<div>
+    			<venda_block errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block>
+    		</div>
+    	</div>
+
+    	<div>
+    	<form method="post" name="<venda_curstep>form" action="<venda_codehttps>" class="js-custom">
+    		<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+    		<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+    		<input type="hidden" name="curstep" value="<venda_curstep>" />
+    		<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+    		<input type="hidden" name="mode" value="process" />
+    		<venda_block errors=null><input type="hidden" name="curlayout" value="checkout" /></venda_block>
+    		<input type="hidden" name="exgroup" value="all" /><venda_tpcomment><!-- Required for user extended fields --></venda_tpcomment>
+    		<input type="hidden" name="step" value="ordersummary" />
+    		<input type="hidden" name="curparam1" value="show" />
+    		<input type="hidden" name="curparam2" value="edit" />
+    		<venda_block label=19,mode=value,<venda_glxt mode=get,name=glxtusertype>=p><input type="hidden" name="ustype" value="P"></venda_block label=19>
+		<fieldset>
+			<div class="row">
+			<div class="large-6 columns">
+				<label for="title" class="inline"><venda_text id=desktop.form.title></label>
+			</div>
+			<div class="large-18 columns">
+				<select name="title" id="title">
+					<option value="Mr"<venda_block label=mr,mode=value,<venda_title>=Mr> selected</venda_block label=mr>><venda_text id=desktop.form.title.mr></option>
+					<option value="Mrs"<venda_block label=mrs,mode=value,<venda_title>=Mrs> selected</venda_block label=mrs>><venda_text id=desktop.form.title.mrs></option>
+					<option value="Miss"<venda_block label=miss,mode=value,<venda_title>=Miss> selected</venda_block label=miss>><venda_text id=desktop.form.title.miss></option>
+					<option value="Ms"<venda_block label=ms,mode=value,<venda_title>=Ms> selected</venda_block label=ms>><venda_text id=desktop.form.title.ms></option>
+					<option value=" "<venda_block label=other,mode=value,<venda_title>=null> selected</venda_block label=other>><venda_text id=desktop.form.title.other></option>
+				</select>
+			</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns"><label for="fname" class="inline"><venda_text id=desktop.form.fname> <span class="hidescreenreadersafe"><venda_text id=desktop.form.required></span></label></div>
+				<div class="large-18 columns"><input type="text" autocorrect="off" name="fname" id="fname" value="<venda_fname>" placeholder="<venda_text id=desktop.form.fname> <venda_text id=desktop.form.required>" required="required"  /></div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns"><label for="lname" class="inline"><venda_text id=desktop.form.lname> <span class="hidescreenreadersafe"><venda_text id=desktop.form.required></span></label></div>
+				<div class="large-18 columns"><input type="text" autocorrect="off" name="lname" id="lname" value="<venda_lname>" placeholder="<venda_text id=desktop.form.lname> <venda_text id=desktop.form.required>" required="required" /></div>
+			</div>
+		</fieldset>
+		<hr><br>
+		<fieldset>
+			<div class="row">
+				<div class="large-6 columns"><label for="cntrylist" class="inline"><venda_text id=desktop.form.country> <span class="hidescreenreadersafe"><venda_text id=desktop.form.required></span></label></div>
+				<div class="large-18 columns">		
+				
+				<select id="cntrylist" name="cntry">
+					<option value="United Kingdom" selected="selected">United Kingdom</option>
+				</select>
+
+				</div>
+			</div>
+			<div id="js-hideOrShowAddress">
+				<div class="row">
+					<div class="large-6 columns"><label for="company" class="inline"><venda_text id=desktop.form.company></label></div>
+					<div class="large-18 columns"><input type="text" autocorrect="off" name="company" id="company" value="<venda_company>" placeholder="<venda_text id=desktop.form.company> <venda_text id=desktop.form.optional>" /></div>
+				</div>
+				<div id="houseNum" class="row">
+					<div class="large-6 columns"><label for="num" class="inline"><venda_text id=desktop.form.house_num></label></div>
+					<div class="large-18 columns"><input type="text" autocorrect="off" name="num" id="num" value="<venda_num>" placeholder="<venda_text id=desktop.form.house_num>" /></div>
+				</div>
+				<div class="row">
+					<div class="large-6 columns"><label for="addr1" class="inline"><venda_text id=desktop.form.addr1> <span class="hidescreenreadersafe"><venda_text id=desktop.form.required></span></label></div>
+					<div class="large-18 columns"><input type="text" autocorrect="off" name="addr1" id="addr1" value="<venda_addr1>" placeholder="<venda_text id=desktop.form.addr1> <venda_text id=desktop.form.required>" required="required" /></div>
+				</div>
+				<div class="row">
+					<div class="large-6 columns"><label for="addr2" class="inline"><venda_text id=desktop.form.addr2></label></div>
+					<div class="large-18 columns"><input type="text" autocorrect="off" name="addr2" id="addr2" value="<venda_addr2>" placeholder="<venda_text id=desktop.form.addr2>" /></div>
+				</div>
+				<div class="row">
+					<div class="large-6 columns"><label for="city" class="inline"><venda_text id=desktop.form.city> <span class="hidescreenreadersafe"><venda_text id=desktop.form.required></span></label></div>
+					<div class="large-18 columns"><input type="text" autocorrect="off" name="city" id="city" value="<venda_city>" placeholder="<venda_text id=desktop.form.city> <venda_text id=desktop.form.required>" required="required" /></div>
+				</div>
+				<div id="stateDiv" class="row">
+					<div class="large-6 columns"><label for="statetext" id="stateLabel" class="inline"><venda_text id=desktop.form.state> <span class="hidescreenreadersafe"><venda_text id=desktop.form.required></span></label></div>
+					<div class="large-18 columns"><input type="text" autocorrect="off" name="state" id="statetext" value="<venda_state>" placeholder="<venda_text id=desktop.form.state> <venda_text id=desktop.form.required>" required="required" />
+					<select name="state" id="statelist"></select></div>
+				</div>
+			</div>
+			<div id="zipcDiv" class="row">
+                <div class="large-6 columns"><label for="zipc" id="zipcLabel" class="inline"><venda_text id=desktop.form.zipc></label></div>
+                <div class="large-18 columns">
+                    <div class="row collapse">
+                        <div class="large-16 columns">
+                            <input type="text" autocorrect="off" name="zipc" id="zipc" value="<venda_zipc>" placeholder="<venda_text id=desktop.form.zipc> <venda_text id=desktop.form.required>" />
+                        </div>
+                        <div class="js-addresslookup large-8 columns">
+                            <a href="#" class="button radius expand postfix nopad" id="js-lookupBtn" data-inline="true"><span class="pad-right"><venda_text id=desktop.button.lookup></span><i class="icon-spinner icon-spin icon-2x" style="display:none;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- returned address lookup-->
+            <div id="addresslookup" class="js-addresslookup marg-top">
+                <div class="row">
+                    <div class="large-6 columns"></div>
+                    <div class="large-18 columns"><div class="alert-box alert radius text-center" data-alert="" style="display:none"><span id="js-lookup-error"></span></div></div>
+                </div>
+                <div id="uklist"></div>
+                <div id="ukaddress"></div>
+            </div>
+            <div class="row js-addresslookup">
+                <div class="large-6 columns"></div>
+                <div class="large-18 columns thickmarg-bottom"><span class="unavailable" id="js-search-again"><a href="#"><venda_text id=desktop.button.search_again></a> /</span> <a id="js-enterManually" href="#"><venda_text id=desktop.button.enter_address_manually></a></div>
+            </div>
+			<div class="row">
+                <input type="hidden" name="area" value="" />
+				<div class="large-6 columns"><label for="phone" class="inline"><venda_text id=desktop.form.phone> <span class="hidescreenreadersafe"><venda_text id=desktop.form.required></span></label></div>
+				<div class="large-18 columns"><input type="tel" name="phone" id="phone" value="<venda_area><venda_phone>" placeholder="<venda_text id=desktop.form.phone> <venda_text id=desktop.form.required>" required="required" /></div>
+			</div>
+		</fieldset>
+    		<hr>
+		<div id="buttons" class="row thickpad-bottom">
+		<div class="large-12 columns right text-right marg-bottom"><input type="submit" value="<venda_text id=desktop.button.continue>" class="button radius" /></div>
+		<div class="large-12 columns"><a href="<venda_wizurl step=ordersummary>" class="button secondary radius"><venda_text id=desktop.button.cancel></a></div>
+		</div>
+    	</form>
+    	</div>
+    </div>
+	
+	<div class="large-7 columns marg-top">
+            <venda_block label=40,workflow=checkout>
+            	<venda_inctemplate name=minicart_detail,type=includes>
+            </venda_block label=40>
+            <venda_block label=40b,workflow!=checkout>&nbsp;</venda_block label=40b>
+    </div>
+</div>
+
+<venda_inctemplate name=validationRulesScript,type=workflow/checkout>
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+<venda_zones type=countries,template=countrySelect>
+<venda_tpcomment><!-- Used for checkout step indicators --></venda_tpcomment>
+<venda_tpxt mode=set,name=curstep,value=step2>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.edit_billing_address>>
+
+<!-- Localisation to be passed to JS -->
+<div id="tag-zipcodeUrl" style="display: none;"><venda_codehttps>?ex=co_wizr-addresslookup&curstep=addresssubmit&step=addressdropdown&trrfnbr=<venda_userinfo><venda_sesid></venda_userinfo>&trrfext=1&mode=display&amp;param1=details&amp;param2=uk&amp;param3=&zipcodelookup=1&zipc=</div>
+<div id="user_details_label_us_state" style="display: none;"><venda_text id=desktop.form.state_us></div>
+<div id="user_details_label_us_zip" style="display: none;"><venda_text id=desktop.form.zipc_us></div>
+<div id="user_details_placeholder_us_zip" style="display: none;"><venda_text id=desktop.form.zipc_us> <venda_text id=desktop.form.required></div>
+<div id="user_details_label_uk_county" style="display: none;"><venda_text id=desktop.form.state></div>
+<div id="user_details_label_non_us_postcode" style="display: none;"><venda_text id=desktop.form.zipc></div>
+<div id="user_details_label_non_us_postcode_lookup" style="display: none;"><venda_text id=desktop.form.zipc> <venda_text id=desktop.form.required></div>
+<div id="user_details_label_non_us_uk_region" style="display: none;"><venda_text id=desktop.form.region></div>
+<div id="please_select_multi_dot" style="display: none;"><venda_text id=desktop.form.please_select_multi_dot></div>
+</div>

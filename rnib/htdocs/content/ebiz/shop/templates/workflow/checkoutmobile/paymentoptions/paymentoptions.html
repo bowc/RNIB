@@ -1,0 +1,159 @@
+<div class="<venda_workflow> <venda_curstep>"><venda_tpcomment><!-- harded code as venda_curstep is null --></venda_tpcomment>
+
+	<div class="checkoutmobile-wrapper">
+		<div class="checkoutmobile-content">
+			<div class="checkoutmobile-header">
+				<h1><venda_text id=mobile.heading.payment_options><span class="hdr-pci"></span></h1>
+				<venda_block label=1,errors=notnull><h2 class="error"><venda_errors></h2></venda_block label=1>
+			</div>
+
+			<venda_block label=181,flgft=0>
+			<div class="giftcert borderBt bgDark"><venda_tpcomment><!-- Start: Gift Certificate input --></venda_tpcomment>
+				<form method="post" name="<venda_curstep>form-giftcert" action="<venda_codehttps>" data-ajax="false">
+				<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+				<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+				<input type="hidden" name="curstep" value="<venda_curstep>" />
+				<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+				<input type="hidden" name="mode" value="process" />
+				<venda_block errors=null><input type="hidden" name="curlayout" value="checkoutmobile" /></venda_block>
+				<input type="hidden" name="step" value="paymentoptions" />
+				<input type="hidden" name="param1" value="show" />
+				<input type="hidden" name="param2" value="giftcert" />
+
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<label for="giftcode" class="ui-hidden-accessible"><venda_text id=mobile.form.apply_gift_code>:</label>
+						<input type="text" name="giftcode" id="giftcode" value="" placeholder="<venda_text id=mobile.form.enter_a_gift_code>" />
+					</div>
+					<div class="ui-block-b">
+						<input type="submit" id="applyGiftcode" value="<venda_text id=mobile.button.apply>" data-ajax="false" data-role="button" data-inline="true" data-mini="true">
+					</div>
+				</div>
+				</form>
+			</div><venda_tpcomment><!-- End: Gift Certificate input --></venda_tpcomment>
+			</venda_block label=181>
+
+			<venda_tpcomment><!-- Start: Payment Details --></venda_tpcomment>
+			<venda_tpcomment><!-- showpayments is null when the user has store credit that is greater than the value of the order total. In this case store credit (ohpaytype 4) will be the payment method used automatically and there will be no payment --></venda_tpcomment>
+			<form method="post" name="<venda_curstep>form" action="<venda_codehttps>" data-ajax="false">
+				<venda_tpcomment><!-- Core parameters --></venda_tpcomment>
+				<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+				<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+				<input type="hidden" name="curstep" value="<venda_curstep>" />
+				<input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+				<input type="hidden" name="mode" value="process" />
+				<venda_block errors=null><input type="hidden" name="curlayout" value="checkoutmobile" /></venda_block>
+				<venda_tpcomment><!-- Specific to this step --></venda_tpcomment>
+				<input type="hidden" name="step" value="payment" />
+				<input type="hidden" name="exgroup" value="all" />
+				<input type="hidden" name="param1" value="process" /> <venda_tpcomment><!-- If set to process one last stock check is made --></venda_tpcomment>
+
+				<venda_block label=165,showaccount=1,storecreditused&gt;0.00,creditused&gt;0.00,operator=or>
+					<venda_block label=182,enablestorecredit=1,creditused&gt;0.00,operator=or>
+						<venda_tpcomment><!-- showpayments is null when the user has store credit that is greater than the value of the order total. In this case store credit (ohpaytype 4) will be the payment method used automatically and there will be no payment --></venda_tpcomment>
+						<venda_block label=180,showpayments=null>
+						<input type="hidden" name="ohpaytype" value="4">
+						</venda_block label=180>
+						<input type="hidden" name="usestorecredit" value="1">
+					</venda_block label=182>
+				</venda_block label=165>
+				<venda_block label=166,enablefreeorder=1>
+					<venda_block label=661,ohbal=0.00>
+						<input type="hidden" name="ohpaytype" value="8">
+					</venda_block label=661>
+				</venda_block label=166>
+				<venda_block label=11,showpayments=notnull>
+					<venda_tpxt mode=set,name=formname,value=<venda_curstep>>
+					<venda_paymenttypes templatetype=paytype/frontend,template=paymenttypes_entrymobile,ohrfnbr=<venda_ohrfnbr>,entry=1>
+				</venda_block label=11>
+
+				<div class="orderTotals bgDark"><venda_tpcomment><!-- Start: Order Totals --></venda_tpcomment>
+					<div class="labeltext"><span><venda_text id=mobile.info.subtotal>:</span></div>
+					<div class="value"><span><venda_ohcursym><venda_ohsub></span></div>
+
+					<venda_block label=64,showdiscount=1>
+					<!-- start discount -->
+					<div class="labeltext"><span><venda_text id=mobile.info.discount>:</span></div>
+					<div class="value"><span>-<venda_ohcursym><venda_ohdisc></span></div>
+					<!-- end discount -->
+					</venda_block label=64>
+
+					<div class="labeltext"><span><venda_text id=mobile.info.delivery_cost>:</span></div>
+					<div class="value"><span><venda_ohcursym><venda_ohship></span></div>
+
+					<venda_block label=91,ohtax!=0.00,ohtax=notnull>
+					<div class="labeltext"><span><venda_text id=mobile.info.estimated_tax>:</span></div>
+					<div class="value"><span><venda_ohcursym><venda_ohtax></span></div>
+					</venda_block label=91>
+
+					<venda_block label=68,ohgwtot&gt;0>
+					<div class="labeltext"><span><venda_text id=mobile.info.giftwrapping_cost>:</span></div>
+					<div class="value"><span><venda_ohcursym><venda_ohgwtot></span></div>
+					</venda_block label=68>
+
+					<div class="orderTotalSum">
+					<div class="labeltext"><span><venda_text id=mobile.info.order_total>:</span></div>
+					<div class="value"><span><venda_ohcursym><venda_ohtot></span></div>
+					<venda_block label=191,ohtaxinc!=0.00,ohtaxinc=notnull>
+						<div class="value value-vatInc"><span class="label-vatInc"><venda_text id=mobile.info.including_vat></span></div>
+					</venda_block label=191>
+					</div>
+
+					<venda_block label=65,showaccount=1,storecreditused&gt;0.00,creditused&gt;0.00,operator=or>
+						<venda_block label=82,enablestorecredit=1,creditused&gt;0.00,operator=or>
+							<venda_block label=601,workflow=<venda_workflow>,curstep=<venda_curstep>>
+							<venda_block label=180,storecredit=notnull,storecredit&gt;0.00>
+							<venda_block label=280,balance=0.00>
+									<div class="labeltext"><span><venda_text id=mobile.info.store_credit_available>:</span></div>
+									<div class="value"><span><venda_ohcursym><venda_storecredit></span></div>
+							</venda_block label=280>
+									<div class="labeltext"><span><venda_text id=mobile.info.store_credit_used>:</span></div>
+									<div class="value"><span><venda_ohcursym><venda_account></span></div>
+							</venda_block label=180>
+
+							<venda_block label=181,balance&gt;0.00>
+								<div class="labeltext balanceToPay"><span><venda_text id=mobile.info.store_credit_balance>:</span></div>
+								<div class="value balanceToPay"><span><venda_ohcursym><venda_balance></span></div>
+							</venda_block label=181>
+							<venda_block label=821,storecreditremain&gt;0.00>
+									<div class="labeltext"><span><venda_text id=mobile.info.store_credit_remaining></span></div>
+									<div class="value"><span><venda_ohcursym><venda_storecreditremain></span></div>
+							</venda_block label=821>
+							</venda_block label=601>
+						</venda_block label=82>
+					</venda_block label=65>
+					<venda_block label=66,enablefreeorder=1>
+						<venda_taxbreakdown ohrfnbr=<venda_ohrfnbr>,template=shipTaxBreakDown>
+						<venda_block label=661,ohbal=0.00>
+							<div class="freeorder"><venda_text id=mobile.info.free_order></div>
+						</venda_block label=661>
+					</venda_block label=66>
+					<venda_detblock9>
+						<div class="value-discount"><venda_codesc></div>
+					</venda_detblock9>
+
+					<venda_block label=43,totaldisc&gt;0.00>
+					  <div id="promotions" class="promotionApplied">
+						<h4><venda_text id=mobile.heading.promotions_applied>:</h4>
+						<venda_detail9>
+					  </div>
+					</venda_block label=43>
+				</div><venda_tpcomment><!-- End: Order Totals --></venda_tpcomment>
+				<div class="submitButton placeOrder"><input type="submit" value="<venda_text id=mobile.button.confirm_payment>" data-ajax="false"></div>
+			</form>
+		</div><!--end checkoutmobile-content -->
+	</div><!--end checkoutmobile-wrapper -->
+</div>
+
+<venda_tpcomment><!-- Dictionary id's to pass to JS --></venda_tpcomment>
+<venda_tpcomment><!-- gift certificate  --></venda_tpcomment>
+<div id="tag-gcWaitMsg" style="display:none"><venda_text id=mobile.info.applying_promotion></div>
+<venda_block label=dts,mode=value,<venda_setting type=ebiz,name=delivertostore>=1>
+	<div class="hide js-dtsenabled"></div>
+</venda_block label=dts>
+<venda_tpcomment><!-- Tracking --></venda_tpcomment>
+<venda_inctemplate name=workflowSteps,type=tracking/mobile/shared>
+<venda_tpcomment><!-- Used for checkout step indicators --></venda_tpcomment>
+<venda_tpxt mode=set,name=curstep,value=step4>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=mobile.heading.payment_options>>

@@ -1,0 +1,84 @@
+<venda_inventory ref=giftcert,temp=giftcertvariables>
+<div id="tag-msg_giftcert_greater_than" style="display:none;"><venda_text id=mobile.validation.giftcert_greater_than></div>
+<div id="tag-msg_giftcert_less_than" style="display:none;"><venda_text id=mobile.validation.giftcert_less_than></div>
+
+<div class="<venda_workflow> <venda_curstep> thickpad">
+	<h1><venda_text id=desktop.heading.gift_certificates></h1>
+	<p><venda_text id=desktop.info.gift_certificates_1></p>
+	<p><venda_text id=desktop.info.gift_certificates_2></p>
+
+	<hr>
+	<div>
+	<venda_block label=1,errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=1>
+
+	<form method="post" enctype="multipart/form-data" name="giftcertificatesform" action="#" id="giftcertificatesform">
+	<input type="hidden" name="ex" value="co_wizr-<venda_workflow>" />
+	<input type="hidden" name="step" value="next" />
+	<input type="hidden" name="mode" value="process" />
+	<input type="hidden" name="param1" value="" />
+	<input type="hidden" name="param2" value="" />
+	<input type="hidden" name="param3" value="" />
+	<input type="hidden" name="check" value="" />
+	<input type="hidden" name="trrfnbr" value="" />
+	<input type="hidden" name="wizard" value="shopcart" />
+	<input type="hidden" name="trrfext" value="<venda_block label=15,mode=value,<venda_protocol>=https>1</venda_block label=15>" />
+	<input type="hidden" name="curstep" value="giftcertificate" />
+	<input type="hidden" name="workflowid" value="<venda_workflowid>" />
+	<input type="hidden" name="bsref" value="<venda_bsref>" />
+	<input type="hidden" name="textcount" value="" />
+
+	<venda_tpcomment><!-- Start: Recipient Details --></venda_tpcomment>
+	<fieldset>
+		<h4><venda_text id=desktop.info.recipient_details></h4>
+		<div class="row">
+            <div class="large-6 columns"><label class="inline" for="to"><venda_text id=desktop.form.recipient_name>: <span class="hidescreenreadersafe"> <venda_text id=desktop.form.required></span></label></div>
+            <div class="large-18 columns"><input type="text" autocorrect="off" name="to" id="to" value="<venda_to>" placeholder="<venda_text id=desktop.form.recipient_name>"></div>
+        </div>
+		<div class="row">
+            <div class="large-6 columns"><label class="inline" for="email"><venda_text id=desktop.form.recipient_email>: <span class="hidescreenreadersafe"> <venda_text id=desktop.form.required></span></label></div>
+            <div class="large-18 columns"><input type="email" name="email" id="email" placeholder="<venda_text id=desktop.form.recipient_email>" value="<venda_email>"></div>
+        </div>
+		<div class="row">
+            <div class="large-6 columns"><label class="inline" for="amount"><venda_text id=desktop.form.giftcert_amount>: <span class="hidescreenreadersafe"> <venda_text id=desktop.form.required></span></label></div>
+            <div class="large-18 columns"><input type="number" name="amount" id="amount" placeholder="<venda_text id=desktop.form.giftcert_amount>" value="<venda_amount>"></div>
+        </div>
+	</fieldset>
+	<venda_inventory ref=giftcert,temp=giftcertpricing>
+	<p><venda_text id=desktop.info.gift_certificates_3></p>
+	<venda_tpcomment><!-- End: Recipient Details --></venda_tpcomment>
+	<hr>
+	<venda_tpcomment><!-- Start: Your Details --></venda_tpcomment>
+	<fieldset>
+		<h4><venda_text id=desktop.info.your_details></h4>
+		<div class="row">
+            <div class="large-6 columns"><label class="inline" for="comment"><venda_text id=desktop.form.your_message>: <span class="hidescreenreadersafe"> <venda_text id=desktop.form.required></span></label></div>
+            <div class="large-18 columns"><textarea placeholder="<venda_text id=desktop.form.your_message>" name="comment" id="comment" cols="25" rows="5"><venda_comment></textarea>
+            <p class="text-right">Characters remaining  [ <span class="js-textMsgCount js-textCount">250</span> ]</p></div>
+		</div>
+
+		<div class="row">
+            <div class="large-6 columns"><label class="inline" for="from"><venda_text id=desktop.form.your_name>: <span class="hidescreenreadersafe"> <venda_text id=desktop.form.required></span></label></div>
+            <div class="large-18 columns"><input type="text" autocorrect="off" name="from" id="from" value="<venda_block ustype=R><venda_userinfo><venda_sesfname> <venda_seslname></venda_userinfo></venda_block><venda_block ustype!=R,from=notnull><venda_from></venda_block>" placeholder="<venda_text id=desktop.form.your_name>"></div>
+        </div>
+	</fieldset>
+	<venda_tpcomment><!-- End: Your Details --></venda_tpcomment>
+	<hr>
+	<venda_tpcomment><!-- Start: Terms and Conditions --></venda_tpcomment>
+	<input type="hidden" name="giftcerttandc" id="giftcerttandc" value="1">
+	<p>By clicking continue you have read and agreed to the <a href="<venda_dispview page=terms>" target="_blank" title="<venda_text id=desktop.button.terms_and_conditions>"><venda_text id=desktop.button.terms_and_conditions></a>.</p>
+	<venda_tpcomment><!-- End: Terms and Conditions --></venda_tpcomment>
+
+	<div id="buttons" class="marg-top text-right">
+		<input type="submit" value="<venda_text id=desktop.button.continue>" class="button radius">
+	</div>
+
+	</form>
+
+	</div>
+</div>
+<!--
+template: templates/workflow/<venda_workflow>/giftcertificate/giftcertificate.html
+-->
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.gift_certificates>>

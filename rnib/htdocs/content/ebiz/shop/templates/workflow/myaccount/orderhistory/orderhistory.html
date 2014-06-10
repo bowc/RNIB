@@ -1,0 +1,102 @@
+<div id="orderhistory">
+
+    <venda_block label=34,ustype=R>
+
+		<div class="box">
+			<div class="main-header"><h1><venda_text id=desktop.heading.order_history></h1></div>
+			<venda_block label=1,errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=1>
+			<p><venda_text id=desktop.info.order_history_1></p>
+			<p><venda_text id=desktop.info.order_history_2> <a href="mailto:<venda_setting type=ebiz,name=email>"><venda_setting type=ebiz,name=email></a>&nbsp;</p>
+		</div>
+
+        <venda_detblock4>
+            <form method="post" enctype="multipart/form-data" name="wizform<venda_ohrfnbr>" action="<venda_codehttps>">
+            <input type="hidden" name="ex" value="co_wizr-shopcart" />
+            <input type="hidden" name="step" value="--shopcart" />
+            <input type="hidden" name="param1" value="reorder" />
+            <input type="hidden" name="param2" value="<venda_ohrfnbr>" />
+            <input type="hidden" name="trrfnbr" value="<venda_userinfo><venda_sesid></venda_userinfo>" />
+            <input type="hidden" name="trrfext" value="<venda_block label=115,mode=value,<venda_protocol>=https>1</venda_block label=115>" />
+            <input type="hidden" name="curstep" value="orderlist" />
+            <input type="hidden" name="workflowid" value="<venda_workflow>" />
+            <input type="hidden" name="curlayout" value="1column" />
+            <input type="hidden" name="bsref" value="<venda_bsref>" />
+
+            <tr class="js-order js-ohordnum-<venda_ohordnum>">
+                <td>
+                    Order number: <a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>&step=orderdetail&param1=<venda_ohrfnbr>&param2=user&formid=<venda_ohrfnbr>">T<venda_ohordnum></a><br>
+                    <venda_text id=desktop.info.order_history.date>: <venda_dateformat type=digit,format=dd/mm/yyyy,suffix=0,date=<venda_ohdeldate>> <br>
+					
+                </td>
+                <td>
+                    <ul><venda_order ref=<venda_ohrfnbr>,shopcart=1,template=orderHistoryItemDisplay,formfields=true></ul>
+                </td>
+                <td>
+				<venda_block label=10,ohstatus=2><venda_text id=desktop.info.order_status_in_progress></venda_block label=10>
+				<venda_block label=11,ohstatus=3><venda_text id=desktop.info.order_status_released_for_delivery></venda_block label=11>
+				<venda_block label=12,ohstatus=4><venda_text id=desktop.info.order_status_backordered></venda_block label=12>
+				<venda_block label=13,ohstatus=5><venda_text id=desktop.info.order_status_despatched></venda_block label=13>
+				<venda_block label=14,ohstatus=6><venda_text id=desktop.info.order_status_returned></venda_block label=14>
+				<venda_block label=15,ohstatus=7><venda_text id=desktop.info.order_status_cancelled></venda_block label=15>
+                </td>
+                <td class="hide-for-small js-order-actions">
+                    <a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>&step=orderdetail&param1=<venda_ohrfnbr>&param2=user&formid=<venda_ohrfnbr>" class="success button radius small marg-bottom"><venda_text id=desktop.button.view></a>
+                    <venda_block label=1500,mode=value,<venda_setting type=ebiz,name=disablereorderbutton>!=1><input type="submit" value="<venda_text id=desktop.button.reorder>" class="button radius small"></venda_block label=1500>
+                </td>
+            </tr>
+            <tr class="hide-for-tablet-portrait-up js-ohordnum-<venda_ohordnum>">
+                <td colspan="3" class="js-order-actions">
+                    <a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>&step=orderdetail&param1=<venda_ohrfnbr>&param2=user&formid=<venda_ohrfnbr>" class="success button small radius marg-bottom"><venda_text id=desktop.button.view></a>
+                    <venda_block label=5,mode=value,<venda_setting type=ebiz,name=disablereorderbutton>!=1><input type="submit" value="<venda_text id=desktop.button.reorder>" class="button radius small"></venda_block label=5>
+                </td>
+            </tr>
+
+            </form>
+        </venda_detblock4>
+
+        <div>
+            <h2><venda_text id=desktop.heading.recent_orders></h2>
+
+            <venda_block label=20,ohorders!=0>
+                <table summary="<venda_text id=desktop.info.order_history_table_summary>" class="orders fullwidth">
+                    <thead>
+                    <tr>
+                        <th scope="col"><venda_text id=desktop.info.order></th>
+                        <th scope="col"><venda_text id=desktop.info.items_in_this_order></th>
+                        <th scope="col"><venda_text id=desktop.info.order_status></th>
+                        <th class="hide-for-small"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                          <venda_detail4>
+                    </tbody>
+                </table>
+            </venda_block label=20>
+            <venda_tpcomment><!-- End: Recent Orders --></venda_tpcomment>
+
+            <venda_tpcomment><!-- Start: No Orders --></venda_tpcomment>
+            <venda_block label=21,ohorders=0>
+            <p><venda_text id=desktop.info.no_orders_placed></p>
+            </venda_block label=21>
+            <venda_tpcomment><!-- End: No Orders --></venda_tpcomment>
+
+            <div id="buttons">
+                <a href="<venda_codehttps>?ex=co_wizr-myaccount&bsref=<venda_bsref>" class="button radius js-myaccount"><venda_text id=desktop.button.my_account></a>
+            </div>
+        </div>
+
+
+    </venda_block label=34>
+
+    <venda_block label=33,ustype!=R>
+      <script language="javascript" type="text/javascript">  <venda_tpcomment>/* forward to log in page*/</venda_tpcomment>  window.location.replace="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>";  </script>
+      <h1><venda_text id=desktop.heading.myaccount></h1>
+        <p><venda_text id=desktop.info.orderhistory_login_message> <a href="<venda_codehttps>?ex=co_wizr-register&bsref=<venda_bsref>"><venda_text id=desktop.button.log_in></a></p>
+    </venda_block label=33>
+
+
+    <venda_tpxt mode=set,name=trackingstep,value=orderhistory>
+    <venda_inctemplate name=workflowSteps,type=tracking/shared>
+    <venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+    <venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.order_history>>
+    </div>

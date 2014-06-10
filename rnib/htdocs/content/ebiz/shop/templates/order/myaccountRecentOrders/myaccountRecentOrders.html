@@ -1,0 +1,23 @@
+<venda_detblock>
+<venda_order ref=<venda_ohrfnbr>,shopcart=0,template=myaccountRecentOrdersDetail>
+</venda_detblock>
+
+<venda_block cartcount!=0>
+<table class="orders fullwidth">
+      <thead>
+        <tr>
+          <th scope="col"><venda_text id=desktop.info.order_number></th>
+          <th scope="col"><venda_text id=desktop.info.items></th>
+          <th scope="col"><venda_text id=desktop.info.order_status></th>
+          <th scope="col" class="hide-for-small"><venda_text id=desktop.info.view_order></th>
+        </tr>
+      </thead>
+      <tbody>
+			<venda_detail>
+      </tbody>
+</table>
+</venda_block>
+
+<venda_block cartcount=0>
+<p><venda_text id=desktop.info.no_orders_placed></p>
+</venda_block>

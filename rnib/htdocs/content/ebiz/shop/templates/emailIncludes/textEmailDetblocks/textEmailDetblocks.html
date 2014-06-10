@@ -1,0 +1,61 @@
+<venda_detblock1>
+<cr>
+<venda_block label=40,pkshipreq=1>
+==============================================================================<cr>
+<venda_text id=desktop.heading.delivery_details><cr>
+==============================================================================<cr><cr>
+
+<venda_text id=desktop.info.recipient><cr>
+<venda_pktitle> <venda_pkfname> <venda_block label=75,pkmname=notnull><venda_pkmname> </venda_block label=75><venda_pklname><cr><cr>
+
+<venda_text id=desktop.info.delivery_address><cr>
+<venda_block label=77,pkcompany=notnull><venda_pkcompany><cr></venda_block label=77>
+<venda_pknum> <venda_pkaddr1><cr>
+<venda_block label=72,pkaddr2=notnull><venda_pkaddr2><cr></venda_block label=72>
+
+<venda_block label=999,mode=value,<venda_pkcntry>=United States,<venda_pkcntry>=United States Non-48,<venda_pkcntry>=United States Armed Forces,operator=or>
+<venda_block label=184,pkcity=notnull><venda_pkcity>, </venda_block label=184>
+<venda_block label=185,pkstate=notnull><venda_pkstate> </venda_block label=185><venda_pkzipc><cr>
+</venda_block label=999>
+
+<venda_block label=9991,mode=value,<venda_pkcntry>!=United States,<venda_pkcntry>!=United States Non-48,<venda_pkcntry>!=United States Armed Forces,operator=and>
+<venda_block label=184,pkcity=notnull><venda_pkcity><cr></venda_block label=184>
+<venda_block label=185,pkstate=notnull><venda_pkstate> </venda_block label=185><venda_pkzipc><venda_block label=1234,pkstate=notnull,pkzipc=notnull,operator=or><cr></venda_block label=1234>
+</venda_block label=9991>
+
+<venda_pkcntry>
+<venda_block label=76,pkarea=notnull><cr><venda_pkarea> <venda_pkphone></venda_block label=76><cr><cr>
+
+<venda_block label=41,pkshipmthd=notnull>
+<venda_text id=desktop.info.delivery_method><cr>
+<venda_pkshipmthd><cr>
+</venda_block label=41>
+<venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=textEmailOrxfieldsDisplay,type=emailIncludes,group=1,displayonly=1><venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=textEmailOrxfieldsDisplay,type=emailIncludes,group=2,displayonly=1><venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=textEmailOrxfieldsDisplay,type=emailIncludes,group=3,displayonly=1><venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=textEmailOrxfieldsDisplay,type=emailIncludes,group=4,displayonly=1><venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=textEmailOrxfieldsDisplay,type=emailIncludes,group=5,displayonly=1><venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=textEmailOrxfieldsDisplay,type=emailIncludes,group=6,displayonly=1><venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=textEmailOrxfieldsDisplay,type=emailIncludes,group=7,displayonly=1><venda_extflds exfldtype=order,ref=<venda_ohrfnbr>,template=textEmailOrxfieldsDisplay,type=emailIncludes,group=8,displayonly=1>
+</venda_block label=40>
+==============================================================================<cr>
+<venda_text id=desktop.info.items><cr>
+==============================================================================<cr><cr>
+<venda_detail2>
+</venda_detblock1>
+
+<venda_detblock2>
+<venda_oiivname> 
+<venda_block label=111,invtatt1=notnull> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>, <venda_invtatt2></venda_block label=112>)</venda_block label=111>
+<venda_block label=221,oigwref=notnull> (<venda_text id=desktop.info.giftwrapping_items_wrapped>)</venda_block label=221>
+<venda_extflds exfldtype=orderitem,group=1,template=textEmailOixfieldsDisplay,type=emailIncludes,ref=<venda_invtref>,displayonly=1><venda_extflds exfldtype=orderitem,group=2,template=textEmailOixfieldsDisplay,type=emailIncludes,ref=<venda_invtref>,displayonly=1>
+<venda_block label=333,invtivtype=download><venda_tpxt mode=set,name=hasdownload,value=download></venda_block label=333>
+ (<venda_oisub> <venda_ohcur>) x <venda_oiqty> = <venda_oiextsub> <venda_ohcur>
+	(<venda_block label=10,oistatus=2><venda_text id=desktop.info.order_status_in_progress></venda_block label=10><venda_block label=11,oistatus=3><venda_text id=desktop.info.order_status_released_for_delivery></venda_block label=11><venda_block label=12,oistatus=4><venda_text id=desktop.info.order_status_backordered></venda_block label=12><venda_block label=13,oistatus=5><venda_block label=114,num=notnull><venda_text id=desktop.info.tracking_num>: <venda_num> <venda_oicarrier> </venda_block label=114><venda_text id=desktop.info.order_status_delivered> <venda_stmp></venda_block label=13><venda_block label=14,oistatus=6><venda_text id=desktop.info.order_status_returned> <venda_stmp></venda_block label=14><venda_block label=15,oistatus=7><venda_text id=desktop.info.order_status_cancelled></venda_block label=15><venda_block label=16,oistatus=8><venda_text id=desktop.info.rma_num>: <venda_num> <venda_text id=desktop.info.order_status_delivered> <venda_stmp></venda_block label=16>)
+<cr>
+<venda_block label=45,oiitype=3>
+<venda_text id=desktop.info.giftcert_sent_to><cr>
+<venda_block label=880,gcexpires=notnull><venda_text id=desktop.info.giftcert_expiry_date> <venda_gcexpires><cr></venda_block label=880>
+<venda_text id=desktop.info.message>: <venda_oicmt><cr>
+<cr>
+</venda_block label=45>
+</venda_detblock2>
+
+
+<venda_detblock3>
+<venda_ckname> (-<venda_cktotal> <venda_ohcur>)<cr>
+</venda_detblock3>

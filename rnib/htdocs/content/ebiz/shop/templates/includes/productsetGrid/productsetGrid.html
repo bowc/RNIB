@@ -1,0 +1,18 @@
+<venda_tpcomment><!-- This template is used by product detail when the product has attributes, it cycles through and stores the image paths to the various attribute 1 association values (e.g. xsmall,medium,large image path for Red Shirt) --></venda_tpcomment>
+
+<venda_detblock_mediagridrow>
+	<venda_detail_mediagridcell>
+</venda_detblock_mediagridrow>
+
+<venda_detblock_mediagridcell>
+	<venda_block label=1,emptycell!=1,medatrvalue!=>
+	imageSwapping['<venda_invtuuid>'].loadImage("<venda_medatrvalue>",{
+		setswatch: "",
+		setimage: "<venda_media rec=invt,type=pict,key=setxsmall,medatr=yes,img=no>"
+	});
+	</venda_block label=1>
+</venda_detblock_mediagridcell>
+
+<script type="text/javascript">
+	<venda_detail_mediagridrow>
+</script> 

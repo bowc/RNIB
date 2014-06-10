@@ -1,0 +1,40 @@
+<!-- venda_search tag starts -->
+<venda_search categories=<venda_icatref>,sort=sequence_<venda_icatref>:name,order=asc:asc,perpage=<venda_itemsperpage>>
+<!-- venda_search tag ends -->
+
+<venda_tpcomment>
+<!-- For hybrid style product list where left sidebar contains category tree and not search refinements:
+	1) layout will be 'search' therefore copy a layout i.e. '2column' that can show category navigation and other left sidebar features
+	2) place the venda_search tag in content div and add parameter for new template i.e. template=icatResults
+	* note example below has venda tags commented
+	<div class="row">
+		<div class="large-19 push-5 columns"><a name="content" id="content"></a><! venda_search template=icatResults,categories=<!venda_icatref>,sort=sequence_<!venda_icatref>:name,order=asc:asc,perpage=<!venda_itemsperpage> ></div>
+		<div class="large-5 pull-19 columns"><! venda_inctemplate name=leftSidebar,type=mainIncludes ></div>
+	</div>
+	3) create new search results template 'icatResults' which is a copy of templates/search/defaultResults but delete the sidebar that contains refinements div:
+	<div class="row"><div class="large-6 pull-18 columns"> ... </div></div>
+	4) some css may need adjusting
+Alternatively, change layout of all product categories in the VCP to '2column' or desired layout using category navigation and edit the venda_search tag above to include the template=icatResults parameter. Then follow step 3) above.
+-->
+</venda_tpcomment>
+
+<venda_tpcomment>
+<!-- TPXTs are defined for other function:
+categorySearch - is used for bestsellers/ and to check if it is a category search
+comparecatref - is used for compare products.
+-->
+</venda_tpcomment>
+<venda_tpxt mode=set,name=track,value=productlist>
+
+<venda_tpcomment><!-- This tpxt is a workaround for not having <venda_icatref> --></venda_tpcomment>
+<venda_tpxt mode=set,name=categorySearch,value=<venda_icatref>>
+
+<venda_tpcomment><!-- Used for product compare widgets/compareItems/compareItems.html  --></venda_tpcomment>
+<venda_block label=41,mode=value,<venda_setting type=ebiz,name=showcompareproductlist>=1>
+<venda_block label=501,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>!=1><venda_tpxt mode=set,name=comparecatref,value=<venda_icatref>></venda_block label=501>
+<venda_block label=502,mode=value,<venda_setting type=ebiz,name=setalwaysshowcompare>=1><venda_tpxt mode=set,name=comparecatref,value=allcategory></venda_block label=502>
+</venda_block label=41>
+
+<div id="parentCatName" style="display:none;"><venda_icatname></div>
+<div id="parentCatLDesc" style="display:none;"><venda_icatldesc></div>
+<div id="parentCatRef" style="display:none;"><venda_icatref></div>

@@ -1,0 +1,65 @@
+<div id="minicartDetail js-aria-minicart" class="minicart-detail" role="alert" aria-live="polite">
+    <div id="minicartHeader" class="row show-for-small minicart-header-small">
+        <div class="small-16 columns off-canvas-title"><h2><venda_text id=desktop.info.your_basket></h2></div>
+        <div class="small-8 columns off-canvas-close"><i class="icon-remove-circle"><span class="hidescreenreadersafe"><venda_text id=desktop.button.close></span></i></div>
+    </div>
+
+    <venda_block errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block>
+
+    <div class="minicart-inner">
+    	<div id="minicart-header" class="minicart-header">
+        	<div class="scroll buttonUp hide-for-small"><i class="icon-caret-up icon-2x"></i></div>
+        </div>
+
+		<venda_block label=53,mode=value,<venda_shopcart mode=getqty>=0>
+            <div class="small-24 columns">
+                <span id="minicart_empty" class="minicart_empty"><venda_text id=desktop.info.shopping_cart_empty></span>
+            </div>
+        </venda_block label=53>
+
+        <venda_block label=52,mode=value,<venda_shopcart mode=getqty>!=0>
+        <div id="basketWrapper" class="basketWrapper">
+            <div id="basketHolder" class="basketholder large-24 columns">
+                <venda_order shopcart=1,template=minicartDetail>
+            </div>
+        </div>
+        </venda_block label=52>
+
+        <!--start: bottom button-->
+        <div id="minicart-footer" class="minicart-footer">
+            <venda_block label=34,mode=value,<venda_tpxt mode=get,name=instore>!=1>
+                <div class="scroll buttonDown hide-for-small"><i class="icon-caret-down icon-2x"></i></div>
+
+                <div class="large-24 columns marg-bottom">
+	               <venda_minicart template=minicartItemsTotal>
+
+	                <div class="minicart-buttons columns"<venda_block label=52,mode=value,<venda_shopcart mode=getqty>=0>style="display:none;"</venda_block label=52>>
+                        <div class="row">
+    	                    <div class="small-11 columns nopad">
+                                <a href="<venda_codehttp>?ex=co_wizr-shopcart&bsref=<venda_bsref>&log=22" class="button secondary radius small"><venda_text id=desktop.button.view_shopping_cart></a>
+                            </div>
+    	                    <div class="small-11 columns nopad">
+    	                        <venda_block label=100,ustype=R>
+    	                            <venda_block label=210,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>=1><a id="goToCheckoutmd" class="button success radius right small" href="<venda_codehttps>?ex=co_wizr-checkout&bsref=<venda_bsref>&step=ordersummary"><venda_text id=desktop.button.checkout></a></venda_block label=210>
+    	                            <venda_block label=211,mode=value,<venda_setting type=ebiz,name=skipsecondlogin>!=1><a id="goToCheckoutmd" class="button success radius right small" href="<venda_codehttps>?ex=co_wizr-checkout&bsref=<venda_bsref>&step=login"><venda_text id=desktop.button.checkout></a></venda_block label=211>
+    	                        </venda_block label=100>
+
+    	                        <venda_block label=101,ustype!=R>
+                                    <a id="goToCheckoutmd" class="button success radius right small" href="<venda_codehttps>?ex=co_wizr-checkout&bsref=<venda_bsref>&step=login"><venda_text id=desktop.button.checkout> <i class="icon-double-angle-right"></i></a>
+                                </venda_block label=101>
+    	                    </div>
+                        </div>
+	                </div>
+	            </div>
+        	</venda_block label=34>
+        </div>
+        <!--end: bottom button-->
+
+        <venda_block label=201,mode=value,<venda_ebxtcurrencyConvert>=1>
+            <venda_tpcomment><!-- Only shows if the currency converter is enabled --></venda_tpcomment>
+            <div class="js-minicart">
+                <h2><span></span><venda_text id=desktop.info.currency_converter_info1> <venda_currencycode></h2>
+            </div>
+        </venda_block label=201>
+    </div>
+</div>

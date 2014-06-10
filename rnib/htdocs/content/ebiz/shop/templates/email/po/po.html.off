@@ -1,0 +1,217 @@
+<venda_detblock1>
+	<!-- start delivery details -->
+	<br>
+<table border="0" cellspacing="0" cellpadding="5" style="font-family:Arial, Helvetica, sans-serif; font-size:16px;text-align:left;color:#000;background-color:#fff;" width="650" >
+	<thead>
+	<tr>
+		<th colspan="2" style="text-align:left;background:#008194;color:#fff"><venda_text id=desktop.heading.delivery_details></th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.info.recipient>:</th>
+		<td width="70%"><span class="addrName"><venda_pktitle> <venda_pkfname><venda_block label=75,pkmname=notnull><venda_pkmname></venda_block label=75> <venda_pklname></span></td>
+	</tr>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.heading.delivery_address>:</th>
+		<td width="70%" >
+		<venda_block label=77,pkcompany=notnull><venda_pkcompany><br></venda_block label=77>
+		<venda_pknum> <venda_pkaddr1><br>
+		<venda_block label=78,pkaddr2=notnull><venda_pkaddr2><br></venda_block label=78>
+		<venda_block label=81,pkcity=notnull><venda_pkcity><br></venda_block label=81>
+		<venda_block label=79,pkstate=notnull><venda_pkstate> </venda_block label=79><venda_block label=82,pkzipc=notnull><venda_pkzipc><br></venda_block label=82>
+		<venda_pkcntry>
+		</td>
+	</tr>
+	<venda_block label=80,pkarea=notnull,pkphone=notnull,operator=or>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.form.phone>:</th>
+		<td width="70%"><venda_block label=81,pkarea=notnull><venda_pkarea> </venda_block label=81><venda_block label=82,pkphone=notnull><venda_pkphone></venda_block label=82></td>
+	</tr>
+	</venda_block label=80>
+	<venda_block label=41,pkshipmthd=notnull>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.info.delivery_method>:</th>
+		<td width="70%"><venda_pkshipmthd></td>
+	</tr>
+	</venda_block label=41>
+	</tbody>
+	<!-- end delivery details -->
+</table>
+<br>
+<table border="0" cellspacing="0" cellpadding="5" style="font-family:Arial, Helvetica, sans-serif; font-size:16px;text-align:left;color:#000;background-color:#fff;" width="650">
+<!-- start items loop -->
+<thead>
+<tr>
+	<th scope="col" style="width:245px;background-color:#008194;color:#fff;text-align:left;"><venda_text id=desktop.info.product></th>
+	<th scope="col" style="width:95px;background-color:#008194;color:#fff;text-align:left;"><venda_text id=desktop.info.price_each></th>
+	<th scope="col" style="width:40px;background-color:#008194;color:#fff;text-align:left;"><venda_text id=desktop.info.qty></th>
+	<th scope="col" style="width:100px;background-color:#008194;color:#fff;text-align:left;"><venda_text id=desktop.info.total_price></th>
+	<th scope="col" style="width:170px;background-color:#008194;color:#fff;text-align:left;"><venda_text id=desktop.info.status></th>
+</tr>
+</thead>
+<tbody>
+<venda_detail2>
+</tbody>
+<!-- end items loop -->
+</table>
+</venda_detblock1>
+
+<venda_detblock2>
+<tr>
+	<td style="text-align:left;"><venda_oiivname><venda_block label=111,invtatt1=notnull> (<venda_invtatt1><venda_block label=112,invtatt2=notnull>, <venda_invtatt2></venda_block label=112>)</venda_block label=111><venda_block label=221,oigwref=notnull> (<venda_text id=desktop.info.gift_wrapped>)</venda_block label=221></td>
+	<td style="text-align:left;"><venda_currsym><venda_invtsell></td>
+	<td style="text-align:left;"><venda_oiqty></td>
+	<td style="text-align:left;"><venda_currsym><venda_oiextsub></td>
+	<td style="text-align:left;"><venda_ohstatus></td>
+</tr>
+<venda_block label=45,oiitype=3>
+<tr>
+	<td colspan="5" style="text-align:left;">
+	<venda_text id=desktop.info.send_to>: <venda_gcto> <venda_text id=desktop.info.at> <venda_gcemail><br>
+	<venda_block label=880,gcexpires=notnull><venda_text id=desktop.form.expiry_date>: <venda_gcexpires><br></venda_block label=880>
+	<venda_text id=desktop.info.message>: <venda_oicmt>
+	</td>
+</tr>
+</venda_block label=45>
+</venda_detblock2>
+
+<html>
+<head>
+	<title><venda_ebizname> <venda_text id=desktop.heading.purchase_order> - <venda_ponum></title>
+</head>
+<body>
+	<table cellpadding="0" cellspacing="0" style="font-family:Arial, Helvetica, sans-serif; font-size:16px;color:#000;" width="100%">
+		<tr>
+			<td valign="bottom" width="199"><venda_inctemplate name=htmlEmailLogo,type=emailIncludes></td>
+			<td valign="bottom">
+				<h1 style="font-size:20px;"><venda_text id=desktop.heading.purchade_order> - <venda_ponum></h1>
+			</td>
+		</tr>
+	</table>
+	<table cellpadding="0" cellspacing="0" style="font-family:Arial, Helvetica, sans-serif; font-size:16px;color:#000;padding:25px 0 15px 0;" width="100%">
+		<tr>
+			<td>
+			<p><venda_text id=desktop.info.dear> <strong><venda_toname></strong></p>
+			<p><venda_text id=desktop.info.po_message_1></p>
+			<p><venda_text id=desktop.info.order_number> <venda_ohordnum>.</p>
+			<p><venda_text id=desktop.info.order_date>: <venda_ohstmp></p>
+			</td>
+		</tr>
+</table>
+<venda_text id=desktop.info.dear> <venda_toname><cr><cr>
+<table border="0" cellspacing="0" cellpadding="5" style="font-family:Arial, Helvetica, sans-serif; font-size:16px;text-align:left;color:#000;background-color:#fff;" width="650">
+	<!-- start business details -->
+	<thead>
+	<tr>
+		<th colspan="2" style="background-color:#008194;color:#fff;text-align:left;"><venda_text id=desktop.info.business_details></th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.form.name>:</th>
+		<td width="70%" ><span class="addrName"><venda_ebizname></span></td>
+	</tr>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.form.address>:</th>
+		<td width="70%" >
+		<venda_ebizaddr1><br>
+		<venda_block label=71,ebizaddr2=notnull><venda_ebizaddr2><br></venda_block label=71>
+		<venda_block label=73,ebizcity=notnull><venda_ebizcity><br></venda_block label=73>
+		<venda_block label=72,ebizstate=notnull><venda_ebizstate> </venda_block label=72><venda_block label=74,ebizzipc=notnull><venda_ebizzipc><br></venda_block label=74>
+		<venda_ebizcntry>
+		</td>
+	</tr>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.form.phone>:</th>
+		<td width="70%" ><venda_ebizarea> <venda_ebizphone></td>
+	</tr>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.info.fax_number>:</th>
+		<td width="70%" ><venda_ebizfarea> <venda_ebizfax></td>
+	</tr>
+	</tbody>
+	<!-- end business details -->
+</table>
+<br>
+<table border="0" cellspacing="0" cellpadding="5" style="font-family:Arial, Helvetica, sans-serif; font-size:16px;text-align:left;color:#000;background-color:#fff;" width="650">
+	<!-- start contact/billing details -->
+	<thead>
+	<tr>
+		<th colspan="2" style="background-color:#008194;color:#fff;text-align:left;"><venda_text id=desktop.info.business_details></th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.info.cardholder>:</th>
+		<td width="70%" ><span class="addrName"><venda_ohtitle> <venda_ohfname> <venda_ohlname></span></td>
+	</tr>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.form.address>:</th>
+		<td width="70%" >
+		<venda_block label=80,ohcompany=notnull><venda_ohcompany><br></venda_block label=80>
+		<venda_ohnum> <venda_ohaddr1><br>
+		<venda_block label=81,ohaddr2=notnull><venda_ohaddr2><br></venda_block label=81>
+		<venda_ohcity><br>
+		<venda_ohstate> <venda_ohzipc><br>
+		<venda_ohcntry>
+		</td>
+	</tr>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.form.phone>:</th>
+		<td width="70%" ><venda_oharea> <venda_ohphone></td>
+	</tr>
+		<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.form.email>:</th>
+		<td width="70%" ><venda_ohemail></td>
+	</tr>
+	</tbody>
+	<!-- end contact/billing details -->
+</table>
+	<!-- start delivery/items loop -->
+	<venda_detail1>
+	<!-- end delivery/items loop -->
+
+	<!-- start totals -->
+	<br>
+<table border="0" cellspacing="0" cellpadding="5" style="font-family:Arial, Helvetica, sans-serif; font-size:16px;text-align:left;color:#000;background-color:#fff;" width="650">
+	<thead>
+	<tr>
+		<th colspan="2" style="background-color:#008194;color:#fff;text-align:left;"><venda_text id=desktop.heading.order_summary></th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.info.items>:</th>
+		<td width="70%" ><venda_currsym><venda_ohsub></td>
+	</tr>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.info.delivery_cost></th>
+		<td width="70%" ><venda_currsym><venda_ohship></td>
+	</tr>
+	<venda_block label=91,ohtax!=0.00,ohtax=notnull>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.info.estimated_tax></th>
+		<td width="70%" ><venda_currsym><venda_ohtax></td>
+	</tr>
+	</venda_block label=91>
+	<venda_block label=670,ohgwtot&gt;0>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.info.giftwrapping></th>
+		<td width="70%" ><venda_currsym><venda_ohgwtot></td>
+	</tr>
+	</venda_block label=670>
+	<tr>
+		<th width="30%" style="text-align:left;"><venda_text id=desktop.info.order_total></th>
+		<td width="70%" ><venda_currsym><venda_ohtot></td>
+	</tr>
+	<venda_block label=92,ohtaxinc!=0.00,ohtaxinc=notnull>
+	<tr>
+		<td colspan="2" ><venda_text id=desktop.info.including_vat></td>
+	</tr>
+	</venda_block label=92>
+	</tbody>
+	<!-- end totals -->
+	</table>
+</body>
+</html>

@@ -1,0 +1,20 @@
+==============================================================================<cr>
+<venda_text id=site.email.refered_update.title><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader2,type=emailIncludes>
+
+<venda_text id=site.email.refered_update.great_news><cr>
+
+<venda_text id=site.email.refered_update.msg1><cr>
+
+<venda_text id=site.email.refered_update.msg2><cr><cr>
+
+<venda_text id=site.email.refered_update.from> <venda_refmail><cr>
+<venda_text id=site.email.refered_update.amount> <venda_coamt> <venda_text id=site.email.refered_update.text.amount_spend><cr>
+<venda_text id=site.email.refered_update.claim_code> <venda_copromo><cr>
+<venda_text id=site.email.refered_update.expiry_date> <venda_codurexp><cr><cr>
+
+<venda_inctemplate name=textEmailTandC,type=emailIncludes>
+
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

@@ -1,0 +1,72 @@
+<venda_detblock>
+<li class="item<venda_itemcount1> grid_6 alpha omega">
+	<venda_block label=4,med-catimage1=notnull>
+	<div class="image"><a href="<venda_dispview icat=<venda_icatref1>>"><venda_media rec=icat1,type=movie-swf-pict,key=catimage></a></div>
+	</venda_block label=4>
+	<div class="itemInfo">
+		<h2><a href="<venda_dispview icat=<venda_icatref1>>"><venda_icatname1></a></h2>
+		<p><venda_sdesc1></p>
+	</div>
+	<p class="moreInfo"><a href="<venda_dispview icat=<venda_icatref1>>" title="<venda_text id=site.link.title.more.cats>" class="button smallButton"><venda_text id=site.link.more></a></p>
+</li>
+</venda_detblock>
+
+	<venda_tpcomment><!-- Hidden div tempLightbox used when triggering a lightbox from flash --></venda_tpcomment>
+	<div id="tempLightbox" style="display:none;"></div>
+
+	<div id="flashlanding">
+    <venda_tpcomment><!-- Required for 10cms Modules --></venda_tpcomment>
+    <script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/10cmsInteract.js"></script>
+		
+	<div class="vimContent" id="<venda_icxtvimassetid>">
+		<venda_page page=<venda_icxtvimassetname>>
+	</div>
+	
+	<script language="javascript">
+		interact.embedApp({
+			target: "<venda_icxtvimassetid>",
+			width: 	750,
+			height: 250,
+			vars: 	{id: "<venda_icxtvimassetid>"},
+			params: {bgcolor:"#ffffff", wmode:"transparent",base:"<venda_entmediaadd>/ebiz/<venda_bsref>/resources/flash/10CMS/"},
+			src: 	[
+						{type:"html5", src:"<venda_entmediaadd>/ebiz/<venda_bsref>/resources/flash/10CMS/tcplayer.js"},
+						{type:"swf", src:"<venda_entmediaadd>/ebiz/<venda_bsref>/resources/flash/10CMS/tcplayer.swf",version:"9.0.0"}
+					]
+		});  
+	</script>
+	</div>	
+
+	<div id="categoryList" class="categoryStyleInner">
+	<venda_block errors=notnull><h2 class="error"><venda_errors></h2></venda_block>
+	<venda_block label=52,cattot=><p><venda_text id=desktop.info.category_no_products></p></venda_block label=52>
+	<venda_block label=53,cattot!=>
+		<ul class="prodsGrid catsList categoryStyle5">
+			<venda_detail>
+		</ul>
+	</venda_block label=53>
+	</div>
+	
+	<venda_tpcomment><!-- start: Tab bottom --></venda_tpcomment>
+	<div id="infotab" class="tabs noBorderTabs grid_19 alpha omega categoryTab">
+		<div class="tabheader">
+			<ul class="nav">
+			<li><a href="#contentTab1" title="<venda_text id=desktop.heading.featured.products>"><venda_text id=desktop.heading.featured.products></a></li>
+			<li><a href="#contentTab2" title="<venda_text id=desktop.heading.bestsellers>"><venda_text id=desktop.heading.bestsellers></a></li>
+			</ul>
+		</div>
+		<div class="tabcontent">
+			<!-- featured -->
+			<div class="tab"><venda_category rec=icat,ref=<venda_icatref>fp,temp=featprods,cacheall=1,itemsperpage=4></div>
+			<!-- bestsellers -->
+			<div class="tab"><venda_category rec=icat,ref=<venda_icatref>bs,temp=featprods,cacheall=1,itemsperpage=3></div>
+		</div>
+	</div>
+	<venda_tpcomment><!-- end: Tab bottom --></venda_tpcomment>
+
+<!-- pagination -->
+<venda_pagesel template=pageselect>
+<venda_tpxt mode=set,name=track,value=categorylist>
+
+<!-- tpxt used for showing the bestseller products based on current category -->
+<venda_tpxt mode=set,name=categorySearch,value=<venda_icatref>>

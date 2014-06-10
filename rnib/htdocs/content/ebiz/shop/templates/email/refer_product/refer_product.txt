@@ -1,0 +1,18 @@
+==============================================================================<cr>
+<venda_ebizname> <venda_text id=desktop.heading.email_tell_a_friend><cr>
+==============================================================================<cr><cr>
+
+<venda_text id=desktop.info.dear> <venda_name><cr>
+
+<venda_block label=1,message=notnull><venda_message></venda_block label=1>
+<venda_block label=2,message=null><venda_text id=desktop.info.refer_product_1> <venda_ebizname> (<venda_ebizurl>).<cr></venda_block label=2>
+
+<venda_invtname><cr>
+<venda_block label=20,invtsell&gt;0><venda_text id=desktop.info.costing> <venda_currsym><venda_invtsell> <venda_text id=desktop.info.each><cr></venda_block label=20>
+<venda_block label=21,invtsell=0.00,invtatrminsubsell&gt;0,operator=or><venda_text id=desktop.info.from> <venda_currsym><venda_invtatrminsubsell><cr></venda_block label=21>
+<venda_text id=desktop.info.sku> <venda_invtref><cr>
+<venda_block label=1,invtdesc1=notnull><venda_invtdesc1><cr><cr></venda_block label=1>
+
+<venda_text id=desktop.info.from><cr>
+<venda_block label=44,fname=Empty><venda_text id=desktop.info.a_friend></venda_block label=44>
+<venda_block label=45,fname!=Empty><venda_fname> <venda_lname></venda_block label=45>

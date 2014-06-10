@@ -1,0 +1,18 @@
+<venda_detblock>
+<div class="small-12 columns prod-cycling-previous">
+<venda_block label=20,mode=value,<venda_itemcount1>=1,<venda_center_on>!=<venda_invtref1>>
+<venda_tpcomment><!--1st item in the loop,not the centre item --></venda_tpcomment>
+<a id="previousInvt" href="<venda_dispview invt=<venda_invtref1>>"><venda_media rec=invt1,type=pict,key=xsmall><p><venda_text id=desktop.button.view_previous_product></p></a></venda_block label=20>
+</div>
+<div class="small-12 columns prod-cycling-next">
+<venda_block label=30,mode=value,<venda_rectot>=2,<venda_itemcount1>=2,<venda_center_on>!=<venda_invtref1>>
+<venda_tpcomment><!--2 items in the catergory, 2nd item in the loop, not the centre item --></venda_tpcomment>
+<a id="nextInvt" href="<venda_dispview invt=<venda_invtref1>>"><venda_media rec=invt1,type=pict,key=xsmall><p><venda_text id=desktop.button.view_next_product></p></a></venda_block label=30>
+
+<venda_block label=40,mode=value,<venda_rectot>&gt;2,<venda_itemcount1>=3>
+<venda_tpcomment><!-- More than 1 item in catergory, 3rd item in the loop --></venda_tpcomment>
+<a id="nextInvt" href="<venda_dispview invt=<venda_invtref1>>"><venda_media rec=invt1,type=pict,key=xsmall><p><venda_text id=desktop.button.view_next_product></p></a></venda_block label=40>
+</div>
+</venda_detblock>
+
+<div class="row prod-cycling"><venda_detail></div>

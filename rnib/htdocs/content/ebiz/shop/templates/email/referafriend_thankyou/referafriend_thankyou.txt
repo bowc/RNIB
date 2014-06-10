@@ -1,0 +1,21 @@
+==============================================================================
+
+<venda_text id=site.email.referer_details.title>
+
+==============================================================================
+
+<venda_text id=site.email.referer_details.msg1><cr>
+
+<venda_text id=site.email.referer_details.msg2>
+<venda_name1>: <venda_email1>
+
+<venda_name2>: <venda_email2>
+
+<venda_name3>: <venda_email3>
+
+<venda_name4>: <venda_email4>
+
+<venda_name5>: <venda_email5>
+
+<venda_ebizname> <venda_text id=site.email.referer_details.msg3>
+

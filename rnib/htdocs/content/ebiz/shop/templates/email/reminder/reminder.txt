@@ -1,0 +1,13 @@
+==============================================================================<cr>
+<venda_text id=site.email.reminder.title><cr>
+==============================================================================<cr><cr>
+
+<venda_inctemplate name=textEmailHeader2,type=emailIncludes>
+
+<venda_text id=site.email.reminder.its> <venda_recfname> <venda_remtype> <venda_text id=site.email.reminder.on> <venda_remday> <venda_remmonth>, <venda_text id=site.email.reminder.msg1><cr>
+
+<venda_text id=site.email.reminder.text.msg2> <venda_serveradd>.<cr>
+
+<venda_text id=site.email.reminder.msg3> <venda_ebizname>.<cr>
+
+<venda_text id=site.email.reminder.msg4><cr><cr>

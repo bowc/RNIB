@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<title><venda_ebizname> <venda_text id=desktop.heading.email.gift_cert></title>
+	<venda_inctemplate name=htmlEmailCss,type=emailIncludes>
+</head>
+<body style ="background: #c2e3e6 !important; font-family:Arial, Helvetica, sans-serif !important; padding-top: 20px;">
+	<div class="body-container" style="color: #000000 !important; padding-bottom: 20px;">
+	<table class="emails-table-header" border="0" cellpadding="0" cellspacing="0" style="background:#008194; width: 92%; padding: 10px; margin: 0 auto !important;">
+		<tr>
+			<td class="nor-col" style="font-family:Arial, Helvetica, sans-serif; text-align: left !important;padding-left:10px !important;"><venda_inctemplate name=htmlEmailLogo,type=emailIncludes></td>
+			<td class="force-col" valign="bottom" style="font-family:Arial, Helvetica, sans-serif !important; text-align: right; vertical-align: bottom; color: #ffffff; position:relative !important; bottom: -15px !important;"><h1 style="font-size:16px; font-weight: bold;color: #fff"><venda_text id=desktop.heading.email.gift_cert></h1></td>
+		</tr>
+	</table>
+	<table class="emails-table-body" border="0" cellpadding="0" cellspacing="0" bgcolor="white" style="background:white;width: 92%;padding: 10px;text-align: left; margin: 0 auto;">
+		<tr>
+			<td valign="middle" style="font-family:Arial, Helvetica, sans-serif !important; font-size: 16px !important;padding: 10px;">
+			    <p style="font-size: 16px !important;"><venda_text id=desktop.info.dear> <strong><venda_to></strong></p>
+			    <p style="font-size: 16px !important;"><strong><venda_from></strong> <venda_text id=desktop.info.sent_you> <strong><venda_amount></strong> <venda_text id=desktop.info.gift_certificate></p>
+			    <p style="font-size: 16px !important;">
+				    <venda_text id=desktop.info.to_title>: <strong><venda_to></strong><br>
+				    <venda_text id=desktop.info.from_title>: <strong><venda_from></strong><br>
+				    <venda_text id=desktop.info.message> <strong><venda_comment></strong>
+			    </p>
+			    <p style="font-size: 16px !important;">
+			        <venda_text id=desktop.info.amount> <strong><venda_amount></strong><br>
+			        <venda_text id=desktop.info.claim_code> <strong><venda_giftcode></strong><br>
+			        <venda_text id=desktop.info.giftcert_expiry_date> <strong><venda_block label=611,gcexpirydate!=0><venda_gcexpires></venda_block label=611><venda_block label=612,gcexpirydate=0><venda_text id=desktop.info.no_expiry_date></venda_block label=612></strong>
+			    </p>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table class="emails-table-header" border="0" cellpadding="0" cellspacing="0" style="background:#008194; width: 92%; padding: 10px; margin: 0 auto !important;">
+	    <tr><th class="th-header" style="background-color:#008194; color: #fff; text-align:left; line-height: 142%; padding:10px;"><venda_text id=desktop.info.gift_cert_howto></th></tr>
+    </table>
+	<table class="emails-table-body" border="0" cellpadding="0" cellspacing="0" bgcolor="white" style="background:white;width: 92%;padding: 10px;text-align: left; margin: 0 auto;">
+		<tr>
+			<td valign="middle" style="font-family:Arial, Helvetica, sans-serif !important; font-size: 16px !important;padding: 10px;">
+				<ul>
+					<li><venda_text id=desktop.info.go_to> <a href="<venda_serveradd>?utm_source=gift_certificate&utm_medium=email&utm_campaign=order_emails"><venda_ebizurl></a>.</li>
+					<li><venda_text id=desktop.info.gift_cert_howto_1></li>
+					<li><venda_text id=desktop.info.gift_cert_howto_2></li>
+					<li><venda_text id=desktop.info.gift_cert_howto_3></li>
+					<li><venda_text id=desktop.info.gift_cert_howto_4></li>
+					<li><venda_text id=desktop.info.gift_cert_howto_5></li>
+					<li><venda_text id=desktop.info.gift_cert_howto_6></li>
+				</ul>
+				<p style="font-size: 16px !important;"><venda_text id=desktop.info.gift_cert_howto_7></p>
+			</td>
+		</tr>
+    </table>
+<br>
+<table class="emails-table-header" border="0" cellpadding="0" cellspacing="0" style="background:#008194; width: 92%; padding: 10px; margin: 0 auto !important;">
+	<tr><th class="th-header" colspan="2" style="background-color:#ddd;text-align:left; line-height: 142%; padding:10px;"><venda_text id=desktop.button.terms_and_conditions></th></tr>
+</table>
+<table class="emails-table-body" border="0" cellpadding="0" cellspacing="0" bgcolor="white" style="background:white;width: 92%;padding: 10px;text-align: left; margin: 0 auto;">
+	<tr>
+		<td valign="middle" style="font-family:Arial, Helvetica, sans-serif !important; font-size: 16px !important;padding: 10px;">
+			<ol>
+				<li><venda_text id=desktop.info.gift_cert_terms_1> <a href="<venda_serveradd>"><venda_ebizurl></a>.</li>
+				<li><venda_text id=desktop.info.gift_cert_terms_2></li>
+				<li><venda_text id=desktop.info.gift_cert_terms_3></li>
+				<li><venda_text id=desktop.info.gift_cert_terms_4></li>
+				<li><venda_text id=desktop.info.gift_cert_terms_5></li>
+				<li><venda_text id=desktop.info.gift_cert_terms_6></li>
+				<li><venda_text id=desktop.info.gift_cert_terms_7></li>
+				<li><venda_text id=desktop.info.gift_cert_terms_8></li>
+				<li><venda_text id=desktop.info.gift_cert_terms_9></li>
+				<li><venda_text id=desktop.info.gift_cert_terms_10> <a href="<venda_serveradd>?utm_source=gift_certificate&utm_medium=email&utm_campaign=order_emails"><venda_ebizurl></a>.</li>
+			</ol>
+	    </td>
+	</tr>
+</table>
+<br>
+<table class="paragraphs-center" style="width: 92%; margin: 20px auto !important; padding: 10px 20px; background:white;">
+    <tr>
+        <td>
+            <venda_inctemplate name=htmlEmailFooter,type=emailIncludes>
+        </td>
+    </tr>
+</table>
+</div>
+</body>
+</html>

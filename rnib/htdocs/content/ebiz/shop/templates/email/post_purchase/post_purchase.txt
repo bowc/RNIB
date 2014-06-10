@@ -1,0 +1,19 @@
+==============================================================================<cr>
+<venda_text id=desktop.heading.email.post_purchase><cr>
+==============================================================================<cr><cr>
+
+<venda_text id=desktop.info.dear> <venda_userinfo><venda_sestitle> <venda_sesfname> <venda_block label=115,sesmname=notnull><venda_sesmname> </venda_block label=115><venda_seslname></venda_userinfo><cr><cr>
+
+<cr><cr>
+<venda_text id=desktop.info.post_purchase_message_1> <venda_setting type=ebiz,name=name>. <venda_text id=desktop.info.post_purchase_message_2>
+<cr>
+<cr>
+<venda_text id=desktop.info.product_purchased>
+<cr>
+<venda_order ref=<venda_ohrfnbr>,template=txtpost_purchase-detail,templategrp=email,shopcart=1,formfields=false>
+<cr>
+<venda_text id=desktop.info.post_purchase_message_3>
+<cr><cr>
+<venda_text id=desktop.info.post_purchase_message_4>
+<cr><cr>
+<venda_inctemplate name=textEmailFooter,type=emailIncludes>

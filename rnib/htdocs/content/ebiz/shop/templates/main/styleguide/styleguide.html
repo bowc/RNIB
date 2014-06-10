@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="<venda_block label=10,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=10><venda_block label=11,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=11>" class="no-js ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html lang="<venda_block label=20,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=20><venda_block label=21,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=21>" class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html lang="<venda_block label=30,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=30><venda_block label=31,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=31>" class="no-js ie8 lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="<venda_block label=40,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=40><venda_block label=41,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=41>" class="no-js"> <!--<![endif]-->
+<!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]-->
+<head>
+<venda_inctemplate name=metatags,type=mainIncludes>
+<venda_inctemplate name=title,type=mainIncludes>
+
+<venda_inctemplate name=jsHead,type=mainIncludes>
+
+<venda_inctemplate name=css,type=mainIncludes>
+<link rel="stylesheet" href="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/css/styleguide.css">
+</head>
+<body class="styleguide">
+    <div class="wrapper">
+        <div class="row collapse">
+            <nav class="large-24 columns" role="navigation" id="topMenu">
+                <venda_category rec=pcat,ref=styleguide,temp=styleguide,itemsperpage=100>
+            </nav>
+        </div>
+        <a name="content" id="content"></a>
+        <p class="hide-for-desktop-up">
+            <a href="#menu" id="menuButton" class="secondary button expand"><i class="icon-menu"></i> Navigation</a>
+        </p>
+        <venda_content><!-- end content -->
+    </div>
+</div>
+
+<venda_detblock_minify_js>
+
+<venda_tpcomment><!-- required --></venda_tpcomment>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/jquery-ui-1.8.23.custom.min.js"></script>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/cookiejar.js"></script>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Venda/Platform.js"></script>
+<venda_tpcomment><!-- Used to keep sitewide functions --></venda_tpcomment>
+<script type="text/javascript" src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/Ebiz.js"></script>
+
+<venda_tpcomment><!-- foundation --></venda_tpcomment>
+<venda_tpcomment><!-- ini script --></venda_tpcomment>
+<script src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/foundation.js"></script>
+<script src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/foundation.alerts.js"></script>
+<venda_tpcomment><!-- Adds placeholder functions to forms --></venda_tpcomment>
+<script src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/foundation.placeholder.js"></script>
+<script src="<venda_entmediaadd>/ebiz/<venda_bsref>/resources/js/external/foundation.offcanvas.js"></script>
+</venda_detblock_minify_js>
+
+<venda_detail_minify_js>
+<script>
+    jQuery(document).foundation();
+    jQuery('input, textarea').placeholder();
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<div id="tl_user-myform">
+
+	<form name="form" action="<venda_codehttps>" method="post" class="js-custom">
+		<input type="hidden" name="ex" value="tl_user-procmyform">
+		<input type="hidden" name="layout" value="myaccount">
+		<input type="hidden" name="bsref" value="<venda_bsref>">
+		<input type="hidden" name="blkpostprev" value="<venda_blkpost>">
+		<input type="hidden" name="blksmsprev" value="<venda_blksms>">
+		<input type="hidden" name="blkemailprev" value="<venda_blkemail>">
+		<input type="hidden" name="blktrdcommprev" value="<venda_blktrdcomm>">
+		<input type="hidden" name="PrimaryForm">
+
+		<venda_tpcomment><!-- Start: Change Email Address and Password --></venda_tpcomment>
+		<venda_block label=100,mode=value,<venda_htxt mode=get,name=pass>=change>
+			<venda_inctemplate type=admn/tl_user-myform,name=emailaddresspassword>
+		</venda_block label=100>
+		<venda_tpcomment><!-- End: Change Email Address and Password --></venda_tpcomment>
+
+		<venda_tpcomment><!-- Start: Edit User Details (Address) --></venda_tpcomment>
+		<venda_block label=101,mode=value,<venda_htxt mode=get,name=addr>=change>
+			<venda_inctemplate type=admn/tl_user-myform,name=billingaddress>
+		</venda_block label=101>
+		<venda_tpcomment><!-- End: Edit User Details (Address) --></venda_tpcomment>
+
+		<venda_tpcomment><!-- Start: Change Communication Options --></venda_tpcomment>
+		<venda_block label=102,mode=value,<venda_htxt mode=get,name=comm>=change>
+			<venda_inctemplate type=admn/tl_user-myform,name=communicationoptions>
+		</venda_block label=102>
+		<venda_tpcomment><!-- End: Change Communication Options --></venda_tpcomment>
+
+		<venda_tpcomment><!-- Start: Store credit information --></venda_tpcomment>
+		<venda_block label=103,param1=storecredit>
+			<venda_inctemplate type=admn/tl_user-myform,name=storecredit>
+		</venda_block label=103>
+		<venda_tpcomment><!-- End: Store credit information --></venda_tpcomment>
+
+		<venda_tpcomment><!-- Start: Change Profile --></venda_tpcomment>
+		<venda_block label=11,param1=profile>
+			<venda_inctemplate type=admn/tl_user-myform,name=changeprofile>
+		</venda_block label=11>
+		<venda_tpcomment><!-- End: Change Profile --></venda_tpcomment>
+	</form>
+
+<venda_zones type=countries,template=countrySelect>
+
+<venda_tpcomment><!-- trackingstep tpxt used in templates/tracking/shared  --></venda_tpcomment>
+<venda_tpxt mode=set,name=trackingstep,value=myaccount/user-myform>
+
+<venda_inctemplate name=workflowSteps,type=tracking/shared>
+
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.myaccount>>
+
+
+	<!-- Localisation to be passed to JS -->
+	<div id="user_details_label_us_state" style="display: none;"><venda_text id=desktop.form.state_us></div>
+	<div id="user_details_label_us_zip" style="display: none;"><venda_text id=desktop.form.zipc_us></div>
+	<div id="user_details_label_uk_county" style="display: none;"><venda_text id=desktop.form.state></div>
+	<div id="user_details_label_non_us_postcode" style="display: none;"><venda_text id=desktop.form.zipc></div>
+	<div id="user_details_label_non_us_uk_region" style="display: none;"><venda_text id=desktop.form.region></div>
+	<div id="please_select_multi_dot" style="display: none;"><venda_text id=desktop.form.please_select_multi_dot></div>
+    </div>
+
+
+
+
+
+

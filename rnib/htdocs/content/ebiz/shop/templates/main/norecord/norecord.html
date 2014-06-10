@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="<venda_block label=10,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=10><venda_block label=11,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=11>" class="no-js ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html lang="<venda_block label=20,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=20><venda_block label=21,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=21>" class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html lang="<venda_block label=30,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=30><venda_block label=31,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=31>" class="no-js ie8 lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="<venda_block label=40,mode=value,<venda_sessionlanguage>=ae>en-US</venda_block label=40><venda_block label=41,mode=value,<venda_sessionlanguage>!=ae><venda_sessionlanguage></venda_block label=41>" class="no-js"> <!--<![endif]-->
+<!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]-->
+    <head>
+        <venda_inctemplate name=metatags,type=mainIncludes>
+        <venda_inctemplate name=title,type=mainIncludes>
+        <venda_inctemplate name=jsHead,type=mainIncludes>
+        <venda_inctemplate name=css,type=mainIncludes>
+        <venda_inctemplate name=head,type=tracking/shared>
+    </head>
+    <body id="<venda_rtype>_<venda_ref>">
+        <venda_inctemplate name=bodyTop,type=tracking/shared>
+        <venda_inctemplate name=admin,type=mainIncludes>
+        <venda_inctemplate name=nojavascript,type=mainIncludes>
+        <venda_inctemplate name=demo,type=mainIncludes>
+	<div class="outer-wrapper">
+        <div class="wrapper">
+			<div class="global-toolbar">
+				<a href="#skiptocontent" class="skiptocontent"><venda_text id=desktop.button.skip_to_content></a>
+				<ul>
+					<li><a href="http://www.rnib.org.uk">Main site</a></li>
+					<li><a href="<venda_dispview page=home>" class="active">Shop</a></li>
+				</ul>		
+			</div>
+		<div class="layout-norecord">	
+            <header id="header" role="banner">
+                <venda_inctemplate name=header,type=mainIncludes>
+            </header>
+            <nav class="nav row" id="nav" role="navigation" aria-label="Main menu">
+                <venda_inctemplate name=topNavigation,type=mainIncludes>
+            </nav>
+            <div class="row">
+                <section id="content" role="main" class="thickpad">
+                    <a name="skiptocontent" id="skiptocontent"></a>
+                    <venda_content>
+                    <div class="large-24 columns">
+                        <h1><venda_text id=desktop.heading.not_found></h1>
+                        <p><venda_text id=desktop.info.page_not_found_1></p>
+                        <p><venda_text id=desktop.info.page_not_found_3></p>
+                        <ul class="disc pad-bottom thickmarg-left">
+                            <li><venda_text id=desktop.info.page_not_found_4></li>
+                            <li><venda_text id=desktop.info.page_not_found_5></li>
+                        </ul>
+                        <p><venda_text id=desktop.info.page_not_found_2></p>
+                    </div>
+                </section><!-- end content section -->
+            </div>
+            <footer id="footer" role="contentinfo" class="row">
+                <venda_inctemplate name=footer,type=mainIncludes>
+            </footer>
+		</div><!-- end layout-norecord -->
+
+		<div class="offCanvasLeftMenu show-for-small hide-for-desktop">
+			<div class="block"><venda_inctemplate name=offCanvasLeftMenu,type=mainIncludes></div>
+		</div><!-- end off canvas left menu -->
+
+		<div class="offCanvasRightMenu show-for-small hide-for-desktop">
+			<div class="block"><venda_inctemplate name=offCanvasRightMenu,type=mainIncludes></div>
+		</div><!-- end off canvas right menu -->			
+        </div><!-- end wrapper -->
+	</div><!-- end outer-wrapper -->		
+        <venda_inctemplate name=validation,type=mainIncludes>
+        <venda_inctemplate name=tagsForJs,type=mainIncludes>
+        <venda_inctemplate name=js,type=mainIncludes>
+        <venda_tpxt mode=set,name=titlenorec,value=1>
+        <venda_inctemplate name=bodyBottom,type=tracking/shared>
+    </body>
+</html>

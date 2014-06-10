@@ -1,0 +1,83 @@
+<venda_tpcomment><!-- tag values used for tell a friend, emwbis, write and read a review popups --></venda_tpcomment>
+<div id="tag-qtymsg" style="display:none;"><venda_text id=desktop.validation.please_enter_quantity></div>
+<div id="tag-ebizref" style="display:none;"><venda_setting type=ebiz,name=ref></div>
+<div id="tag-ebizurl" style="display:none;"><venda_ebizurl></div>
+<div id="tag-invtref" style="display:none;"><venda_invtref></div>
+<div id="tag-invtname" style="display:none;"><venda_invtname></div>
+<div id="tag-currsym" style="display:none;"><venda_currsym></div>
+
+<venda_tpcomment><!-- Dictionary translations required for attributes JS --></venda_tpcomment>
+<div id="attributes-stockNA" style="display:none;"><venda_text id=desktop.validation.selection_not_available></div>
+<div id="attributes-stockOut" style="display:none;"><venda_text id=desktop.validation.selection_out_of_stock></div>
+<div id="attributes-productselected" style="display:none;"><venda_text id=desktop.validation.you_have_selected></div>
+<div id="attributes-productstatus" style="display:none;"><venda_text id=desktop.validation.please_select_colon></div>
+<div id="attributes-only" style="display:none;"><venda_text id=desktop.validation.only></div>
+<div id="attributes-left" style="display:none;"><venda_text id=desktop.validation.left></div>
+<div id="attributes-optionDefault" style="display:none;"><venda_text id=desktop.validation.please_select_multi_dot></div>
+<div id="attributes-tooltip" style="display:none;"><venda_text id=desktop.validation.is_out_of_stock></div>
+<div id="attributes-backorder" style="display:none;"><venda_text id=desktop.validation.backorder_text></div>
+<div id="attributes-preorder" style="display:none;"><venda_text id=desktop.validation.preorder_text></div>
+<div id="attributes-quantity" style="display:none;"><venda_text id=desktop.validation.enter_quantity></div>
+<div id="attributes-chooseVariant" style="display:none;"><venda_text id=desktop.validation.choose_variant></div>
+<div id="attributes-addThisProduct" style="display:none;"><venda_text id=desktop.validation.add_this_product></div>
+<div id="attributes-addAllProduct" style="display:none;"><venda_text id=desktop.validation.add_all_product></div>
+<div id="attributes-noneChecked" style="display:none;"><venda_text id=desktop.validation.none_checked></div>
+<div id="emwbisType" style="display: none;"><venda_setting type=ebiz,name=emailmebackcriteria></div><venda_tpcomment><!-- Email me when back in stock criteria (ETA / Release Dates): 4 options: none, eta, release, eta and etarelease --></venda_tpcomment>
+<div id="waitMesg" class="js-loadingimg" style="display:none;">Please wait while we update your Quick Shop results.</div>
+<venda_block label=quickshop,mode=value,<venda_emptytemplate>!=1>
+<venda_detblock1>
+<venda_inventory ref=<venda_invtref>,temp=quickShop>
+</venda_detblock1>
+<venda_detblock2>
+<venda_inventory ref=<venda_invtref>,temp=quickShop>
+</venda_detblock2>
+
+<div class="quickshop thickpad">
+<h1><venda_text id=desktop.heading.quick_shop_results></h1>
+<div>
+<venda_block label=1,errors=notnull><p class="alert-box alert radius" data-alert=""><venda_errors></p></venda_block label=1>
+<form name="form" action="<venda_codehttp>" method="post" name="addproductform" id="addproductform">
+
+	<input type="hidden" name="bsref" value="<venda_bsref>">
+	<input type="hidden" name="log" value="22">
+	<input type="hidden" name="mode" value="addmul">
+	<input type="hidden" name="curpage" value="">
+	<input type="hidden" name="next" value="">
+	<input type="hidden" name="layout">
+	<!-- "ex" sends user to basket if "co_wizr-shopcart" - or leaves on current page if "co_disp-shopc" -->
+	<!-- will sends user to basket by default - "Add to Basket" button changes "ex" value and leaves on current page (unless js disabled) -->
+	<input type="hidden" name="ex" value="co_disp-shopc">
+	<input type="hidden" name="page" value="quickshop">
+	<input type="hidden" name="param1" value="bulk">
+	<input type="hidden" name="param2" value="invt">
+
+	<div summary="<venda_text id=desktop.info.quick_shop_summary>">
+		<venda_detail1>
+		<venda_detail2>
+	</div>
+
+	<div>
+	<a href="<venda_dispview page=quickshop>" class="button"><venda_text id=desktop.button.search_again></a>
+	<input type="submit" id="addproduct" class="button js-addproduct right" value="<venda_text id=desktop.button.addtobasket>" onClick="document.form.ex.value='co_disp-shopc';">
+	</div>
+</form>
+</div>
+
+<div class="js-attributesForm" id="quickShop" style="display: none;">dropdown</div>
+
+</div>
+</venda_block label=quickshop>
+
+<venda_block label=quickshopempty,mode=value,<venda_emptytemplate>=1>
+<div class="thickpad">
+<h1><venda_text id=desktop.heading.quick_shop_results></h1>
+<div>
+<p><venda_text id=desktop.info.quick_shop_1></p>
+</div>
+</div>
+</venda_block label=quickshopempty>
+
+<venda_tpxt mode=set,name=orsc,value=1>
+<venda_tpxt mode=set,name=track,value=quickshop>
+<venda_tpcomment><!-- Used for html title --></venda_tpcomment>
+<venda_tpxt mode=set,name=title,value=<venda_text id=desktop.heading.quick_shop_results>>

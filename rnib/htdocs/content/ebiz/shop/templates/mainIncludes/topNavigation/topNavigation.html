@@ -1,0 +1,33 @@
+<div class="small-24 columns thickmarg-bottom">
+    <div class="row">
+        <div class="mm_bg small-24 columns">
+            <venda_tpcomment><!-- shown for mobile/small only --></venda_tpcomment>
+            <div class="row nav-header hide-for-desktop-up" id="nav-header">
+                <div class="small-12 columns nopad"><h5 class="nav-browse " id="nav-browse"><venda_text id=desktop.heading.browse> <i class="icon-menu icon-large"></i></h5></div>
+                <div class="small-12 columns nopad"><h5 class="nav-search show-for-small" id="show-small-search"><venda_text id=desktop.button.search> <i class="icon-search icon-large"></i></h5></div>
+            </div>
+            <venda_tpcomment><!-- Dynamic Top Navigation --><!--venda_category rec=icat,ref=shop,temp=dynamicTopNavigation,itemsperpage=100--></venda_tpcomment>
+            <venda_tpcomment><!-- Static Top Navigation --></venda_tpcomment><venda_page page=mainmenu>
+        </div>
+    </div>
+
+    <!--<venda_page page=headerpromobar>-->
+
+    <venda_block label=980,workflow!=shopcart>
+    <venda_block label=113,pageref!=home>
+    <div class="row">
+        <div class="small-24 columns nopad">
+            <p class="crumbtrail">
+                <span class="crumbtrail-home">You are here:</span> <a href="<venda_ebizurl>" class="crumbtrail-home"> <venda_text id=desktop.button.home></a><venda_cattree class=crumbtrail-anchor,sep=&#47;,append=<span class="prod-name"><venda_invtname><venda_pagename></span>>
+            </p>
+        </div>
+    </div>
+    </venda_block label=113>
+    </venda_block label=980>
+</div>
+
+<div id="tags_cattree" style="display: none">
+<venda_cattree index=1, value=catref>,
+<venda_cattree index=2, value=catref>,
+<venda_cattree index=3, value=catref>
+</div>

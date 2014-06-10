@@ -1,0 +1,10 @@
+<venda_tpcomment><!-- This template is used by product detail when the product has attributes, it cycles through and stores the image paths to the various attribute 1 association values (e.g. xsmall,medium,large image path for Red Shirt) --></venda_tpcomment>
+
+<venda_detblock_mediagridrow><venda_detail_mediagridcell></venda_detblock_mediagridrow>
+<venda_detblock_mediagridcell>
+	<venda_block label=1,emptycell!=1,medatrvalue!=>
+	<a class="js-sw-<venda_block label=597,mode=value,<venda_media rec=invt,type=pict,key=setswatch,medatr=yes,img=no>=>no</venda_block label=597>image" href="<venda_dispview invt=<venda_invtref>>&color=<venda_medatrvalue>" title="<venda_medatrvalue>" data-prodid="comp-image<venda_invtref>" data-detailsid="details-<venda_invtref>" data-uuid="<venda_invtuuid>" data-color="<venda_medatrvalue>" data-setimage="<venda_block label=notsearch,mode=value,<venda_tpxt mode=get,name=activekeyword>=null><venda_media rec=invt,type=pict,key=set<venda_setting type=ebiz,name=setproductlistimagekey>,medatr=yes,img=no></venda_block label=notsearch><venda_block label=search,mode=value,<venda_tpxt mode=get,name=activekeyword>=notnull><venda_media rec=invt,type=pict,key=set<venda_setting type=ebiz,name=setsearchimagekey>,medatr=yes,img=no></venda_block label=search>" data-setimagehover="" data-setimagemedium="<venda_media rec=invt,type=pict,key=setmedium,medatr=yes,img=no>"><span><venda_block label=598,mode=value,<venda_media rec=invt,type=pict,key=setswatch,medatr=yes,img=no>!=><venda_media rec=invt,type=pict,key=setswatch,medatr=yes></venda_block label=598>
+	<venda_block label=599,mode=value,<venda_media rec=invt,type=pict,key=setswatch,medatr=yes,img=no>=><venda_medatrvalue></venda_block label=599></span></a>
+	</venda_block label=1>
+</venda_detblock_mediagridcell>
+<div class="js-swatchContainer"><div id="swatch<venda_invtref>"><venda_detail_mediagridrow></div></div>

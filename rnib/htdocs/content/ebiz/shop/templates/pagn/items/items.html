@@ -1,0 +1,51 @@
+<div class="large-10 columns text-center hide-for-small">
+    <venda_block label=1139,mode=value,<venda_setting type=ebiz,name=viewpagedisplaysearch>=1>
+        <div class="pagn-page-info<venda_block label=1140,mode=value,<venda_setting type=ebiz,name=alwaysshowpagenumsearch>!=1,<venda_pgn_totalpages>=1> pagn-always-show-page-num</venda_block label=1140>"><venda_text id=desktop.info.pagn_page_x_of_y></div>
+    </venda_block label=1139>
+    <venda_block label=1121,mode=value,<venda_setting type=ebiz,name=viewitemsdisplaysearch>=1>
+        <p class="pagn-item-info"><venda_text id=desktop.info.pagn_items_x_of_y></p>
+    </venda_block label=1121>
+</div>
+<div class="large-4 small-12 columns">
+    <venda_block label=1120,mode=value,<venda_pgn_isviewall>=1>
+        <!-- show paged view -->
+        <span class="pagn-show-view-by-page<venda_block label=1136,mode=value,<venda_pgn_totalpages>=1> setMarginPagedView</venda_block label=1136>"><a class="js-updatesearch" href="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setsearchviewbypagevalue>" title="<venda_text id=desktop.info.pagn_page_go_viewbypage>"><venda_text id=desktop.button.viewbypage></a></span>
+    </venda_block label=1120>
+    <venda_block label=1119,mode=value,<venda_pgn_isviewall>!=1>
+        <venda_block label=20,mode=value,<venda_setting type=ebiz,name=setitemsperpagestylesearch>=itemsperpagedropdownsearch>
+            <venda_tpcomment><!-- show perpage dropdown --></venda_tpcomment>
+            <div class="js-pagnPerpage">
+                <form>
+                    <div class="row collapse">
+                        <div class="large-10 columns hide-for-small"><label for="perpagedpd" class="inline"><span class="pagn-text-view"><venda_text id=desktop.form.view>:</span></label></div>
+                        <div class="large-14 small-21 columns js-custom">
+                            <select name="perpagedpd" id="perpagedpd">
+                            <option> - </option>
+                            <venda_block label=30,mode=value,<venda_setting type=ebiz,name=setitemsperpage1dropdownsearch>=notnull><option value="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage1dropdownsearch>" <venda_block label=71,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage1dropdownsearch>> selected</venda_block label=71>><venda_setting type=ebiz,name=setitemsperpage1dropdownsearch></option></venda_block label=30>
+                            <venda_block label=31,mode=value,<venda_setting type=ebiz,name=setitemsperpage2dropdownsearch>=notnull><option value="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage2dropdownsearch>" <venda_block label=72,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage2dropdownsearch>> selected</venda_block label=72>><venda_setting type=ebiz,name=setitemsperpage2dropdownsearch></option></venda_block label=31>
+                            <venda_block label=32,mode=value,<venda_setting type=ebiz,name=setitemsperpage3dropdownsearch>=notnull><option value="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage3dropdownsearch>" <venda_block label=73,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage3dropdownsearch>> selected</venda_block label=73>><venda_setting type=ebiz,name=setitemsperpage3dropdownsearch></option></venda_block label=32>
+                            <venda_block label=33,mode=value,<venda_setting type=ebiz,name=setitemsperpage4dropdownsearch>=notnull><option value="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage4dropdownsearch>" <venda_block label=74,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage4dropdownsearch>> selected</venda_block label=74>><venda_setting type=ebiz,name=setitemsperpage4dropdownsearch></option></venda_block label=33>
+                            <venda_block label=34,mode=value,<venda_setting type=ebiz,name=setitemsperpage5dropdownsearch>=notnull><option value="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage5dropdownsearch>" <venda_block label=75,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage5dropdownsearch>> selected</venda_block label=75>><venda_setting type=ebiz,name=setitemsperpage5dropdownsearch></option></venda_block label=34>
+                            <venda_block label=35,mode=value,<venda_setting type=ebiz,name=setitemsperpage6dropdownsearch>=notnull><option value="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage6dropdownsearch>" <venda_block label=76,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage6dropdownsearch>> selected</venda_block label=76>><venda_setting type=ebiz,name=setitemsperpage6dropdownsearch></option></venda_block label=35>
+                            </select>
+                        </div>
+                   </div>
+                </form>
+            </div>
+        </venda_block label=20>
+        <venda_block label=21,mode=value,<venda_setting type=ebiz,name=setitemsperpagestylesearch>=itemsperpagelinkssearch>
+            <venda_tpcomment><!-- show perpage textlinks --></venda_tpcomment>
+            <span class="js-pagnPerpage">
+                <ul class="pagn-item-per-page inline-list">
+                    <li class="pagn-text-view"><venda_text id=desktop.form.view>:</li>
+                    <venda_block label=40,mode=value,<venda_setting type=ebiz,name=setitemsperpage1linkssearch>=notnull><li class="<venda_block label=1137,mode=value,<venda_setting type=ebiz,name=setitemsperpage2linkssearch>=null>pagn-set-last-per-page</venda_block label=1137><venda_block label=1138,mode=value,<venda_setting type=ebiz,name=setitemsperpage2linkssearch>=notnull>setperpage</venda_block label=1138> <venda_block label=91,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage1linkssearch>>setperpage_active</venda_block label=91>"><a class="js-updatesearch" href="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setitemsperpage1linkssearch>"><venda_setting type=ebiz,name=setitemsperpage1linkssearch></a></li></venda_block label=40>
+                    <venda_block label=41,mode=value,<venda_setting type=ebiz,name=setitemsperpage2linkssearch>=notnull><li class="<venda_block label=1137,mode=value,<venda_setting type=ebiz,name=setitemsperpage3linkssearch>=null>pagn-set-last-per-page</venda_block label=1137><venda_block label=1138,mode=value,<venda_setting type=ebiz,name=setitemsperpage3linkssearch>=notnull>setperpage</venda_block label=1138> <venda_block label=92,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage2linkssearch>>setperpage_active</venda_block label=92>"><a class="js-updatesearch" href="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage2linkssearch>"><venda_setting type=ebiz,name=setitemsperpage2linkssearch></a></li></venda_block label=41>
+                    <venda_block label=42,mode=value,<venda_setting type=ebiz,name=setitemsperpage3linkssearch>=notnull><li class="<venda_block label=1137,mode=value,<venda_setting type=ebiz,name=setitemsperpage4linkssearch>=null>pagn-set-last-per-page</venda_block label=1137><venda_block label=1138,mode=value,<venda_setting type=ebiz,name=setitemsperpage4linkssearch>=notnull>setperpage</venda_block label=1138> <venda_block label=93,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage3linkssearch>>setperpage_active</venda_block label=93>"><a class="js-updatesearch" href="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage3linkssearch>"><venda_setting type=ebiz,name=setitemsperpage3linkssearch></a></li></venda_block label=42>
+                    <venda_block label=43,mode=value,<venda_setting type=ebiz,name=setitemsperpage4linkssearch>=notnull><li class="<venda_block label=1137,mode=value,<venda_setting type=ebiz,name=setitemsperpage5linkssearch>=null>pagn-set-last-per-page</venda_block label=1137><venda_block label=1138,mode=value,<venda_setting type=ebiz,name=setitemsperpage5linkssearch>=notnull>setperpage</venda_block label=1138> <venda_block label=94,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage4linkssearch>>setperpage_active</venda_block label=94>"><a class="js-updatesearch" href="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage4linkssearch>"><venda_setting type=ebiz,name=setitemsperpage4linkssearch></a></li></venda_block label=43>
+                    <venda_block label=44,mode=value,<venda_setting type=ebiz,name=setitemsperpage5linkssearch>=notnull><li class="<venda_block label=1137,mode=value,<venda_setting type=ebiz,name=setitemsperpage6linkssearch>=null>pagn-set-last-per-page</venda_block label=1137><venda_block label=1138,mode=value,<venda_setting type=ebiz,name=setitemsperpage6linkssearch>=notnull>setperpage</venda_block label=1138> <venda_block label=95,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage5linkssearch>>setperpage_active</venda_block label=95>"><a class="js-updatesearch" href="<venda_pgn_baseurl>&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage5linkssearch>"><venda_setting type=ebiz,name=setitemsperpage5linkssearch></a></li></venda_block label=44>
+                    <venda_block label=45,mode=value,<venda_setting type=ebiz,name=setitemsperpage6linkssearch>=notnull><li class="pagn-set-last-per-page <venda_block label=96,mode=value,<venda_pgn_perpage>=<venda_setting type=ebiz,name=setitemsperpage6linkssearch>>setperpage_active</venda_block label=96>"><a class="js-updatesearch" href="pgn_baseurl&setpagenum=1&perpage=<venda_setting type=ebiz,name=setitemsperpage6linkssearch>"><venda_setting type=ebiz,name=setitemsperpage6linkssearch></a></li></venda_block label=45>
+                </ul>
+            </span>
+        </venda_block label=21><venda_tpcomment><!-- end itemsperpage style --></venda_tpcomment>
+    </venda_block label=1119>
+</div>

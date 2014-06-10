@@ -1,0 +1,17 @@
+<venda_block label=62,paymentavailable=notnull>
+    <fieldset class="f-matra thickmarg-topbottom">
+        <legend><venda_text id=desktop.info.matra></legend>
+        <div class="matra">
+            <input type="radio" name="ohpaytype" value="14" id="matra" <venda_block label=65,paymentused=notnull>checked</venda_block label=65>><label for="matra"><span class="thinpad-side"><venda_text id=desktop.form.matra></span></label>
+            <br>
+            <p class="paypaltext nomarg"><venda_text id=desktop.info.placeorder_text></p>
+            <select name="pm" id="methodtype"><venda_paymentselectmethod></select>
+        </div>
+    </fieldset>
+    <hr>
+    <venda_block label=67,checkfullamount=notnull>
+    <script type="text/javascript">
+        document.wizform.sendpaypaid.readOnly=true;
+    </script>
+    </venda_block label=67>
+</venda_block label=62>

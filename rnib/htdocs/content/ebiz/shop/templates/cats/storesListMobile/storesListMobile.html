@@ -1,0 +1,14 @@
+<venda_detblock>
+		<option value="<venda_dispview scat=<venda_scatref1>>&temp=substoresListMobile&layout=blank"><venda_scatname1></option>
+</venda_detblock>
+
+<div class="storelocatorDropdown">
+		<div class="storeListHolder" class="allukStores">
+			<div data-role="fieldcontain" class="regionselect ui-hide-label">
+				<label for="selectStore"><venda_text id=mobile.form.store.select_region></label>
+				<select id="selectStore" name="selectStore" onchange="Venda.Ebiz.changeSelectStore(this,'.regionselect')"><option><venda_text id=mobile.form.store.select_region></option><venda_detail></select></div>
+			<div class="town"></div>
+			<div class="store"></div>
+		</div>
+		<div id="storeDetail" class="storelocator"></div>
+</div>
